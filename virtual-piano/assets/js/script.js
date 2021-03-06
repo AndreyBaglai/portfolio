@@ -1,7 +1,30 @@
 const piano = document.querySelector('.piano');
 const pianoKeys = document.querySelectorAll('.piano-key');
+const containerBtn = document.querySelector('.btn-container');
+const buttons = document.querySelectorAll('.btn');
 
 const fullscreenBtn = document.querySelector('.fullscreen');
+
+containerBtn.addEventListener('click', (e) => {
+  const activeButton = e.target;
+  const isLetters = activeButton.dataset.letters === 'letters';
+
+  buttons.forEach((btn) => {
+    if (btn.classList.contains('btn-active')) {
+      btn.classList.remove('btn-active');
+    }
+  });
+
+  activeButton.classList.add('btn-active');
+
+  isLetters
+    ? pianoKeys.forEach((key) => {
+        key.classList.add('letter');
+      })
+    : pianoKeys.forEach((key) => {
+        key.classList.remove('letter');
+      });
+});
 
 fullscreenBtn.addEventListener('click', () => {
   if (!document.fullscreenElement) {
@@ -20,12 +43,12 @@ piano.addEventListener('click', (e) => {
     const note = pianoKey.dataset.note;
     const src = `./assets/audio/${note}.mp3`;
 
-    pianoKeys.forEach(key => {
+    pianoKeys.forEach((key) => {
       if (key.classList.contains('piano-key-active')) {
         key.classList.remove('piano-key-active');
       }
     });
-    
+
     pianoKey.classList.add('piano-key-active');
     playAudio(src);
   }

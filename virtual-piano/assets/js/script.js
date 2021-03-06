@@ -60,3 +60,26 @@ function playAudio(src) {
   audio.currentTime = 0;
   audio.play();
 }
+
+window.addEventListener('keydown', (e) => {
+  const keyCode = e.code.slice(-1);
+
+  let note = '';
+  let keyLetter = '';
+  let src = ``;
+
+  pianoKeys.forEach((key) => {
+    if (key.classList.contains('piano-key-active')) {
+      key.classList.remove('piano-key-active');
+    }
+
+    note = key.dataset.note;
+    keyLetter = key.dataset.letter;
+    src = `./assets/audio/${note}.mp3`;
+
+    if (keyCode === keyLetter) {
+      key.classList.add('piano-key-active');
+      playAudio(src);
+    }
+  });
+});

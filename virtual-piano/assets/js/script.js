@@ -54,6 +54,25 @@ piano.addEventListener('click', (e) => {
   }
 });
 
+piano.addEventListener('mouseover', (e) => {
+  const pianoKey = e.target;
+  const pressAnyMouseKey = e.buttons !== 0;
+
+  if (pianoKey.classList.contains('piano-key') && pressAnyMouseKey) {
+    const note = pianoKey.dataset.note;
+    const src = `./assets/audio/${note}.mp3`;
+
+    pianoKeys.forEach((key) => {
+      if (key.classList.contains('piano-key-active')) {
+        key.classList.remove('piano-key-active');
+      }
+    });
+
+    pianoKey.classList.add('piano-key-active');
+    playAudio(src);
+  }
+});
+
 function playAudio(src) {
   const audio = new Audio();
   audio.src = src;
@@ -82,4 +101,8 @@ window.addEventListener('keydown', (e) => {
       playAudio(src);
     }
   });
+});
+
+window.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
 });

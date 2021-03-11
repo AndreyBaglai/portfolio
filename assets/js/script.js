@@ -1,9 +1,54 @@
 const filtersContainer = document.querySelector('.filters');
-const currentImg = document.querySelector('.editor > img');
+let currentImg = '';
+const editor = document.querySelector('.editor');
 
 const fullscreenBtn = document.querySelector('.fullscreen');
 const buttons = document.querySelectorAll('.btn');
 const resetBtn = document.querySelector('.btn-reset');
+const nextPictureBtn = document.querySelector('.btn-next');
+
+const MAX_CONT_IMAGES = 19;
+const timesOfDay = setTimesOfDay();
+let imageIndex = 0;
+const imageUrl =
+  'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
+const images = [
+  '01.jpg',
+  '02.jpg',
+  '03.jpg',
+  '05.jpg',
+  '06.jpg',
+  '07.jpg',
+  '08.jpg',
+  '09.jpg',
+  '10.jpg',
+  '11.jpg',
+  '12.jpg',
+  '13.jpg',
+  '14.jpg',
+  '15.jpg',
+  '16.jpg',
+  '17.jpg',
+  '18.jpg',
+  '19.jpg',
+  '20.jpg',
+];
+
+window.addEventListener('load', () => {
+  let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
+  viewImage(src);
+});
+
+nextPictureBtn.addEventListener('click', (e) => {
+  const btn = e.target;
+  setActiveBtn(btn);
+
+  imageIndex++;
+  console.log(imageIndex);
+  if (imageIndex === MAX_CONT_IMAGES) imageIndex = 0;
+  let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
+  viewImage(src);
+});
 
 resetBtn.addEventListener('click', (e) => {
   const btn = e.target;
@@ -65,4 +110,29 @@ function resetFilter(filter) {
     filter.value = 0;
     filter.nextElementSibling.value = 0;
   }
+}
+
+function setTimesOfDay() {
+  const hour = new Date(Date.now()).getHours();
+
+  if (hour > 0 && hour < 6) {
+    return 'night';
+  } else if (hour >= 6 && hour < 12) {
+    return 'morning';
+  } else if (hour >= 12 && hour < 18) {
+    return 'day';
+  } else if (hour >= 18 && hour < 24) {
+    return 'evening';
+  }
+}
+
+function viewImage(src) {
+  const img = new Image();
+  img.src = src;
+  img.alt = images[imageIndex];
+  img.onload = () => {
+    editor.removeChild(editor.lastChild);
+    editor.appendChild(img);
+    currentImg = img;
+  };
 }

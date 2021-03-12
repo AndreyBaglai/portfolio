@@ -7,6 +7,7 @@ const buttons = document.querySelectorAll('.btn');
 const resetBtn = document.querySelector('.btn-reset');
 const nextPictureBtn = document.querySelector('.btn-next');
 const loadPictureBtn = document.getElementById('btnInput');
+const savePictureBtn = document.querySelector('.btn-save');
 
 const MAX_CONT_IMAGES = 19;
 const timesOfDay = setTimesOfDay();
@@ -38,6 +39,31 @@ const images = [
 window.addEventListener('load', () => {
   let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
   viewImage(src);
+});
+
+savePictureBtn.addEventListener('click', (e) => {
+  const btn = e.target;
+  setActiveBtn(btn);
+
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.src = currentImg.src;
+  img.onload = function () {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const computedFilters = window.getComputedStyle(currentImg, null).filter;
+    ctx.filter = computedFilters;
+    ctx.drawImage(img, 0, 0);
+
+    const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL('image/jpeg');
+    link.click();
+    link.delete;
+  };
 });
 
 loadPictureBtn.addEventListener('change', (e) => {

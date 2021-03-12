@@ -160,6 +160,7 @@ output {
   justify-content: flex-start;
   width: 100%;
   max-width: 60%;
+  object-fit: fill;
 }
 :root {
   --blur: 0px;

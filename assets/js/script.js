@@ -6,6 +6,7 @@ const fullscreenBtn = document.querySelector('.fullscreen');
 const buttons = document.querySelectorAll('.btn');
 const resetBtn = document.querySelector('.btn-reset');
 const nextPictureBtn = document.querySelector('.btn-next');
+const loadPictureBtn = document.getElementById('btnInput');
 
 const MAX_CONT_IMAGES = 19;
 const timesOfDay = setTimesOfDay();
@@ -39,12 +40,28 @@ window.addEventListener('load', () => {
   viewImage(src);
 });
 
+loadPictureBtn.addEventListener('change', (e) => {
+  const btn = e.target.parentElement;
+  console.log(btn);
+  setActiveBtn(btn);
+
+  const file = loadPictureBtn.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const img = new Image();
+    img.src = reader.result;
+    editor.removeChild(editor.lastChild);
+    editor.appendChild(img);
+    currentImg = img;
+  };
+  reader.readAsDataURL(file);
+});
+
 nextPictureBtn.addEventListener('click', (e) => {
   const btn = e.target;
   setActiveBtn(btn);
 
   imageIndex++;
-  console.log(imageIndex);
   if (imageIndex === MAX_CONT_IMAGES) imageIndex = 0;
   let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
   viewImage(src);
@@ -83,7 +100,7 @@ filtersContainer.addEventListener('input', (e) => {
 });
 
 function setFilter(name, val, sizing) {
-  currentImg.style.filter = `${name}(${val}${sizing ? sizing : 'px'})`;
+  document.documentElement.style.setProperty(`--${name}`, val + sizing);
 }
 
 function setActiveBtn(btn) {
@@ -101,12 +118,14 @@ function setActiveBtn(btn) {
 }
 
 function resetFilter(filter) {
-  currentImg.style.filter = 'none';
+  const { name } = filter;
 
-  if (filter.name === 'saturate') {
+  if (name === 'saturate') {
+    document.documentElement.style.setProperty(`--${name}`, 100 + filter.dataset.sizing);
     filter.value = 100;
     filter.nextElementSibling.value = 100;
   } else {
+    document.documentElement.style.setProperty(`--${name}`, 0 + filter.dataset.sizing);
     filter.value = 0;
     filter.nextElementSibling.value = 0;
   }
@@ -129,7 +148,7 @@ function setTimesOfDay() {
 function viewImage(src) {
   const img = new Image();
   img.src = src;
-  img.alt = images[imageIndex];
+  img.alt = 'photo';
   img.onload = () => {
     editor.removeChild(editor.lastChild);
     editor.appendChild(img);

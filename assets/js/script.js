@@ -37,7 +37,7 @@ const images = [
 ];
 
 window.addEventListener('load', () => {
-  let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
+  const src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
   viewImage(src);
 });
 
@@ -46,24 +46,7 @@ savePictureBtn.addEventListener('click', (e) => {
   setActiveBtn(btn);
 
   const canvas = document.querySelector('canvas');
-  const ctx = canvas.getContext('2d');
-
-  const img = new Image();
-  img.setAttribute('crossOrigin', 'anonymous');
-  img.src = currentImg.src;
-  img.onload = function () {
-    canvas.width = img.width;
-    canvas.height = img.height;
-    const computedFilters = window.getComputedStyle(currentImg, null).filter;
-    ctx.filter = computedFilters;
-    ctx.drawImage(img, 0, 0);
-
-    const link = document.createElement('a');
-    link.download = 'download.png';
-    link.href = canvas.toDataURL('image/jpeg');
-    link.click();
-    link.delete;
-  };
+  savePicture(canvas);
 });
 
 loadPictureBtn.addEventListener('change', (e) => {
@@ -73,15 +56,11 @@ loadPictureBtn.addEventListener('change', (e) => {
   try {
     const file = loadPictureBtn.files[0];
     const reader = new FileReader();
+
     reader.onload = () => {
-      const img = new Image();
-      console.log(reader);
-      img.src = reader.result;
-      img.alt = 'photo';
-      editor.removeChild(editor.lastChild);
-      editor.appendChild(img);
-      currentImg = img;
+      loadPicture(reader.result);
     };
+
     reader.readAsDataURL(file);
   } catch (err) {
     if (err instanceof TypeError) {
@@ -96,16 +75,19 @@ nextPictureBtn.addEventListener('click', (e) => {
 
   imageIndex++;
   if (imageIndex === MAX_CONT_IMAGES) imageIndex = 0;
-  let src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
+  const src = `${imageUrl}${timesOfDay}/${images[imageIndex]}`;
   viewImage(src);
 });
 
 resetBtn.addEventListener('click', (e) => {
   const btn = e.target;
-  filtersContainer.querySelectorAll('input').forEach((filter) => {
+  const allFilters = filtersContainer.querySelectorAll('input');
+
+  setActiveBtn(btn);
+
+  allFilters.forEach((filter) => {
     resetFilter(filter);
   });
-  setActiveBtn(btn);
 });
 
 fullscreenBtn.addEventListener('click', () => {
@@ -132,6 +114,45 @@ filtersContainer.addEventListener('input', (e) => {
   }
 });
 
+function savePicture(canvasEl) {
+  const img = new Image();
+  const ctx = canvasEl.getContext('2d');
+
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.src = currentImg.src;
+
+  img.onload = function () {
+    canvasEl.width = img.width;
+    canvasEl.height = img.height;
+
+    const computedFilters = window.getComputedStyle(currentImg, null).filter;
+    ctx.filter = computedFilters;
+
+    ctx.drawImage(img, 0, 0);
+    createDownloadLink(canvasEl)
+  };
+}
+
+function createDownloadLink(canvas) {
+  const link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = canvas.toDataURL('image/jpeg');
+    link.click();
+    link.delete;
+}
+
+function loadPicture(src) {
+  const img = new Image();
+
+  img.src = src;
+  img.alt = 'photo';
+
+  editor.removeChild(editor.lastChild);
+  editor.appendChild(img);
+
+  currentImg = img;
+}
+
 function setFilter(name, val, sizing) {
   document.documentElement.style.setProperty(`--${name}`, val + sizing);
 }
@@ -151,16 +172,20 @@ function setActiveBtn(btn) {
 }
 
 function resetFilter(filter) {
-  const { name } = filter;
+  const {
+    name,
+    dataset: { sizing },
+  } = filter;
+  const output = filter.nextElementSibling;
 
   if (name === 'saturate') {
-    document.documentElement.style.setProperty(`--${name}`, 100 + filter.dataset.sizing);
+    document.documentElement.style.setProperty(`--${name}`, 100 + sizing);
     filter.value = 100;
-    filter.nextElementSibling.value = 100;
+    output.value = 100;
   } else {
-    document.documentElement.style.setProperty(`--${name}`, 0 + filter.dataset.sizing);
+    document.documentElement.style.setProperty(`--${name}`, 0 + sizing);
     filter.value = 0;
-    filter.nextElementSibling.value = 0;
+    output.value = 0;
   }
 }
 

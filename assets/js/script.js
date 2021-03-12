@@ -42,19 +42,26 @@ window.addEventListener('load', () => {
 
 loadPictureBtn.addEventListener('change', (e) => {
   const btn = e.target.parentElement;
-  console.log(btn);
   setActiveBtn(btn);
 
-  const file = loadPictureBtn.files[0];
-  const reader = new FileReader();
-  reader.onload = () => {
-    const img = new Image();
-    img.src = reader.result;
-    editor.removeChild(editor.lastChild);
-    editor.appendChild(img);
-    currentImg = img;
-  };
-  reader.readAsDataURL(file);
+  try {
+    const file = loadPictureBtn.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      console.log(reader);
+      img.src = reader.result;
+      img.alt = 'photo';
+      editor.removeChild(editor.lastChild);
+      editor.appendChild(img);
+      currentImg = img;
+    };
+    reader.readAsDataURL(file);
+  } catch (err) {
+    if (err instanceof TypeError) {
+      return;
+    }
+  }
 });
 
 nextPictureBtn.addEventListener('click', (e) => {

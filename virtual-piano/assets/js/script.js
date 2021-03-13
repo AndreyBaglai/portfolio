@@ -83,6 +83,8 @@ function playAudio(src) {
 window.addEventListener('keydown', (e) => {
   const keyCode = e.code.slice(-1);
 
+  if (e.repeat) return;
+
   let note = '';
   let keyLetter = '';
   let src = ``;

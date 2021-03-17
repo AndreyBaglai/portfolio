@@ -140,6 +140,7 @@ body {
   bottom: -45px;
   left: 20px;
   transition: 0.3s;
+  pointer-events: none;
 }
 .piano-key::after {
   display: none;
@@ -147,11 +148,17 @@ body {
 }
 .piano-key:hover::before,
 .piano-key:hover::after {
-  color: #cbd5de;
+  color: #fff;
 }
 .piano-key:active::before,
 .piano-key:active::after {
   color: #fff;
+}
+.piano-key.piano-key-active::before,
+.piano-key.sharp.piano-key-active::before,
+.piano-key.piano-key-active::after,
+.piano-key.sharp.piano-key-active::after {
+  color: #00c9b7;
 }
 .piano-key.sharp::before,
 .piano-key.sharp::after {

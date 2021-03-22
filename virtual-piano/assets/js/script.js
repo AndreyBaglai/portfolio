@@ -36,7 +36,7 @@ fullscreenBtn.addEventListener('click', () => {
   }
 });
 
-piano.addEventListener('click', (e) => {
+piano.addEventListener('mousedown', (e) => {
   const pianoKey = e.target;
 
   if (pianoKey.classList.contains('piano-key')) {
@@ -52,6 +52,12 @@ piano.addEventListener('click', (e) => {
     pianoKey.classList.add('piano-key-active');
     playAudio(src);
   }
+});
+
+piano.addEventListener('mouseup', () => {
+  pianoKeys.forEach(key => {
+    key.classList.remove('piano-key-active');
+  });
 });
 
 piano.addEventListener('mouseover', (e) => {
@@ -105,6 +111,8 @@ window.addEventListener('keydown', (e) => {
   });
 });
 
-window.addEventListener('contextmenu', (e) => {
-  e.preventDefault();
+window.addEventListener('keyup', () => {
+  pianoKeys.forEach(key => {
+    key.classList.remove('piano-key-active');
+  });
 });

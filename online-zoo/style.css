@@ -1,6 +1,7 @@
 :root {
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #f2f2f2;
+  --btn-bg: linear-gradient(106.89deg, #4bd8b5 -14.32%, #49d6df 100.68%);
 }
 
 body {
@@ -10,13 +11,14 @@ body {
   box-sizing: border-box;
 }
 
-header {
+.header {
   max-width: 1920px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   padding: 28px 150px;
   align-items: center;
+  background-color: var(--primary-bg-color);
 }
 
 .header-logo {
@@ -49,4 +51,131 @@ header {
 .header-nav-link.active {
   font-weight: 900;
   text-decoration: underline;
+}
+
+.main {
+  z-index: 0;
+  overflow: hidden;
+  min-height: 940px;
+  background-image: url('./assets/img/favorite-animals-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 1920px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: start;
+  align-items: flex-end;
+  padding: 0 150px 105px;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  text-transform: capitalize;
+}
+
+.wrapper-social-links {
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.main-social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-social-links > li {
+  padding-bottom: 8px;
+}
+
+.main-text-wrapper {
+  margin-left: 180px;
+  align-self: center;
+  margin-bottom: 90px;
+}
+
+.main-text {
+  font-weight: 900;
+  font-size: 89px;
+  line-height: 104px;
+  color: #ffffff;
+  max-width: 790px;
+  margin: 0 0 80px;
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  background: var(--btn-bg);
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn > span {
+  margin-right: 6px;
+}
+
+.main-slider {
+  position: absolute;
+  width: 1124px;
+  height: 421px;
+  left: 53%;
+}
+
+.line {
+  display: block;
+  position: relative;
+  top: 41%;
+  transform: translateY(-50%);
+  right: 7%;
+  z-index: -1;
+}
+
+.slider-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 185px;
+}
+
+.count.main-count {
+  margin: 20px 0 0 270px;
+}
+
+.count-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color:rgba(189, 189, 189, 0.57);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#current-number {
+  color: #fefefe;
+  font-weight: 900;
 }

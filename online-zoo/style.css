@@ -1,0 +1,52 @@
+:root {
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #f2f2f2;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  max-width: 1920px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 28px 150px;
+  align-items: center;
+}
+
+.header-logo {
+  width: 60px;
+  height: 40px;
+}
+
+.header-nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav > ul > li {
+  text-transform: capitalize;
+  padding: 0 40px;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  transition: all 0.5s ease;
+}
+
+.header-nav-link.active {
+  font-weight: 900;
+  text-decoration: underline;
+}

@@ -126,7 +126,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 245px;
+  min-width: 245px;
   max-height: 50px;
 }
 
@@ -289,7 +289,7 @@ h1 {
   background-color: var(--primary-bg-color);
 }
 
-.pets-in-zoo-header {
+.h3-text {
   text-align: center;
   font-family: 'Roboto';
   font-style: normal;
@@ -306,7 +306,8 @@ h1 {
   position: relative;
 }
 
-.left-arrow, .right-arrow {
+.left-arrow,
+.right-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -322,11 +323,69 @@ h1 {
 
 .pets-in-zoo-slider-wrapper > img {
   width: 278px;
-height: 399px;
-object-fit: fill;
+  height: 399px;
+  object-fit: fill;
 }
 
 .favorite-btn {
   margin: 0 auto 100px;
   padding: 18px 15px;
+}
+
+.pay-feed-wrapper {
+  padding: 110px 0;
+}
+
+.pay-feed-wrapper {
+  background-color: var(--secondary-bg-color);
+}
+
+.pay-wrp > .h3-text {
+  margin-top: 0;
+}
+
+.pay-feed-text {
+  margin: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.btn-donate {
+  margin: 0 auto;
+}
+
+.pay-feed-items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 92px;
+}
+
+.pay-feed-items > .item {
+  border: 2px solid #4bd8b5;
+  border-radius: 100%; 
+  width: 245px;
+  height: 245px;
+}
+
+.pay-feed-items > .item svg {
+  width: 65px;
+  height: 53px;
+  margin: 60px 0 18px;
+}
+
+.pay-feed-item-text {
+  max-width: 135px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #4f4f4f;
+  margin: 0;
 }

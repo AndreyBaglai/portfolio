@@ -281,5 +281,52 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;text-align: left;
+  color: #4f4f4f;
+  text-align: left;
+}
+
+.pets-in-zoo-wrapper {
+  background-color: var(--primary-bg-color);
+}
+
+.pets-in-zoo-header {
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #333333;
+  margin: 110px 0 38px;
+}
+
+.pets-in-zoo-slider {
+  display: flex;
+  position: relative;
+}
+
+.left-arrow, .right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-arrow {
+  left: -35px;
+}
+
+.right-arrow {
+  right: -35px;
+}
+
+.pets-in-zoo-slider-wrapper > img {
+  width: 278px;
+height: 399px;
+object-fit: fill;
+}
+
+.favorite-btn {
+  margin: 0 auto 100px;
+  padding: 18px 15px;
 }

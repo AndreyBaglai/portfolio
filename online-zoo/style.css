@@ -11,6 +11,7 @@ body {
   box-sizing: border-box;
 }
 
+/*header start*/
 .header {
   max-width: 1920px;
   display: flex;
@@ -52,6 +53,7 @@ body {
   font-weight: 900;
   text-decoration: underline;
 }
+/*header end*/
 
 .main {
   z-index: 0;
@@ -97,7 +99,7 @@ h1 {
 }
 
 .main-text-wrapper {
-  margin-left: 180px;
+  margin-left: 185px;
   align-self: center;
   margin-bottom: 90px;
 }
@@ -120,10 +122,12 @@ h1 {
   font-weight: 900;
   font-size: 18px;
   line-height: 21px;
-  padding: 18px 40px;
+  padding: 18px 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 245px;
+  max-height: 50px;
 }
 
 .btn > span {
@@ -153,6 +157,7 @@ h1 {
   display: flex;
 }
 
+/*count start*/
 .count {
   display: flex;
   flex-direction: column;
@@ -170,7 +175,7 @@ h1 {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-  color:rgba(189, 189, 189, 0.57);
+  color: rgba(189, 189, 189, 0.57);
   text-align: center;
   margin-bottom: 10px;
 }
@@ -178,4 +183,57 @@ h1 {
 #current-number {
   color: #fefefe;
   font-weight: 900;
+}
+/*count end*/
+
+.how-it-works {
+  background-color: var(--primary-bg-color);
+}
+
+.container {
+  max-width: 790px;
+  margin: 0 auto;
+}
+
+.how-it-works {
+  display: flex;
+  flex-direction: column;
+}
+
+.how-it-works-header {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 110px 0 30px;
+  color: #333333;
+}
+
+.how-it-works-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4f4f4f;
+  margin: 0 0 30px;
+}
+
+.how-it-works-count {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.how-it-works-count #current-number {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  color: #333333;
+}
+
+.how-it-works-btn {
+  margin: 0 auto 100px;
 }

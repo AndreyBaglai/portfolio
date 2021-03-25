@@ -17,14 +17,17 @@ body {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  padding: 28px 150px;
+  padding: 25px 150px;
   align-items: center;
   background-color: var(--primary-bg-color);
 }
 
 .header-logo {
-  width: 60px;
-  height: 40px;
+  width: 69px;
+  height: 42px;
+}
+
+.header-nav {
 }
 
 .header-nav > ul {
@@ -36,10 +39,11 @@ body {
 
 .header-nav > ul > li {
   text-transform: capitalize;
-  padding: 0 40px;
+  padding: 0 36px;
 }
 
 .header-nav-link {
+  font-family: 'Roboto';
   text-decoration: none;
   font-style: normal;
   font-weight: normal;
@@ -52,6 +56,71 @@ body {
 .header-nav-link.active {
   font-weight: 900;
   text-decoration: underline;
+}
+
+/*Switch theme slider*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 30px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 190px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 6px;
+  background-color: #ffffff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
+}
+
+input:checked + .slider {
+  background-color: #4f4f4f;
+}
+
+input:checked + .slider:before {
+  background-color: #1b1b1b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4f4f4f;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 /*header end*/
 
@@ -128,6 +197,7 @@ h1 {
   justify-content: center;
   min-width: 245px;
   max-height: 50px;
+  cursor: pointer;
 }
 
 .btn > span {
@@ -671,7 +741,9 @@ form > textarea {
 
 .btn-footer {
   margin-left: 100px;
-  min-width: 280px;
+  max-width: 250px;
+  padding: 18px 18px;
+  white-space: nowrap;
 }
 
 .right-side-header {

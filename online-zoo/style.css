@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
 }
 
-/*header start*/
+/* Header start */
 .header {
   max-width: 1920px;
   display: flex;
@@ -22,12 +22,9 @@ body {
   background-color: var(--primary-bg-color);
 }
 
-.header-logo {
+.header-logo > .header-logo-link {
   width: 69px;
   height: 42px;
-}
-
-.header-nav {
 }
 
 .header-nav > ul {
@@ -50,7 +47,6 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #333333;
-  transition: all 0.5s ease;
 }
 
 .header-nav-link.active {
@@ -58,7 +54,17 @@ body {
   text-decoration: underline;
 }
 
-/*Switch theme slider*/
+.header-nav-link:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.header-nav-link.active:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+/* Switch color theme slider start */
 .switch {
   position: relative;
   display: inline-block;
@@ -114,7 +120,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Rounded slider */
 .slider.round {
   border-radius: 34px;
 }
@@ -122,7 +128,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/*header end*/
+/* Switch color theme slider end */
+/* Header end */
 
 .main {
   z-index: 0;
@@ -614,9 +621,13 @@ h1 {
 
 /******************Footer start**************************/
 .footer {
-  max-width: 1920px;
-  padding: 98px 150px 0;
   background-color: #333333;
+}
+
+.footer-container {
+  padding: 98px 150px 0;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .footer-content {
@@ -806,7 +817,7 @@ form > textarea {
 }
 
 .footer-line svg {
-  max-width: 100%;
+  max-width: 1620px;
 }
 
 .copyright {

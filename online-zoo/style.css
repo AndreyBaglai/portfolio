@@ -49,7 +49,7 @@ body {
   color: #333333;
 }
 
-.header-nav-link.active {
+.header-nav-link.active-link {
   font-weight: 900;
   text-decoration: underline;
 }
@@ -59,7 +59,7 @@ body {
   font-weight: 900;
 }
 
-.header-nav-link.active:hover {
+.header-nav-link.active-link:hover {
   text-decoration: underline;
   font-weight: 900;
 }
@@ -205,6 +205,12 @@ h1 {
   min-width: 245px;
   max-height: 50px;
   cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn:hover {
+  background: linear-gradient(106.89deg, #6bb3a1 -14.32%, #20a4ad 100.68%);
 }
 
 .btn > span {
@@ -660,29 +666,109 @@ input[type='email'] {
   font-size: 14px;
   line-height: 16px;
   color: #e0e0e0;
-  max-width: 383px;
+  min-width: 383px;
   outline: none;
   padding: 5px 5px 5px 0;
   margin-bottom: 20px;
 }
 
-form > textarea {
+.textarea-wrapper {
   border: 1px solid #bdbdbd;
   background-color: transparent;
-  max-width: 383px;
+  min-width: 383px;
   border-radius: 3px;
   outline: none;
   color: #e0e0e0;
   margin-bottom: 25px;
+  padding: 5px;
 }
 
-.agree-wrapper {
+.textarea-wrapper > legend {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #bdbdbd;
+}
+
+form textarea {
+  outline: none;
+  border: none;
+  width: 100%;
+  color: #e0e0e0;
+  resize: none;
+  background-color: transparent;
+}
+
+/*Footer checkbox start*/
+.label-cbx {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 20px;
 }
 
-.agree-wrapper > label {
+.label-cbx input:checked + .checkbox {
+  border-color: #bdbdbd;
+}
+
+.label-cbx input:checked + .checkbox svg path {
+  fill: #bdbdbd;
+}
+
+.label-cbx input:checked + .checkbox svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx:hover .checkbox svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx .checkbox {
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-right: 8px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
+
+.label-cbx .checkbox svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx .checkbox svg path {
+  fill: none;
+  stroke: #bdbdbd;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.6s ease;
+}
+
+.label-cbx .checkbox svg polyline {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.3s ease;
+}
+
+.label-cbx > span {
+  pointer-events: none;
+  vertical-align: middle;
   margin-left: 4px;
   font-family: 'Roboto';
   font-style: normal;
@@ -691,6 +777,23 @@ form > textarea {
   line-height: 14px;
   color: #bdbdbd;
 }
+
+.cntr {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.invisible {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+/*Footer checkbox end*/
 
 .send {
   font-family: 'Roboto';
@@ -730,7 +833,7 @@ form > textarea {
   padding: 0 30px;
 }
 
-.footer-nav > li > a {
+.footer-nav-link {
   text-decoration: none;
   font-family: 'Roboto';
   font-style: normal;
@@ -740,6 +843,10 @@ form > textarea {
   color: #fefefe;
   cursor: pointer;
   text-transform: capitalize;
+}
+
+.footer-nav-link:hover {
+  text-decoration: underline;
 }
 
 .footer-nav > .footer-about {
@@ -773,7 +880,7 @@ form > textarea {
   margin-bottom: 35px;
 }
 
-.right-side-description-text {
+.address {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
@@ -782,14 +889,23 @@ form > textarea {
   color: #fefefe;
 }
 
-.right-side-description-text.first-text {
+.address.first-text {
   max-width: 190px;
   margin-bottom: 20px;
 }
 
-.right-side-description-text.second-text {
+.address.second-text {
   max-width: 144px;
   margin-bottom: 24px;
+}
+
+.second-text a {
+  text-decoration: none;
+  color: #fefefe;
+}
+
+.second-text a:hover {
+  text-decoration: underline;
 }
 
 .footer-social-links {
@@ -801,6 +917,16 @@ form > textarea {
 .footer-social-links > li {
   padding: 0 10px;
   cursor: pointer;
+}
+
+.footer-social-links li a svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-social-links li a:hover svg {
+  /* stroke: rgb(114, 114, 114); */
+  transform: scale(1.2);
 }
 
 .footer-social-links > li:first-child {

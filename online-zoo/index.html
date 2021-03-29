@@ -175,7 +175,7 @@
               <a href="#" class="favorite-slider-animal favorite-eagle"></a>
             </li>
             <li>
-              <a href="#" class="favorite-slider-animal favorite-panda active-favorite-animal"> </a>
+              <a href="#" class="favorite-slider-animal favorite-panda active-favorite-animal"></a>
               <div class="slider-text-favorite-wrapper">
                 <p>
                   Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
@@ -275,7 +275,10 @@
         <div class="how-it-works-slider">
           <img src="./assets/img/how-works-bg.png" alt="slider" />
           <div class="count how-it-works-count">
-            <div class="count-text"><span id="current-number">01/</span><span id="how-it-works-max-value">04</span></div>
+            <div class="count-text">
+              <span id="how-it-works-current-value">01/</span
+              ><span id="how-it-works-max-value">04</span>
+            </div>
             <input class="default-input-range" type="range" min="1" max="4" value="1" />
           </div>
         </div>
@@ -334,25 +337,324 @@
           <h3 class="h3-text">Pets in Zoo</h3>
           <div class="pets-in-zoo-slider">
             <a href="#" class="left-arrow">
-              <img src="./assets/icons/pets-in-zoo-left-arrow.svg" alt="left-arrow" />
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.6663 16.1706L20.0167 29.5207C20.3255 29.8298 20.7376 30 21.1772 30C21.6167 30 22.0289 29.8298 22.3376 29.5207L23.3208 28.5378C23.9605 27.8973 23.9605 26.8564 23.3208 26.2169L12.1102 15.0062L23.3332 3.78314C23.642 3.47412 23.8125 3.06217 23.8125 2.6229C23.8125 2.18315 23.642 1.7712 23.3332 1.46194L22.3501 0.479263C22.0411 0.17024 21.6291 0 21.1896 0C20.7501 0 20.3379 0.17024 20.0291 0.479263L6.6663 13.8416C6.35679 14.1516 6.18679 14.5655 6.18777 15.0055C6.18679 15.4472 6.35679 15.8608 6.6663 16.1706Z"
+                  fill="#828282"
+                />
+              </svg>
             </a>
-            <div class="pets-in-zoo-slider-wrapper">
-              <img src="./assets/img/favorites-slider/favorite-panda.png" alt="panda" />
-              <img src="./assets/img/favorites-slider/favorite-eagle.png" alt="eagle" />
-              <img src="./assets/img/favorites-slider/pets-in-zoo-gorilla.png" alt="gorilla" />
-              <img src="./assets/img/favorites-slider/favorite-alligator.png" alt="crocodile" />
-            </div>
+            <ul class="pets-in-zoo-slider-wrapper">
+              <li>
+                <a class="in-zoo-panda" href="#"></a>
+                <div class="bg-zoo-item">
+                  <div class="slider-text-favorite-wrapper">
+                    <p>
+                      Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
+                      bamboos.
+                    </p>
+                    <div class="buttons-wrapper">
+                      <a href="./pages/panda/panda.html" class="btn watch-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="url(#paint0_linear)" />
+                            <path d="M16 12L10 15.4641V8.5359L16 12Z" fill="url(#paint1_linear)" />
+                            <defs>
+                              <linearGradient
+                                id="paint0_linear"
+                                x1="-4.48125"
+                                y1="-1.26175e-07"
+                                x2="28.4614"
+                                y2="10"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                              <linearGradient
+                                id="paint1_linear"
+                                x1="16"
+                                y1="6.50625"
+                                x2="12.6667"
+                                y2="17.4871"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                            </defs>
+                          </svg> </span
+                        >watch online
+                      </a>
+                      <a href="#" class="btn donate-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="white" />
+                            <path
+                              d="M14.1982 15.6602C14.1982 15.1621 14.04 14.752 13.7236 14.4297C13.4072 14.1016 12.8799 13.8086 12.1416 13.5508C11.4033 13.2871 10.8291 13.0439 10.4189 12.8213C9.05371 12.0889 8.37109 11.0049 8.37109 9.56934C8.37109 8.59668 8.66699 7.79687 9.25879 7.16992C9.85059 6.54297 10.6533 6.1709 11.667 6.05371V4.1377H13.0732V6.07129C14.0928 6.21777 14.8809 6.65137 15.4375 7.37207C15.9941 8.08691 16.2725 9.01855 16.2725 10.167H14.1455C14.1455 9.42871 13.9785 8.84863 13.6445 8.42676C13.3164 7.99902 12.8682 7.78516 12.2998 7.78516C11.7373 7.78516 11.2979 7.9375 10.9814 8.24219C10.665 8.54688 10.5068 8.9834 10.5068 9.55176C10.5068 10.0615 10.6621 10.4717 10.9727 10.7822C11.2891 11.0869 11.8223 11.377 12.5723 11.6523C13.3223 11.9277 13.9111 12.1826 14.3389 12.417C14.7666 12.6514 15.127 12.9209 15.4199 13.2256C15.7129 13.5244 15.9385 13.8701 16.0967 14.2627C16.2549 14.6553 16.334 15.1152 16.334 15.6426C16.334 16.6328 16.0293 17.4355 15.4199 18.0508C14.8164 18.666 13.9727 19.0293 12.8887 19.1406V20.8545H11.4912V19.1494C10.3311 19.0205 9.4375 18.6045 8.81055 17.9014C8.18945 17.1982 7.87891 16.2666 7.87891 15.1064H10.0146C10.0146 15.8447 10.1992 16.416 10.5684 16.8203C10.9434 17.2246 11.4707 17.4268 12.1504 17.4268C12.8184 17.4268 13.3252 17.2656 13.6709 16.9434C14.0225 16.6211 14.1982 16.1934 14.1982 15.6602Z"
+                              fill="white"
+                            />
+                          </svg> </span
+                        >donate
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a class="in-zoo-eagle" href="#"></a>
+                <div class="bg-zoo-item">
+                  <div class="slider-text-favorite-wrapper">
+                    <p>
+                      Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
+                      bamboos.
+                    </p>
+                    <div class="buttons-wrapper">
+                      <a href="./pages/panda/panda.html" class="btn watch-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="url(#paint0_linear)" />
+                            <path d="M16 12L10 15.4641V8.5359L16 12Z" fill="url(#paint1_linear)" />
+                            <defs>
+                              <linearGradient
+                                id="paint0_linear"
+                                x1="-4.48125"
+                                y1="-1.26175e-07"
+                                x2="28.4614"
+                                y2="10"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                              <linearGradient
+                                id="paint1_linear"
+                                x1="16"
+                                y1="6.50625"
+                                x2="12.6667"
+                                y2="17.4871"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                            </defs>
+                          </svg> </span
+                        >watch online
+                      </a>
+                      <a href="#" class="btn donate-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="white" />
+                            <path
+                              d="M14.1982 15.6602C14.1982 15.1621 14.04 14.752 13.7236 14.4297C13.4072 14.1016 12.8799 13.8086 12.1416 13.5508C11.4033 13.2871 10.8291 13.0439 10.4189 12.8213C9.05371 12.0889 8.37109 11.0049 8.37109 9.56934C8.37109 8.59668 8.66699 7.79687 9.25879 7.16992C9.85059 6.54297 10.6533 6.1709 11.667 6.05371V4.1377H13.0732V6.07129C14.0928 6.21777 14.8809 6.65137 15.4375 7.37207C15.9941 8.08691 16.2725 9.01855 16.2725 10.167H14.1455C14.1455 9.42871 13.9785 8.84863 13.6445 8.42676C13.3164 7.99902 12.8682 7.78516 12.2998 7.78516C11.7373 7.78516 11.2979 7.9375 10.9814 8.24219C10.665 8.54688 10.5068 8.9834 10.5068 9.55176C10.5068 10.0615 10.6621 10.4717 10.9727 10.7822C11.2891 11.0869 11.8223 11.377 12.5723 11.6523C13.3223 11.9277 13.9111 12.1826 14.3389 12.417C14.7666 12.6514 15.127 12.9209 15.4199 13.2256C15.7129 13.5244 15.9385 13.8701 16.0967 14.2627C16.2549 14.6553 16.334 15.1152 16.334 15.6426C16.334 16.6328 16.0293 17.4355 15.4199 18.0508C14.8164 18.666 13.9727 19.0293 12.8887 19.1406V20.8545H11.4912V19.1494C10.3311 19.0205 9.4375 18.6045 8.81055 17.9014C8.18945 17.1982 7.87891 16.2666 7.87891 15.1064H10.0146C10.0146 15.8447 10.1992 16.416 10.5684 16.8203C10.9434 17.2246 11.4707 17.4268 12.1504 17.4268C12.8184 17.4268 13.3252 17.2656 13.6709 16.9434C14.0225 16.6211 14.1982 16.1934 14.1982 15.6602Z"
+                              fill="white"
+                            />
+                          </svg> </span
+                        >donate
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a class="in-zoo-gorilla" href="#"></a>
+                <div class="bg-zoo-item">
+                  <div class="slider-text-favorite-wrapper">
+                    <p>
+                      Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
+                      bamboos.
+                    </p>
+                    <div class="buttons-wrapper">
+                      <a href="./pages/panda/panda.html" class="btn watch-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="url(#paint0_linear)" />
+                            <path d="M16 12L10 15.4641V8.5359L16 12Z" fill="url(#paint1_linear)" />
+                            <defs>
+                              <linearGradient
+                                id="paint0_linear"
+                                x1="-4.48125"
+                                y1="-1.26175e-07"
+                                x2="28.4614"
+                                y2="10"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                              <linearGradient
+                                id="paint1_linear"
+                                x1="16"
+                                y1="6.50625"
+                                x2="12.6667"
+                                y2="17.4871"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                            </defs>
+                          </svg> </span
+                        >watch online
+                      </a>
+                      <a href="#" class="btn donate-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="white" />
+                            <path
+                              d="M14.1982 15.6602C14.1982 15.1621 14.04 14.752 13.7236 14.4297C13.4072 14.1016 12.8799 13.8086 12.1416 13.5508C11.4033 13.2871 10.8291 13.0439 10.4189 12.8213C9.05371 12.0889 8.37109 11.0049 8.37109 9.56934C8.37109 8.59668 8.66699 7.79687 9.25879 7.16992C9.85059 6.54297 10.6533 6.1709 11.667 6.05371V4.1377H13.0732V6.07129C14.0928 6.21777 14.8809 6.65137 15.4375 7.37207C15.9941 8.08691 16.2725 9.01855 16.2725 10.167H14.1455C14.1455 9.42871 13.9785 8.84863 13.6445 8.42676C13.3164 7.99902 12.8682 7.78516 12.2998 7.78516C11.7373 7.78516 11.2979 7.9375 10.9814 8.24219C10.665 8.54688 10.5068 8.9834 10.5068 9.55176C10.5068 10.0615 10.6621 10.4717 10.9727 10.7822C11.2891 11.0869 11.8223 11.377 12.5723 11.6523C13.3223 11.9277 13.9111 12.1826 14.3389 12.417C14.7666 12.6514 15.127 12.9209 15.4199 13.2256C15.7129 13.5244 15.9385 13.8701 16.0967 14.2627C16.2549 14.6553 16.334 15.1152 16.334 15.6426C16.334 16.6328 16.0293 17.4355 15.4199 18.0508C14.8164 18.666 13.9727 19.0293 12.8887 19.1406V20.8545H11.4912V19.1494C10.3311 19.0205 9.4375 18.6045 8.81055 17.9014C8.18945 17.1982 7.87891 16.2666 7.87891 15.1064H10.0146C10.0146 15.8447 10.1992 16.416 10.5684 16.8203C10.9434 17.2246 11.4707 17.4268 12.1504 17.4268C12.8184 17.4268 13.3252 17.2656 13.6709 16.9434C14.0225 16.6211 14.1982 16.1934 14.1982 15.6602Z"
+                              fill="white"
+                            />
+                          </svg> </span
+                        >donate
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a class="in-zoo-alligator" href="#"></a>
+                <div class="bg-zoo-item">
+                  <div class="slider-text-favorite-wrapper">
+                    <p>
+                      Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
+                      bamboos.
+                    </p>
+                    <div class="buttons-wrapper">
+                      <a href="./pages/panda/panda.html" class="btn watch-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="url(#paint0_linear)" />
+                            <path d="M16 12L10 15.4641V8.5359L16 12Z" fill="url(#paint1_linear)" />
+                            <defs>
+                              <linearGradient
+                                id="paint0_linear"
+                                x1="-4.48125"
+                                y1="-1.26175e-07"
+                                x2="28.4614"
+                                y2="10"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                              <linearGradient
+                                id="paint1_linear"
+                                x1="16"
+                                y1="6.50625"
+                                x2="12.6667"
+                                y2="17.4871"
+                                gradientUnits="userSpaceOnUse"
+                              >
+                                <stop stop-color="#4BD8B5" />
+                                <stop offset="1" stop-color="#49D6DF" />
+                              </linearGradient>
+                            </defs>
+                          </svg> </span
+                        >watch online
+                      </a>
+                      <a href="#" class="btn donate-btn">
+                        <span
+                          ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="12" cy="12" r="11.5" stroke="white" />
+                            <path
+                              d="M14.1982 15.6602C14.1982 15.1621 14.04 14.752 13.7236 14.4297C13.4072 14.1016 12.8799 13.8086 12.1416 13.5508C11.4033 13.2871 10.8291 13.0439 10.4189 12.8213C9.05371 12.0889 8.37109 11.0049 8.37109 9.56934C8.37109 8.59668 8.66699 7.79687 9.25879 7.16992C9.85059 6.54297 10.6533 6.1709 11.667 6.05371V4.1377H13.0732V6.07129C14.0928 6.21777 14.8809 6.65137 15.4375 7.37207C15.9941 8.08691 16.2725 9.01855 16.2725 10.167H14.1455C14.1455 9.42871 13.9785 8.84863 13.6445 8.42676C13.3164 7.99902 12.8682 7.78516 12.2998 7.78516C11.7373 7.78516 11.2979 7.9375 10.9814 8.24219C10.665 8.54688 10.5068 8.9834 10.5068 9.55176C10.5068 10.0615 10.6621 10.4717 10.9727 10.7822C11.2891 11.0869 11.8223 11.377 12.5723 11.6523C13.3223 11.9277 13.9111 12.1826 14.3389 12.417C14.7666 12.6514 15.127 12.9209 15.4199 13.2256C15.7129 13.5244 15.9385 13.8701 16.0967 14.2627C16.2549 14.6553 16.334 15.1152 16.334 15.6426C16.334 16.6328 16.0293 17.4355 15.4199 18.0508C14.8164 18.666 13.9727 19.0293 12.8887 19.1406V20.8545H11.4912V19.1494C10.3311 19.0205 9.4375 18.6045 8.81055 17.9014C8.18945 17.1982 7.87891 16.2666 7.87891 15.1064H10.0146C10.0146 15.8447 10.1992 16.416 10.5684 16.8203C10.9434 17.2246 11.4707 17.4268 12.1504 17.4268C12.8184 17.4268 13.3252 17.2656 13.6709 16.9434C14.0225 16.6211 14.1982 16.1934 14.1982 15.6602Z"
+                              fill="white"
+                            />
+                          </svg> </span
+                        >donate
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
             <a href="#" class="right-arrow">
-              <img src="./assets/icons/pets-in-zoo-right-arrow.svg" alt="right-arrow" />
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.3337 13.8294L9.98332 0.479264C9.67454 0.170243 9.26235 0 8.82284 0C8.38334 0 7.97114 0.170243 7.66237 0.479264L6.6792 1.46218C6.03945 2.10267 6.03945 3.14363 6.6792 3.78314L17.8898 14.9938L6.66676 26.2169C6.35799 26.5259 6.1875 26.9378 6.1875 27.3771C6.1875 27.8168 6.35799 28.2288 6.66676 28.5381L7.64993 29.5207C7.95895 29.8298 8.3709 30 8.81041 30C9.24991 30 9.66211 29.8298 9.97088 29.5207L23.3337 16.1584C23.6432 15.8484 23.8132 15.4345 23.8122 14.9945C23.8132 14.5528 23.6432 14.1392 23.3337 13.8294Z"
+                  fill="#828282"
+                />
+              </svg>
             </a>
           </div>
 
           <div class="count how-it-works-count">
-            <div class="count-text"><span id="current-number">02/</span>08</div>
-            <input type="range" />
+            <div class="count-text">
+              <span id="pets-in-zoo-current-number">01/</span
+              ><span id="pets-in-zoo-max-value">08</span>
+            </div>
+            <input
+              class="default-input-range pets-in-zoo-range"
+              type="range"
+              min="1"
+              max="8"
+              value="1"
+            />
           </div>
 
-          <button class="btn favorite-btn">Choose your favorite</button>
+          <a href="./pages/map/map.html" class="btn favorite-btn">Choose your favorite</a>
         </div>
       </div>
     </section>

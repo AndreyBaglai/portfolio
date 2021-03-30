@@ -532,7 +532,8 @@ h1 {
 }
 
 #how-it-works-current-value,
-#pets-in-zoo-current-number {
+#pets-in-zoo-current-number,
+#testimonials-current-number {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
@@ -543,7 +544,8 @@ h1 {
 
 /*How it works range start*/
 #how-it-works-max-value,
-#pets-in-zoo-max-value {
+#pets-in-zoo-max-value,
+#testimonials-max-value {
   color: #bdbdbd;
   font-size: 15px;
 }
@@ -727,11 +729,11 @@ h1 {
 }
 
 .left-arrow {
-  left: -42px;
+  left: -48px;
 }
 
 .right-arrow {
-  right: -42px;
+  right: -48px;
 }
 
 .right-arrow:hover svg,
@@ -752,9 +754,6 @@ h1 {
   position: relative;
   overflow: hidden;
   transition: all 1s ease;
-}
-
-.pets-in-zoo-slider-wrapper > li::before {
 }
 
 .pets-in-zoo-slider-wrapper > li > a {
@@ -839,8 +838,9 @@ h1 {
 }
 /*Pets in zoo section end*/
 
+/*Pay feed section start*/
 .pay-feed-wrapper {
-  padding: 110px 0;
+  padding: 90px 0;
 }
 
 .pay-feed-wrapper {
@@ -862,8 +862,14 @@ h1 {
   color: #4f4f4f;
 }
 
+.pay-arrow {
+  display: flex;
+  align-items: center;
+}
+
 .btn-donate {
-  margin: 60px auto 0;
+  margin: 52px auto 0;
+  min-width: 250px;
 }
 
 .pay-feed-items {
@@ -896,9 +902,11 @@ h1 {
   color: #4f4f4f;
   margin: 0;
 }
+/*Pay feed section end*/
 
+/*Testimonials section start*/
 .testimonials-wrapper {
-  background-color: #ffffff;
+  background-color: var(--primary-bg-color);
 }
 
 .testimonials {
@@ -913,7 +921,7 @@ h1 {
   box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
   border-radius: 5px;
   text-align: center;
-  padding: 47px 0 105px;
+  padding: 60px 0 105px;
 }
 
 .testimonial-photo {
@@ -945,6 +953,17 @@ h1 {
   max-width: 440px;
 }
 
+.testimonials-count {
+  margin-top: 55px;
+}
+
+.testimonials-btn {
+  margin: 30px auto 95px;
+  min-width: 245px;
+}
+/*Testimonials section end*/
+
+/*Map section start*/
 .map-wrapper {
   background-color: var(--secondary-bg-color);
 }
@@ -1048,6 +1067,7 @@ h1 {
   left: -263px;
   display: none;
 }
+/*Map section end*/
 
 /******************Footer start**************************/
 .footer {

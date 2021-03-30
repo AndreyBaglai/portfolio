@@ -969,7 +969,7 @@ h1 {
 }
 
 .inner {
-  padding: 105px 0;
+  padding: 92px 0;
 }
 
 .inner > h3 {
@@ -1000,6 +1000,7 @@ h1 {
   width: 66px;
   height: 94px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .map-placeholder-eagle {
@@ -1008,8 +1009,8 @@ h1 {
   background-image: url('./assets/icons/map/placeholder-eagle.svg');
 }
 
-.map-placeholder-crocodile {
-  background-image: url('./assets/icons/map/placeholder-crocodile.svg');
+.map-placeholder-alligator {
+  background-image: url('./assets/icons/map/placeholder-alligator.svg');
   left: 247px;
   top: 118px;
 }
@@ -1026,6 +1027,38 @@ h1 {
   top: 101px;
 }
 
+.map-placeholder-panda:hover {
+  background-image: url('./assets/icons/map/red-placeholder-panda.svg');
+}
+
+.map-placeholder-eagle:hover {
+  background-image: url('./assets/icons/map/red-placeholder-eagle.svg');
+}
+
+.map-placeholder-alligator:hover {
+  background-image: url('./assets/icons/map/red-placeholder-alligator.svg');
+}
+
+.map-placeholder-gorilla:hover {
+  background-image: url('./assets/icons/map/red-placeholder-gorilla.svg');
+}
+
+.map-placeholder-eagle:hover .map-hint-eagle {
+  visibility: visible;
+}
+
+.map-placeholder-alligator:hover .map-hint-alligator {
+  visibility: visible;
+}
+
+.map-placeholder-gorilla:hover .map-hint-gorilla {
+  visibility: visible;
+}
+
+.map-placeholder-panda:hover .map-hint-panda {
+  visibility: visible;
+}
+
 .map-hint {
   position: absolute;
   background-color: #fefefe;
@@ -1034,6 +1067,8 @@ h1 {
   align-items: center;
   box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
   border-radius: 8px;
+  transition: all 0.5s ease;
+  cursor: default;
 }
 
 .map-hint > img {
@@ -1063,13 +1098,37 @@ h1 {
 }
 
 .map-hint-eagle {
-  top: 154px;
-  left: -263px;
-  display: none;
+  top: 69px;
+  left: -388px;
+  visibility: hidden;
+}
+
+.map-hint-alligator {
+  top: 69px;
+  left: -388px;
+  visibility: hidden;
+}
+
+.map-hint-gorilla {
+  top: 69px;
+  left: -388px;
+  visibility: hidden;
+}
+
+.map-hint-panda {
+  top: 69px;
+  left: -388px;
+  visibility: hidden;
+}
+
+.map-btn {
+  max-width: 245px;
+  margin: 38px auto 0;
+  padding: 12px 0px;
 }
 /*Map section end*/
 
-/******************Footer start**************************/
+/*Footer start*/
 .footer {
   background-color: #333333;
 }
@@ -1258,6 +1317,10 @@ form textarea {
 
 .send > span {
   padding-left: 24px;
+}
+
+.right-side {
+  min-width: 775px;
 }
 
 .right-side-header {

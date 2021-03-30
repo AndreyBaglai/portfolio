@@ -1006,41 +1006,41 @@ h1 {
 .map-placeholder-eagle {
   left: 127px;
   top: 97px;
-  background-image: url('./assets/icons/map/placeholder-eagle.svg');
+  background-image: url('./assets/img/map/map-placeholder/placeholder-eagle.png');
 }
 
 .map-placeholder-alligator {
-  background-image: url('./assets/icons/map/placeholder-alligator.svg');
+  background-image: url('./assets/img/map/map-placeholder/placeholder-alligator.png');
   left: 247px;
   top: 118px;
 }
 
 .map-placeholder-gorilla {
-  background-image: url('./assets/icons/map/placeholder-gorilla.svg');
+  background-image: url('./assets/img/map/map-placeholder/placeholder-gorilla.png');
   left: 574px;
   top: 203px;
 }
 
 .map-placeholder-panda {
-  background-image: url('./assets/icons/map/placeholder-panda.svg');
+  background-image: url('./assets/img/map/map-placeholder/placeholder-panda.png');
   right: 250px;
   top: 101px;
 }
 
 .map-placeholder-panda:hover {
-  background-image: url('./assets/icons/map/red-placeholder-panda.svg');
+  background-image: url('./assets/img/map/map-placeholder/red-placeholder-panda.png');
 }
 
 .map-placeholder-eagle:hover {
-  background-image: url('./assets/icons/map/red-placeholder-eagle.svg');
+  background-image: url('./assets/img/map/map-placeholder/red-placeholder-eagle.png');
 }
 
 .map-placeholder-alligator:hover {
-  background-image: url('./assets/icons/map/red-placeholder-alligator.svg');
+  background-image: url('./assets/img/map/map-placeholder/red-placeholder-alligator.png');
 }
 
 .map-placeholder-gorilla:hover {
-  background-image: url('./assets/icons/map/red-placeholder-gorilla.svg');
+  background-image: url('./assets/img/map/map-placeholder/red-placeholder-gorilla.png');
 }
 
 .map-placeholder-eagle:hover .map-hint-eagle {

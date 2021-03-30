@@ -1139,6 +1139,11 @@ h1 {
   margin: 0 auto;
 }
 
+.footer-logo {
+  cursor: default;
+  margin-bottom: 32px;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -1202,6 +1207,7 @@ form textarea {
   color: #e0e0e0;
   resize: none;
   background-color: transparent;
+  max-height: 100px;
 }
 
 /*Footer checkbox start*/
@@ -1476,4 +1482,4 @@ form textarea {
   margin: 0;
   max-width: 195px;
 }
-/******************Footer end**************************/
+/*Footer end*/

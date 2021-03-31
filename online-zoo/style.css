@@ -327,23 +327,23 @@ h1 {
 /*Active animal end*/
 
 .favorite-eagle {
-  background-image: url('./assets/img/favorites-slider/favorite-eagle.png');
+  background-image: url('./assets/img/favorites-slider/favorite-eagle.jpg');
 }
 
 .favorite-panda {
-  background-image: url('./assets/img/favorites-slider/favorite-panda.png');
+  background-image: url('./assets/img/favorites-slider/favorite-panda.jpg');
 }
 
 .favorite-gorilla {
-  background-image: url('./assets/img/favorites-slider/favorite-gorilla.png');
+  background-image: url('./assets/img/favorites-slider/favorite-gorilla.jpg');
 }
 
 .favorite-alligator {
-  background-image: url('./assets/img/favorites-slider/favorite-alligator.png');
+  background-image: url('./assets/img/favorites-slider/favorite-alligator.jpg');
 }
 
 .favorite-fox {
-  background-image: url('./assets/img/favorites-slider/favorite-fox.png');
+  background-image: url('./assets/img/favorites-slider/favorite-fox.jpg');
 }
 
 /*Count start*/
@@ -766,19 +766,19 @@ h1 {
 }
 
 .in-zoo-panda {
-  background-image: url('./assets/img/favorites-slider/favorite-panda.png');
+  background-image: url('./assets/img/favorites-slider/favorite-panda.jpg');
 }
 
 .in-zoo-eagle {
-  background-image: url('./assets/img/favorites-slider/favorite-eagle.png');
+  background-image: url('./assets/img/favorites-slider/favorite-eagle.jpg');
 }
 
 .in-zoo-gorilla {
-  background-image: url('./assets/img/favorites-slider/pets-in-zoo-gorilla.png');
+  background-image: url('./assets/img/favorites-slider/pets-in-zoo-gorilla.jpg');
 }
 
 .in-zoo-alligator {
-  background-image: url('./assets/img/favorites-slider/favorite-alligator.png');
+  background-image: url('./assets/img/favorites-slider/favorite-alligator.jpg');
 }
 
 .bg-zoo-item {

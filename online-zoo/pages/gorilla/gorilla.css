@@ -175,13 +175,18 @@ h1 {
 
 /*Panda broadcast start*/
 .main {
-  background-color: #fefefe;
+  background-color: #fbfbfb;
   position: relative;
+  display: flex;
+  min-height: 900px;
 }
 
 .aside {
-  position: absolute;
-  left: 50px;
+  position: sticky;
+  margin: 70px 0;
+  max-height: 580px;
+  left: 25px;
+  top: 10px;
 }
 
 .sidebar {
@@ -194,12 +199,41 @@ h1 {
   align-items: center;
 }
 
-.sidebar > li {
+.top-arrow:hover svg,
+.bottom-arrow:hover svg {
+  stroke: #333333;
+}
+
+.sidebar > li > a > img {
   padding: 8px 0;
+  width: 108px;
+  height: 108px;
+  transition: all 0.5s ease;
+}
+
+.sidebar > li:hover > a > img {
+  transform: scale(1.2);
+}
+
+.active-li-wrapper {
+  width: 157px;
+  height: 157px;
+  background: url('../../assets/icons/map/border-ellipse.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-li-wrapper .active-map-slider-item {
+  width: 137px;
+  height: 137px;
 }
 
 .container {
-  padding: 0 355px 0;
+  padding: 0 144px 0 0;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -264,6 +298,24 @@ h1 {
   max-width: 790px;
 }
 
+.video-slider-item {
+  position: relative;
+  width: 246px;
+  height: 141px;
+}
+
+.video-slider-item::before {
+  content: '';
+  background-color: #333333;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
+
 .circle-wrapper {
   padding: 0;
   display: flex;
@@ -276,10 +328,19 @@ h1 {
 
 .circle-wrapper > li {
   padding: 0 3px;
+  cursor: pointer;
+}
+
+.circle-wrapper > li:hover svg {
+  transform: scale(1.7);
+}
+
+.circle-wrapper > li:hover svg circle {
+  fill: #49d6df;
 }
 /*Panda broadcast end*/
 
-/******************Footer start**************************/
+/*Footer start*/
 .footer {
   background-color: #333333;
 }
@@ -293,6 +354,11 @@ h1 {
 .footer-content {
   display: flex;
   justify-content: space-between;
+}
+
+.footer-logo {
+  cursor: default;
+  margin-bottom: 32px;
 }
 
 form {
@@ -353,6 +419,7 @@ form textarea {
   color: #e0e0e0;
   resize: none;
   background-color: transparent;
+  max-height: 100px;
 }
 
 /*Footer checkbox start*/
@@ -518,6 +585,10 @@ form textarea {
   white-space: nowrap;
 }
 
+.right-side {
+  min-width: 775px;
+}
+
 .right-side-header {
   margin-bottom: 60px;
 }
@@ -579,7 +650,6 @@ form textarea {
 }
 
 .footer-social-links li a:hover svg {
-  /* stroke: rgb(114, 114, 114); */
   transform: scale(1.2);
 }
 
@@ -624,4 +694,4 @@ form textarea {
   margin: 0;
   max-width: 195px;
 }
-/******************Footer end**************************/
+/*Footer end*/

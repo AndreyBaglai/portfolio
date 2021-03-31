@@ -206,6 +206,8 @@ h1 {
 
 .sidebar > li > a > img {
   padding: 8px 0;
+  width: 108px;
+  height: 108px;
   transition: all 0.5s ease;
 }
 
@@ -223,6 +225,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.active-li-wrapper .active-map-slider-item {
+  width: 137px;
+  height: 137px;
 }
 
 .container {

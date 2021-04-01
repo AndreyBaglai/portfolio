@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  --primary-bg-color: #ffffff;
+  --primary-bg-color: #fbfbfb;
   --secondary-bg-color: #f2f2f2;
   --btn-bg: linear-gradient(106.89deg, #4bd8b5 -14.32%, #49d6df 100.68%);
 }
@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   padding: 25px 150px;
   align-items: center;
-  background-color: var(--primary-bg-color);
+  background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
 }
 
@@ -227,6 +227,10 @@ h1 {
   align-items: center;
 }
 
+.active-li-wrapper > a {
+  cursor: default;
+}
+
 .active-li-wrapper .active-map-slider-item {
   width: 137px;
   height: 137px;
@@ -351,14 +355,14 @@ h1 {
   margin: 0 auto;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer-logo {
   cursor: default;
   margin-bottom: 32px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 form {
@@ -531,6 +535,7 @@ form textarea {
   cursor: pointer;
   max-width: 140px;
   align-self: flex-end;
+  margin-right: 10px;
 }
 
 .send > span {
@@ -541,17 +546,17 @@ form textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 48px;
 }
 
 .footer-nav {
   list-style: none;
   display: flex;
-  margin: 0;
   padding: 0;
 }
 
 .footer-nav > li {
-  padding: 0 30px;
+  padding: 0 38px;
 }
 
 .footer-nav-link {
@@ -579,18 +584,22 @@ form textarea {
 }
 
 .btn-footer {
-  margin-left: 100px;
-  max-width: 250px;
-  padding: 18px 18px;
+  max-width: 270px;
+  padding: 18px 24px;
   white-space: nowrap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-right: -14px;
 }
 
 .right-side {
-  min-width: 775px;
-}
-
-.right-side-header {
-  margin-bottom: 60px;
+  flex: 0.65;
 }
 
 .right-side-description-header {
@@ -667,7 +676,7 @@ form textarea {
 }
 
 .footer-line svg {
-  max-width: 1620px;
+  width: -webkit-fill-available;
 }
 
 .copyright {

@@ -34,14 +34,14 @@ body {
 
 .header-nav > ul > li {
   text-transform: capitalize;
-  padding: 0 36px;
+  padding: 0 42px;
 }
 
 .header-nav-link {
   font-family: 'Roboto';
   text-decoration: none;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: #333333;
@@ -502,6 +502,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .contact-us {
@@ -528,6 +529,11 @@ input[type='email'] {
   outline: none;
   padding: 5px 5px 5px 0;
   margin-bottom: 20px;
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder {
+  color: #e0e0e0;
 }
 
 .textarea-wrapper {

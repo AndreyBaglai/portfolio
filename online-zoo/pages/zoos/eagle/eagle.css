@@ -218,7 +218,7 @@ h1 {
 .active-li-wrapper {
   width: 157px;
   height: 157px;
-  background: url('../../assets/icons/map/border-ellipse.svg');
+  background: url('../../../assets/icons/map/border-ellipse.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -356,7 +356,7 @@ h1 {
 }
 
 .footer-logo {
-  cursor: default;
+  cursor: pointer;
   margin-bottom: 32px;
 }
 

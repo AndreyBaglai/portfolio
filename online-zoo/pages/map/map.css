@@ -490,7 +490,7 @@ h1 {
 }
 
 .footer-logo {
-  cursor: default;
+  cursor: pointer;
   margin-bottom: 32px;
 }
 

@@ -996,11 +996,11 @@ h1 {
 
 .map-placeholder {
   position: absolute;
+  width: 97px;
+  height: 124px;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  width: 66px;
-  height: 94px;
   cursor: pointer;
   transition: all 0.5s ease;
 }

@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gorilla broadcast</title>
+    <title>Panda broadcast</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./gorilla.css" />
+    <link rel="stylesheet" href="./panda.css" />
   </head>
   <body>
     <header class="header" id="header">
       <div class="header-logo">
-        <a class="header-logo-link" href="../../index.html#header">
+        <a class="header-logo-link" href="../../../index.html">
           <svg
             width="59"
             height="42"
@@ -35,10 +35,10 @@
       </div>
       <nav class="header-nav">
         <ul>
-          <li><a href="../../index.html" class="header-nav-link">about</a></li>
-          <li><a href="./gorilla.html#header" class="header-nav-link active-link">zoos</a></li>
-          <li><a href="../map/map.html" class="header-nav-link">map</a></li>
-          <li><a href="./gorilla.html#contactUs" class="header-nav-link">contact us</a></li>
+          <li><a href="../../../index.html" class="header-nav-link">about</a></li>
+          <li><a href="./panda.html#header" class="header-nav-link active-link">zoos</a></li>
+          <li><a href="../../map/map.html" class="header-nav-link">map</a></li>
+          <li><a href="./panda.html#contactUs" class="header-nav-link">contact us</a></li>
           <li>
             <a
               target="_blank"
@@ -88,42 +88,42 @@
             </svg>
           </a>
           <li>
-            <a href="../panda/panda.html">
-              <img
-                class="map-slider-item"
-                src="../../assets/img/map/map-slider/panda.png"
-                alt="panda"
-                title="Panda"
-            /></a>
+            <div class="active-li-wrapper">
+              <a>
+                <img
+                  class="map-slider-item active-map-slider-item"
+                  src="../../../assets/img/map/map-slider/panda.png"
+                  alt="panda"
+                  title="Panda"
+              /></a>
+            </div>
           </li>
           <li>
-            <a href="../eagle/eagle.html">
-              <img
+            <a href="../eagle/eagle.html"
+              ><img
                 class="map-slider-item"
-                src="../../assets/img/map/map-slider/eagle.png"
+                src="../../../assets/img/map/map-slider/eagle.png"
                 alt="eagle"
                 title="Eagle"
             /></a>
           </li>
           <li>
-            <a href="../alligator/alligator.html">
-              <img
+            <a href="../alligator/alligator.html"
+              ><img
                 class="map-slider-item"
-                src="../../assets/img/map/map-slider/alligator.png"
+                src="../../../assets/img/map/map-slider/alligator.png"
                 alt="alligator"
                 title="Alligator"
             /></a>
           </li>
           <li>
-            <div class="active-li-wrapper">
-              <a>
-                <img
-                  class="map-slider-item active-map-slider-item"
-                  src="../../assets/img/map/map-slider/gorilla.png"
-                  alt="gorilla"
-                  title="Gorilla"
-              /></a>
-            </div>
+            <a href="../gorilla/gorilla.html"
+              ><img
+                class="map-slider-item"
+                src="../../../assets/img/map/map-slider/gorilla.png"
+                alt="gorilla"
+                title="Gorilla"
+            /></a>
           </li>
           <a href="#" class="bottom-arrow"
             ><svg
@@ -149,13 +149,14 @@
         </ul>
       </aside>
       <div class="container">
-        <h1>online zoo</h1>
-        <h2 class="main-header">GRACE Gorilla Forest Corridor Cam</h2>
+        <h1>Online Zoo</h1>
+        <h2 class="main-header">The Beijing Zoo</h2>
         <div class="broadcast">
           <iframe
+            class="live-broadcast"
             width="790"
             height="442"
-            src="https://www.youtube.com/embed/3T0z1CT-nR8"
+            src="https://www.youtube.com/embed/R2uiy27Xv_U"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -165,22 +166,18 @@
             <ul class="animal-description-list">
               <li>
                 <h4>Population:</h4>
-                <p>Over 100,000 western lowland gorillas</p>
+                <p>About 1,590 individuals</p>
               </li>
               <li>
                 <h4>Habitat:</h4>
-                <p>
-                  Gorillas primarily inhabit tropical forest habitats.Tropical forests are
-                  characterized as having little variance in temperature (around 23°C) and length of
-                  daylight (around 12 hours).
-                </p>
+                <p>Temperate forests high in the mountains of southwest China</p>
               </li>
               <li>
                 <h4>Diet:</h4>
                 <p class="diet-text">
-                  Gorillas stick to a mainly vegetarian diet, feeding on stems, bamboo shoots and
-                  fruits. Western lowland gorillas, however, also have an appetite for termites and
-                  ants, and break open termite nests to eat the larvae.
+                  A panda's daily diet consists almost entirely of the leaves, stems and shoots of
+                  various bamboo species. Bamboo contains very little nutritional value so pandas
+                  must eat 12-38kg every day to meet their energy needs.
                 </p>
               </li>
             </ul>
@@ -190,9 +187,10 @@
         <div class="video-slider">
           <div class="video-slider-item">
             <iframe
+              class="sub-live-broadcast"
               width="246"
               height="141"
-              src="https://www.youtube.com/embed/3T0z1CT-nR8"
+              src="https://www.youtube.com/embed/R2uiy27Xv_U"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -201,9 +199,10 @@
           </div>
           <div class="video-slider-item">
             <iframe
+              class="sub-live-broadcast"
               width="246"
               height="141"
-              src="https://www.youtube.com/embed/3T0z1CT-nR8"
+              src="https://www.youtube.com/embed/R2uiy27Xv_U"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -212,9 +211,10 @@
           </div>
           <div class="video-slider-item">
             <iframe
+              class="sub-live-broadcast"
               width="246"
               height="141"
-              src="https://www.youtube.com/embed/3T0z1CT-nR8"
+              src="https://www.youtube.com/embed/R2uiy27Xv_U"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -264,7 +264,7 @@
       <div class="footer-container">
         <div class="footer-content">
           <div class="left-side">
-            <div class="footer-logo" title="Online Zoo">
+            <a href="../../../index.html" class="footer-logo">
               <svg
                 width="59"
                 height="54"
@@ -281,7 +281,7 @@
                   fill="#FEFEFE"
                 />
               </svg>
-            </div>
+            </a>
             <form id="contactUs">
               <h3 class="contact-us">Contact us</h3>
               <input type="text" placeholder="Name" required />
@@ -302,7 +302,7 @@
                 </div>
                 <span>I agree to the processing of Personal Data</span>
               </label>
-              <button class="send">
+              <button type="submit" class="send">
                 Send<span
                   ><svg
                     width="49"
@@ -324,10 +324,10 @@
             <div class="right-side-header">
               <ul class="footer-nav">
                 <li class="footer-about">
-                  <a href="../../index.html" class="footer-nav-link">about</a>
+                  <a href="../../../index.html" class="footer-nav-link">about</a>
                 </li>
-                <li><a href="./gorilla.html#header" class="footer-nav-link">zoos</a></li>
-                <li><a href="../map/map.html" class="footer-nav-link">map</a></li>
+                <li><a href="./panda.html#header" class="footer-nav-link">zoos</a></li>
+                <li><a href="../../map/map.html" class="footer-nav-link">map</a></li>
                 <li class="footer-design">
                   <a
                     target="_blank"

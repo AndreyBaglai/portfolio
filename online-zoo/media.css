@@ -1,0 +1,105 @@
+@media screen and (max-width: 1200px) {
+  .header,
+  .favorite-wrapper {
+    max-width: 1200px;
+  }
+
+  .favorite-text-wrapper {
+    margin-left: 0;
+  }
+
+  ..wrapper-social-links {
+    left: 0;
+  }
+
+  .how-it-works,
+  .how-it-works-slider > img {
+    max-width: 746px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .item {
+    max-width: 290px;
+  }
+
+  .pets-in-zoo-slider-wrapper > li > a,
+  .bg-zoo-item {
+    width: 210px;
+    height: 300px;
+  }
+
+  .pets-in-zoo-slider-wrapper .slider-text-favorite-wrapper {
+    left: 6px;
+  }
+
+  .pay-arrow > svg {
+    width: 48px;
+  }
+
+  .testimonial {
+    max-width: 440px;
+    padding-left: 55px;
+    padding-right: 55px;
+    width: auto;
+  }
+
+  .testimonial-text {
+    max-width: 326px;
+    text-align: left;
+  }
+
+  .map {
+    background-image: url('./assets/icons/map/map-1200px.svg');
+    background-size: auto;
+  }
+
+  .map-placeholder-eagle {
+    left: 90px;
+    top: 90px;
+  }
+
+  .map-hint-eagle {
+    top: 80px;
+    left: 0;
+    right: -387px;
+  }
+
+  .map-placeholder-alligator {
+    left: 176px;
+    top: 111px;
+  }
+
+  .map-hint-alligator {
+    top: 80px;
+    left: 0;
+    right: -387px;
+  }
+
+  .map-placeholder-gorilla {
+    left: 419px;
+    top: 187px;
+  }
+
+  .map-hint-gorilla {
+    top: 69px;
+    left: -419px;
+  }
+
+  .map-placeholder-panda {
+    right: 180px;
+    top: 97px;
+  }
+
+  .right-side {
+    position: relative;
+  }
+
+  .btn-footer {
+    position: absolute;
+    top: 325px;
+    left: 0;
+  }
+}

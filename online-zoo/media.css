@@ -533,6 +533,10 @@
     padding-bottom: 50px;
   }
 
+  .pets-in-zoo-wrapper .container {
+    padding-top: 0;
+  }
+
   .h3-text {
     font-size: 36px;
     line-height: 42px;

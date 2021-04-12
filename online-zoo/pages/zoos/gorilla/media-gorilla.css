@@ -1,0 +1,368 @@
+@media screen and (max-width: 1200px) {
+  .header {
+    max-width: 1200px;
+  }
+
+  .main {
+    min-height: 720px;
+  }
+
+  .aside {
+    left: 16px;
+    margin: 0;
+    max-height: 520px;
+  }
+
+  .sidebar > li > a > img {
+    width: 96px;
+    height: 96px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 104px;
+    height: 104px;
+  }
+
+  .active-li-wrapper {
+    width: 114px;
+    height: 114px;
+  }
+
+  .container {
+    max-width: 900px;
+    padding: 0 0 0 90px;
+    margin: 0;
+  }
+
+  .live-broadcast {
+    width: 527px;
+    height: 297px;
+  }
+
+  .sub-live-broadcast {
+    width: 164px;
+    height: 94px;
+  }
+
+  .video-slider-item {
+    width: 164px;
+    height: 94px;
+  }
+
+  .video-slider {
+    margin-top: -15px;
+    max-width: 528px;
+  }
+
+  .animal-description {
+    max-width: 290px;
+  }
+
+  .circle-wrapper {
+    max-width: 528px;
+  }
+
+  /*Footer start*/
+  .footer-container {
+    padding: 116px 150px 0;
+    max-width: 900px;
+  }
+
+  .footer-content {
+    justify-content: inherit;
+  }
+
+  .right-side {
+    position: relative;
+    left: 60px;
+    top: -1px;
+  }
+
+  .footer-logo {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .btn-footer {
+    position: absolute;
+    top: 325px;
+    left: 0;
+  }
+  /*Footer end*/
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    padding: 25px 20px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-nav-wrapper {
+    display: block;
+  }
+
+  .switch-color-theme {
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .mobile-nav-icon {
+    display: block;
+  }
+
+  .main {
+    min-height: 1040px;
+  }
+
+  .aside {
+    max-height: 420px;
+  }
+
+  .sidebar > li > a > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 78px;
+    height: 78px;
+  }
+
+  .active-li-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .container {
+    padding-left: 36px;
+  }
+
+  .video-slider {
+    margin-top: 18px;
+    max-width: 497px;
+  }
+
+  .video-slider-item {
+    width: 154px;
+    height: 90px;
+  }
+
+  .broadcast {
+    position: relative;
+  }
+
+  .animal-description {
+    position: absolute;
+    top: 490px;
+    max-width: 497px;
+  }
+
+  .animal-description-list {
+    margin-left: 0;
+    max-width: 497px;
+  }
+
+  .animal-description-list p.diet-text {
+    max-width: 497px;
+  }
+
+  .btn.btn-feed {
+    margin-left: 0;
+  }
+
+  .live-broadcast {
+    width: 497px;
+    height: 280px;
+  }
+
+  .sub-live-broadcast {
+    width: 155px;
+    height: 89px;
+  }
+
+  /*Footer start*/
+  .footer-container {
+    padding: 0;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .footer-logo {
+    margin-bottom: 50px;
+  }
+
+  .left-side {
+    margin-top: 80px;
+  }
+
+  .btn-footer {
+    right: 20px;
+    top: -562px;
+    left: auto;
+  }
+
+  form {
+    max-width: 400px;
+    position: relative;
+    top: 64px;
+    margin-bottom: 70px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    position: absolute;
+    top: -494px;
+  }
+
+  .footer-nav > li {
+    padding: 0;
+  }
+
+  .right-side {
+    left: 0;
+  }
+
+  .right-side-description {
+    margin-top: 50px;
+  }
+
+  .footer-line {
+    max-width: 600px;
+    margin: 40px auto;
+  }
+
+  .copyright {
+    margin: 28px 0 0 20px;
+    padding-bottom: 40px;
+  }
+  /*Footer end*/
+}
+
+@media screen and (max-width: 320px) {
+  .mobile-nav {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .mobile-nav > li {
+    margin-bottom: 20px;
+  }
+
+  .mobile-nav > li:last-child {
+    margin-bottom: 0;
+  }
+
+  .main {
+    min-height: 868px;
+  }
+
+  .aside {
+    max-height: 318px;
+  }
+
+  .sidebar > li > a > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 55px;
+    height: 55px;
+  }
+
+  .video-slider {
+    max-width: 205px;
+  }
+
+  .animal-description-list p.diet-text {
+    max-width: 211px;
+  }
+
+  .active-li-wrapper {
+    width: 67px;
+    height: 67px;
+    align-items: flex-end;
+  }
+
+  .main-header {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 40px 0 25px;
+    max-width: 205px;
+  }
+
+  .container {
+    padding-left: 30px;
+  }
+
+  .live-broadcast {
+    width: 205px;
+    height: 116px;
+  }
+
+  .sub-live-broadcast {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider-item {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider .video-slider-item:nth-child(3) {
+    display: none;
+  }
+
+  .animal-description-list h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .animal-description-list p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .animal-description {
+    top: 280px;
+  }
+
+  /*Footer start*/
+  .textarea-wrapper,
+  input[type='text'],
+  input[type='email'] {
+    min-width: auto;
+  }
+
+  .btn-footer {
+    top: 272px;
+  }
+
+  form {
+    margin-bottom: 70px;
+  }
+
+  .send {
+    margin-right: 0;
+  }
+
+  .right-side-description {
+    margin-top: 60px;
+  }
+
+  .footer-line {
+    max-width: 300px;
+    margin: 110px auto 40px;
+  }
+  /*Footer end*/
+}

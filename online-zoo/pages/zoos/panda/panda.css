@@ -37,8 +37,9 @@ body {
   padding: 0 42px;
 }
 
-.header-nav-link {
-  font-family: 'Roboto';
+.header-nav-link,
+.mobile-nav-link {
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -47,14 +48,16 @@ body {
   color: #333333;
 }
 
-.header-nav-link.active-link {
+.header-nav-link.active-link,
+.mobile-nav-link.active-link {
   font-weight: 900;
   text-decoration: underline;
   pointer-events: none;
   cursor: none;
 }
 
-.header-nav-link:hover {
+.header-nav-link:hover,
+.mobile-nav-link:hover {
   text-decoration: underline;
   font-weight: 900;
 }
@@ -127,6 +130,36 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.mobile-nav-icon {
+  display: none;
+}
+
+.mobile-nav-wrapper {
+  transition: all 1.5s ease;
+  z-index: 20;
+  display: none;
+}
+
+.mobile-nav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: -1000px;
+  list-style: none;
+  min-height: 98px;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+}
+
+.mobile-nav > li {
+  text-transform: capitalize;
 }
 /* Switch color theme slider end */
 /* Header end */
@@ -356,7 +389,7 @@ h1 {
 }
 
 .footer-logo {
-  cursor: pointer;
+  cursor: default;
   margin-bottom: 32px;
 }
 
@@ -368,7 +401,6 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
 }
 
 .contact-us {

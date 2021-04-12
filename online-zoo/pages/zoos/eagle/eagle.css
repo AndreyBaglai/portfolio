@@ -128,6 +128,36 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.mobile-nav-icon {
+  display: none;
+}
+
+.mobile-nav-wrapper {
+  transition: all 1.5s ease;
+  z-index: 20;
+  display: none;
+}
+
+.mobile-nav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: -1000px;
+  list-style: none;
+  min-height: 98px;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+}
+
+.mobile-nav > li {
+  text-transform: capitalize;
+}
 /* Switch color theme slider end */
 /* Header end */
 

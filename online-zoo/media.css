@@ -198,6 +198,14 @@
     margin-bottom: 450px;
   }
 
+  .count.favorite-count {
+    margin-left: 210px;
+  }
+
+  .favorite-slider-animals > li {
+    margin: 0 10px;
+  }
+
   .line {
     right: 7%;
   }
@@ -208,12 +216,16 @@
   }
 
   .favorite-slider {
-    left: 150px;
+    left: 137px;
     height: 520px;
   }
 
   .how-it-works {
     max-width: 600px;
+  }
+
+  .how-it-works-text {
+    margin-bottom: 30px;
   }
 
   .how-it-works-slider > img {
@@ -262,7 +274,7 @@
 
   .pay-arrow > svg {
     width: 32px;
-    height: 28px;
+    height: 40px;
     transform: rotate(90deg);
     position: relative;
     bottom: 25px;
@@ -288,26 +300,27 @@
   .map {
     background-image: url('./assets/icons/map/map-640px.svg');
     background-size: auto;
+    height: 350px;
   }
 
   .map-placeholder-eagle {
     left: 48px;
-    top: 108px;
+    top: 37px;
   }
 
   .map-placeholder-alligator {
-    left: 105px;
-    top: 125px;
+    left: 106px;
+    top: 50px;
   }
 
   .map-placeholder-gorilla {
     left: 269px;
-    top: 177px;
+    top: 101px;
   }
 
   .map-placeholder-panda {
     right: 109px;
-    top: 117px;
+    top: 40px;
   }
 
   .map-hint-gorilla {
@@ -331,13 +344,17 @@
     padding: 0 20px;
   }
 
+  .footer-logo {
+    margin-bottom: 50px;
+  }
+
   .left-side {
     margin-top: 80px;
   }
 
   .btn-footer {
     right: 20px;
-    top: -540px;
+    top: -562px;
     left: auto;
   }
 
@@ -356,6 +373,10 @@
 
   .footer-nav > li {
     padding: 0;
+  }
+
+  .right-side {
+    left: 0;
   }
 
   .right-side-description {

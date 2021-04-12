@@ -416,6 +416,7 @@
 
   .favorite-text-wrapper {
     margin-top: 80px;
+    margin-left: 0;
   }
 
   .main-text {
@@ -476,8 +477,8 @@
   }
 
   .line {
-    right: 0;
-    top: 33%;
+    right: -2px;
+    top: 32%;
   }
 
   .count.favorite-count {
@@ -509,13 +510,48 @@
     height: 323px;
   }
 
+  .how-it-works-btn {
+    margin-bottom: 56px;
+  }
+
+  .icons-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .pets-in-zoo-slider-wrapper .buttons-wrapper {
+    flex-direction: row;
+  }
+
+  .pets-in-zoo-slider-wrapper .slider-text-favorite-wrapper > p {
+    font-size: 14px;
+    line-height: 16px;
+    max-width: initial;
+  }
+
+  .pets-in-zoo-wrapper {
+    padding-bottom: 50px;
+  }
+
   .h3-text {
     font-size: 36px;
     line-height: 42px;
   }
 
+  .pay-feed-wrapper {
+    padding: 50px 0;
+  }
+
+  .btn-donate {
+    margin-top: 10px;
+  }
+
   .pay-feed-text {
     display: none;
+  }
+
+  .testimonials-wrapper {
+    padding: 50px 0;
   }
 
   .testimonial {
@@ -523,10 +559,14 @@
     padding-right: 10px;
   }
 
+  .container {
+    padding: 50px 0;
+  }
+
   .map {
     background-image: url('./assets/icons/map/map-320px.svg');
     background-size: auto;
-    height: 275px;
+    height: 200px;
   }
 
   .map-placeholder {
@@ -548,22 +588,22 @@
 
   .map-placeholder-eagle {
     left: 25px;
-    top: 67px;
+    top: 30px;
   }
 
   .map-placeholder-gorilla {
-    left: 135px;
-    top: 103px;
+    left: 134px;
+    top: 63px;
   }
 
   .map-placeholder-alligator {
     left: 54px;
-    top: 76px;
+    top: 38px;
   }
 
   .map-placeholder-panda {
     right: 54px;
-    top: 71px;
+    top: 32px;
   }
 
   .map-hint {
@@ -621,6 +661,10 @@
 
   form {
     margin-bottom: 70px;
+  }
+
+  .send {
+    margin-right: 0;
   }
 
   .right-side-description {

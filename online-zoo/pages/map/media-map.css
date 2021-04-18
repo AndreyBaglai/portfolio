@@ -122,6 +122,12 @@
 }
 
 @media screen and (max-width: 900px) {
+  .header {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 100;
+  }
+
   .main {
     padding-top: 160px;
   }

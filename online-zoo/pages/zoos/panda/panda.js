@@ -1,4 +1,16 @@
 const changeThemeBtn = document.getElementById('changeTheme');
+const mobileIcon = document.getElementById('mobileIcon');
+const closeMobileIcon = document.getElementById('closeMobileNavIcon');
+
+mobileIcon.addEventListener('click', () => {
+  const nav = document.getElementById('mobileNav');
+  nav.style.top = '0';
+});
+
+closeMobileIcon.addEventListener('click', () => {
+  const nav = document.getElementById('mobileNav');
+  nav.style.top = '-1000px';
+});
 
 changeThemeBtn.addEventListener('change', (e) => {
   const checkbox = e.currentTarget;
@@ -7,6 +19,8 @@ changeThemeBtn.addEventListener('change', (e) => {
   changeMainBg(checkbox);
   changeTextColor(checkbox);
   changeHeaderLogoColor(checkbox);
+  changeMobileIconColor(checkbox);
+  changeMobileCloseBtn(checkbox);
 });
 
 function changeHeaderBg(el) {
@@ -37,4 +51,18 @@ function changeHeaderLogoColor(el) {
   [...logoPaths].forEach((path) => {
     el.checked ? (path.style.fill = '#ffffff') : (path.style.fill = '#333333');
   });
+}
+
+function changeMobileIconColor(el) {
+  const iconLines = document.querySelectorAll('#mobileNavSvg line');
+
+  [...iconLines].forEach((line) => {
+    el.checked ? (line.style.stroke = '#ffffff') : (line.style.stroke = '#333333');
+  });
+}
+
+function changeMobileCloseBtn(el) {
+  const closeIcon = document.querySelector('#closeMobileNavIcon svg');
+
+  el.checked ? (closeIcon.style.fill = '#ffffff') : (closeIcon.style.fill = '#333333');
 }

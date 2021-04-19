@@ -57,9 +57,10 @@
           <span class="slider round"></span>
         </label>
       </div>
-      <div class="mobile-nav-icon">
+      <div class="mobile-nav-icon" id="mobileIcon">
         <a href="#"
           ><svg
+            id="mobileNavSvg"
             width="40"
             height="21"
             viewBox="0 0 40 21"
@@ -73,11 +74,11 @@
         </a>
       </div>
       <nav class="mobile-nav-wrapper">
-        <ul class="mobile-nav">
-          <li><a href="./index.html#header" class="mobile-nav-link active-link">about</a></li>
-          <li><a href="./pages/zoos/panda/panda.html" class="mobile-nav-link">zoos</a></li>
-          <li><a href="./pages/map/map.html" class="mobile-nav-link">map</a></li>
-          <li><a href="./index.html#contactUs" class="mobile-nav-link">contact us</a></li>
+        <ul class="mobile-nav" id="mobileNav">
+          <li><a href="../../../index.html" class="mobile-nav-link">about</a></li>
+          <li><a href="./panda.html#header" class="mobile-nav-link active-link">zoos</a></li>
+          <li><a href="../../map/map.html" class="mobile-nav-link">map</a></li>
+          <li><a href="./panda.html#contactUs" class="mobile-nav-link">contact us</a></li>
           <li>
             <a
               href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=0%3A1"
@@ -86,7 +87,7 @@
               >design</a
             >
           </li>
-          <li>
+          <li id="closeMobileNavIcon">
             <svg
               width="36px"
               height="36px"

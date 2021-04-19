@@ -145,7 +145,7 @@ input:checked + .slider:before {
 }
 
 .mobile-nav {
-  background-color: #ffffff;
+  background-color: var(--header-bg);
   display: flex;
   justify-content: space-around;
   min-width: 100%;

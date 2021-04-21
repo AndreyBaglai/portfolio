@@ -57,11 +57,15 @@ loadPictureBtn.addEventListener('change', (e) => {
     const file = loadPictureBtn.files[0];
     const reader = new FileReader();
 
-    reader.onload = () => {
+    reader.onloadend = () => {
       loadPicture(reader.result);
     };
 
-    reader.readAsDataURL(file);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+    
+    e.target.value = '';
   } catch (err) {
     if (err instanceof TypeError) {
       return;

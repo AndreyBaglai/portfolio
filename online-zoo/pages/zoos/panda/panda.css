@@ -216,12 +216,20 @@ h1 {
   min-height: 900px;
 }
 
+.top-arrow,
+.bottom-arrow {
+  cursor: pointer;
+}
+
 .aside {
   position: sticky;
   margin: 70px 0;
   max-height: 580px;
   left: 25px;
   top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar {
@@ -232,6 +240,7 @@ h1 {
   padding: 0;
   margin: 0;
   align-items: center;
+  transition: all 0.5s ease;
 }
 
 .top-arrow:hover svg,
@@ -239,14 +248,14 @@ h1 {
   stroke: #333333;
 }
 
-.sidebar > li > a > img {
+.sidebar > li a > img {
   padding: 8px 0;
   width: 108px;
   height: 108px;
   transition: all 0.5s ease;
 }
 
-.sidebar > li:hover > a > img {
+.sidebar > li:hover a > img {
   transform: scale(1.2);
 }
 

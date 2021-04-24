@@ -152,8 +152,8 @@
 
     <main class="main">
       <aside class="aside">
-        <div id="topArrow" class="top-arrow"
-          ><svg
+        <div id="topArrow" class="top-arrow"></div>
+          <svg
             width="23"
             height="23"
             viewBox="0 0 23 23"
@@ -180,7 +180,7 @@
         </div>
         <ul class="sidebar" id="asideSlider">
           <li class="item active-li-wrapper">
-            <a>
+            <a href="panda.html#header">
               <img
                 class="map-slider-item active-map-slider-item"
                 src="../../../assets/img/map/map-slider/panda.png"
@@ -216,8 +216,8 @@
             /></a>
           </li>
         </ul>
-        <div id="bottomArrow" class="bottom-arrow"
-          ><svg
+        <div id="bottomArrow" class="bottom-arrow">
+          <svg
             width="23"
             height="23"
             viewBox="0 0 23 23"
@@ -529,6 +529,72 @@
         </div>
       </div>
     </footer>
+
+    <div class="popup-wrapper">
+      <div class="popup">
+        <aside>
+          <img src="../../../assets/img/popup.png" alt="photo" />
+        </aside>
+        <div class="popup-content">
+          <h3>Donate for your animal</h3>
+          <form>
+            <div class="form-header">
+              <fieldset>
+                <legend>Сhoose an animal</legend>
+                <select name="" id="">
+                  <option value="panda">Panda</option>
+                  <option value="eagle">Eagle</option>
+                  <option value="alligator">Alligator</option>
+                  <option value="gorilla">gorilla</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>To donate</legend>
+                <input type="number"/>
+              </fieldset>
+            </div>
+            <div class="form-main">
+              <div class="about-you">
+                <h5>About you</h5>
+                <fieldset>
+                  <legend>Name</legend>
+                  <input type="text">
+                </fieldset>
+                <fieldset>
+                  <legend>Email</legend>
+                  <input type="email">
+                </fieldset>
+                <fieldset>
+                  <legend>Phone</legend>
+                  <input type="tel">
+                </fieldset>
+              </div>
+              <div class="checkout">
+                <h5>Checkout</h5>
+                <fieldset>
+                  <legend>Card number</legend>
+                  <input type="number">
+                </fieldset>
+                <fieldset>
+                  <legend>Expiry date</legend>
+                  <input type="date">
+                </fieldset>
+                <fieldset>
+                  <legend>CVC</legend>
+                  <input type="number">
+                </fieldset>
+              </div>
+            </div>
+          </form>
+          <p class="popup-text">
+            If don’t cancel your subscription before the trial ends on April 15, 2021, you agree that
+            you will automatically be charged
+          </p>
+          <button class="btn popup-btn">Donate</button>
+        </div>
+      </div>
+    </div>
+    
     <script src="./panda.js"></script>
   </body>
 </html>

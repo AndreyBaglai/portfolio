@@ -216,20 +216,21 @@ h1 {
   min-height: 900px;
 }
 
-.top-arrow,
-.bottom-arrow {
-  cursor: pointer;
-}
-
 .aside {
   position: sticky;
-  margin: 70px 0;
-  max-height: 580px;
+  margin: 70px 0 10px;
+  max-height: 645px;
   left: 25px;
   top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.top-arrow,
+.bottom-arrow {
+  cursor: pointer;
 }
 
 .sidebar {
@@ -753,6 +754,116 @@ form textarea {
   max-width: 195px;
 }
 /*Footer end*/
-#headerLogo:hover path {
-  fill: #ffffff;
+
+/*Popup start*/
+.popup-wrapper {
+  content: '';
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 28%, 0.6);
+  top: 0;
+  left: 0;
+  display: none;
 }
+
+.popup {
+  display: flex;
+  max-width: 1200px;
+  height: 795px;
+  margin: 0 auto;
+  background-color: var(--main-bg);
+  box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.popup h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 116.5%;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  color: #313131;
+}
+
+.popup h5 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 116.5%;
+  color: #828282;
+  text-align: left;
+  margin: 0 0 20px;
+}
+
+.popup-content {
+  padding: 100px 140px 80px;
+  text-align: center;
+}
+
+.form-main,
+.form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup fieldset {
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  border-radius: 5px;
+  min-width: 335px;
+  padding: 6px 3px;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+.popup legend {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 116.5%;
+  color: #828282;
+  text-align: end;
+  margin: 0 10px;
+  padding: 0 16px;
+}
+
+.popup input,
+.popup select {
+  min-width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-bottom: 0;
+  color: #000000;
+}
+
+.about-you {
+  margin-right: 55px;
+}
+
+.popup-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 116.5%;
+  text-align: center;
+  color: #828282;
+  max-width: 478px;
+  margin: 10px auto 40px;
+}
+
+.popup-btn {
+  margin: 0 auto;
+}
+/*Popup end*/

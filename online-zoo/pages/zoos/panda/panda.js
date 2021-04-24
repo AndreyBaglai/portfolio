@@ -1,3 +1,4 @@
+/*Change theme color start*/
 const changeThemeBtn = document.getElementById('changeTheme');
 const mobileIcon = document.getElementById('mobileIcon');
 const closeMobileIcon = document.getElementById('closeMobileNavIcon');
@@ -96,7 +97,9 @@ function saveColorThemeToLS(color) {
 function getColorThemeFromLS() {
   return localStorage.getItem('theme');
 }
+/*Change theme color end*/
 
+/*Aside slider start*/
 const asideSlider = document.getElementById('asideSlider');
 const topArrow = document.getElementById('topArrow');
 const bottomArrow = document.getElementById('bottomArrow');
@@ -152,3 +155,25 @@ topArrow.addEventListener('click', () => {
   removeActiveItem();
   setActiveItem();
 });
+/*Aside slider end*/
+
+/*Popup start*/
+const feedBtn = document.getElementById('feedBtn');
+const popupWrp = document.querySelector('.popup-wrapper');
+
+feedBtn.addEventListener('click', () => {
+  popupWrp.style.display = 'block';
+});
+
+popupWrp.addEventListener('click', (e) => {
+  if (e.target.classList.contains('popup-wrapper')) {
+    popupWrp.style.display = 'none';
+  }
+});
+
+window.addEventListener('keyup', (e) => {
+  if (e.key === 'Escape') {
+    popupWrp.style.display = 'none';
+  }
+});
+/*Popup end*/

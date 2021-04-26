@@ -166,9 +166,9 @@
         </p>
         <div class="map-slider-wrapper">
           <ul class="map-slider">
-            <a href="#" class="map-left-arrow">
+            <div class="map-left-arrow">
               <svg
-              id="leftArrow"
+                id="leftArrow"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -180,8 +180,8 @@
                   fill="#333333"
                 />
               </svg>
-            </a>
-            <li>
+            </div>
+            <li class="item" data-animal="gorilla">
               <a href="../gorilla/gorilla.html"
                 ><img
                   class="map-slider-item"
@@ -189,17 +189,15 @@
                   alt="gorilla"
               /></a>
             </li>
-            <li>
-              <div class="active-li-wrapper">
-                <a>
-                  <img
-                    class="map-slider-item active-map-slider-item"
-                    src="../../assets/img/map/map-slider/panda.png"
-                    alt="panda"
-                /></a>
-              </div>
+            <li class="item active-li-wrapper" data-animal="panda">
+              <a>
+                <img
+                  class="map-slider-item active-map-slider-item"
+                  src="../../assets/img/map/map-slider/panda.png"
+                  alt="panda"
+              /></a>
             </li>
-            <li>
+            <li class="item" data-animal="alligator">
               <a href="../alligator/alligator.html"
                 ><img
                   class="map-slider-item"
@@ -207,7 +205,7 @@
                   alt="alligator"
               /></a>
             </li>
-            <li>
+            <li class="item" data-animal="eagle">
               <a href="../eagle/eagle.html"
                 ><img
                   class="map-slider-item"
@@ -215,7 +213,7 @@
                   alt="eagle"
               /></a>
             </li>
-            <li>
+            <li class="item" data-animal="">
               <a href="#"
                 ><img
                   class="map-slider-item"
@@ -223,7 +221,7 @@
                   alt="tiger"
               /></a>
             </li>
-            <li>
+            <li class="item" data-animal="">
               <a href="#"
                 ><img
                   class="map-slider-item"
@@ -231,7 +229,7 @@
                   alt="elephant"
               /></a>
             </li>
-            <li>
+            <li class="item" data-animal="">
               <a href="#"
                 ><img
                   class="map-slider-item"
@@ -239,7 +237,7 @@
                   alt="lion"
               /></a>
             </li>
-            <li>
+            <li class="item" data-animal="">
               <a href="#"
                 ><img
                   class="map-slider-item"
@@ -247,9 +245,9 @@
                   alt="zebra"
               /></a>
             </li>
-            <a href="#" class="map-right-arrow">
+            <div class="map-right-arrow">
               <svg
-              id="rightArrow"
+                id="rightArrow"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -261,15 +259,16 @@
                   fill="#333333"
                 />
               </svg>
-            </a>
+            </div>
           </ul>
 
           <div class="count how-it-works-count">
-            <div class="count-text">
-              <span id="map-slider-current-number">02/</span
-              ><span id="map-slider-max-value">08</span>
-            </div>
+            <label for="range" class="count-text">
+              <span id="map-slider-current-number">02</span
+              ><span id="map-slider-max-value">/08</span>
+            </label>
             <input
+              id="range"
               class="default-input-range map-slider-range"
               type="range"
               min="1"
@@ -280,7 +279,7 @@
         </div>
         <div class="map-wrapper">
           <div class="map" id="map">
-            <div title="Eagle" class="map-placeholder map-placeholder-eagle">
+            <div title="Eagle" class="map-placeholder map-placeholder-eagle" data-number="3">
               <div class="map-marker">
                 <svg
                   width="67"
@@ -313,7 +312,7 @@
                 />
               </div>
             </div>
-            <div title="Alligator" class="map-placeholder map-placeholder-alligator">
+            <div title="Alligator" class="map-placeholder map-placeholder-alligator" data-number="2">
               <div class="map-marker">
                 <svg
                   width="67"
@@ -346,7 +345,7 @@
                 />
               </div>
             </div>
-            <div title="Gorilla" class="map-placeholder map-placeholder-gorilla">
+            <div title="Gorilla" class="map-placeholder map-placeholder-gorilla" data-number="0">
               <div class="map-marker">
                 <svg
                   width="67"
@@ -379,7 +378,7 @@
                 />
               </div>
             </div>
-            <div title="Panda" class="map-placeholder map-placeholder-panda">
+            <div title="Panda" class="map-placeholder map-placeholder-panda" data-number="1">
               <div class="map-marker active-marker">
                 <svg
                   width="67"
@@ -413,7 +412,7 @@
               </div>
             </div>
           </div>
-          <a href="../zoos/panda/panda.html" class="btn watch-online-btn">
+          <a id="watchOnline" href="../zoos/panda/panda.html" class="btn watch-online-btn">
             <span
               ><svg
                 width="32"

@@ -236,6 +236,11 @@ h1 {
   margin: 0 0 20px;
 }
 
+.map-left-arrow,
+.map-right-arrow {
+  cursor: pointer;
+}
+
 .map-text {
   font-family: 'Roboto';
   font-style: normal;
@@ -255,6 +260,11 @@ h1 {
 .map-left-arrow:hover svg,
 .map-right-arrow:hover svg {
   stroke: #333333;
+}
+
+.item.active-li-wrapper > a {
+  width: 139px;
+  height: 139px;
 }
 
 .map-slider {
@@ -305,6 +315,10 @@ h1 {
   flex-direction: column;
   justify-content: center;
   max-width: 185px;
+}
+
+.count-text {
+  cursor: pointer;
 }
 
 .count.favorite-count {

@@ -162,6 +162,7 @@ input:checked + .slider:before {
 
 .mobile-nav > li {
   text-transform: capitalize;
+  cursor: pointer;
 }
 /* Switch color theme slider end */
 /* Header end */
@@ -774,6 +775,7 @@ form textarea {
   height: 795px;
   margin: 0 auto;
   background-color: var(--main-bg);
+  color: var(--text-color);
   box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
   position: fixed;
   top: 50%;
@@ -790,7 +792,6 @@ form textarea {
   line-height: 116.5%;
   margin: 0 0 40px;
   text-transform: uppercase;
-  color: #313131;
 }
 
 .popup h5 {
@@ -799,7 +800,7 @@ form textarea {
   font-weight: bold;
   font-size: 18px;
   line-height: 116.5%;
-  color: #828282;
+  color: var(--text-subColor);
   text-align: left;
   margin: 0 0 20px;
 }
@@ -844,7 +845,7 @@ form textarea {
   border: none;
   outline: none;
   margin-bottom: 0;
-  color: #000000;
+  color: var(--text-color);
 }
 
 .about-you {
@@ -858,7 +859,7 @@ form textarea {
   font-size: 13px;
   line-height: 116.5%;
   text-align: center;
-  color: #828282;
+  color: var(--text-subColor);
   max-width: 478px;
   margin: 10px auto 40px;
 }

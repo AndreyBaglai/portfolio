@@ -3,8 +3,10 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  --primary-bg-color: #fbfbfb;
-  --secondary-bg-color: #f2f2f2;
+  --header-bg: #ffffff;
+  --main-bg: #fbfbfb;
+  --text-color: #333333;
+  --text-subColor: #4f4f4f;
   --btn-bg: linear-gradient(106.89deg, #4bd8b5 -14.32%, #49d6df 100.68%);
 }
 
@@ -16,7 +18,7 @@ body {
   justify-content: space-between;
   padding: 25px 150px;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--header-bg);
   box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
 }
 
@@ -45,7 +47,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .header-nav-link.active-link,
@@ -143,7 +145,7 @@ input:checked + .slider:before {
 }
 
 .mobile-nav {
-  background-color: #ffffff;
+  background-color: var(--header-bg);
   display: flex;
   justify-content: space-around;
   min-width: 100%;
@@ -160,6 +162,7 @@ input:checked + .slider:before {
 
 .mobile-nav > li {
   text-transform: capitalize;
+  cursor: pointer;
 }
 /* Switch color theme slider end */
 /* Header end */
@@ -211,7 +214,7 @@ h1 {
 
 /*Main start*/
 .main {
-  background-color: #fbfbfb;
+  background-color: var(--main-bg);
   padding-top: 60px;
 }
 
@@ -228,7 +231,7 @@ h1 {
   font-size: 48px;
   line-height: 56px;
   text-align: center;
-  color: #333333;
+  color: var(--text-color);
   text-align: center;
   margin: 0 0 20px;
 }
@@ -239,7 +242,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;
+  color: var(--text-subColor);
   text-align: left;
   max-width: 790px;
   margin: 0 auto 54px;
@@ -350,11 +353,11 @@ h1 {
   font-weight: 900;
   font-size: 24px;
   line-height: 28px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 #map-slider-max-value {
-  color: #bdbdbd;
+  color: var(--text-subColor);
   font-size: 15px;
 }
 
@@ -381,7 +384,7 @@ h1 {
   border: 0px solid #000000;
   height: 10px;
   width: 30px;
-  background: #333333;
+  background: var(--text-color);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.6px;
@@ -406,7 +409,7 @@ h1 {
   border: 0px solid #000000;
   height: 10px;
   width: 30px;
-  background: #333333;
+  background: var(--text-color);
   cursor: pointer;
 }
 
@@ -493,23 +496,23 @@ h1 {
 }
 
 .map-placeholder-eagle {
-  left: 127px;
-  top: 97px;
+  left: 121px;
+  top: 80px;
 }
 
 .map-placeholder-alligator {
-  left: 247px;
-  top: 118px;
+  left: 245px;
+  top: 107px;
 }
 
 .map-placeholder-gorilla {
-  left: 574px;
-  top: 203px;
+  left: 571px;
+  top: 192px;
 }
 
 .map-placeholder-panda {
-  right: 250px;
-  top: 101px;
+  right: 257px;
+  top: 86px;
 }
 /*Map end*/
 /*Main end*/

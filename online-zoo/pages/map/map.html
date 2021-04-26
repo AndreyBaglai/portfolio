@@ -10,13 +10,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./map.css" />
-    <link rel="stylesheet" href="./media-map.css">
+    <link rel="stylesheet" href="./media-map.css" />
   </head>
   <body>
     <header class="header" id="header">
       <div class="header-logo">
         <a class="header-logo-link" href="../../index.html#header">
           <svg
+            id="headerLogo"
             width="59"
             height="42"
             viewBox="0 0 59 42"
@@ -52,13 +53,14 @@
       </nav>
       <div class="switch-color-theme">
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" id="changeTheme" />
           <span class="slider round"></span>
         </label>
       </div>
-      <div class="mobile-nav-icon">
+      <div class="mobile-nav-icon" id="mobileIcon">
         <a href="#"
           ><svg
+            id="mobileNavSvg"
             width="40"
             height="21"
             viewBox="0 0 40 21"
@@ -72,11 +74,11 @@
         </a>
       </div>
       <nav class="mobile-nav-wrapper">
-        <ul class="mobile-nav">
-          <li><a href="./index.html#header" class="mobile-nav-link active-link">about</a></li>
-          <li><a href="./pages/zoos/panda/panda.html" class="mobile-nav-link">zoos</a></li>
-          <li><a href="./pages/map/map.html" class="mobile-nav-link">map</a></li>
-          <li><a href="./index.html#contactUs" class="mobile-nav-link">contact us</a></li>
+        <ul class="mobile-nav" id="mobileNav">
+          <li><a href="../../index.html" class="mobile-nav-link">about</a></li>
+          <li><a href="../../pages/zoos/panda/panda.html" class="mobile-nav-link">zoos</a></li>
+          <li><a href="./map.html" class="mobile-nav-link active-link">map</a></li>
+          <li><a href="./map.html#contactUs" class="mobile-nav-link">contact us</a></li>
           <li>
             <a
               href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=0%3A1"
@@ -85,7 +87,7 @@
               >design</a
             >
           </li>
-          <li>
+          <li id="closeMobileNavIcon">
             <svg
               width="36px"
               height="36px"
@@ -166,6 +168,7 @@
           <ul class="map-slider">
             <a href="#" class="map-left-arrow">
               <svg
+              id="leftArrow"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -246,6 +249,7 @@
             </li>
             <a href="#" class="map-right-arrow">
               <svg
+              id="rightArrow"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -275,7 +279,7 @@
           </div>
         </div>
         <div class="map-wrapper">
-          <div class="map">
+          <div class="map" id="map">
             <div title="Eagle" class="map-placeholder map-placeholder-eagle">
               <div class="map-marker">
                 <svg
@@ -303,7 +307,10 @@
                     </linearGradient>
                   </defs>
                 </svg>
-                <img src="../../assets/img/map/map-placeholder/placeholder-eagle-img.png" alt="Eagle marker" />
+                <img
+                  src="../../assets/img/map/map-placeholder/placeholder-eagle-img.png"
+                  alt="Eagle marker"
+                />
               </div>
             </div>
             <div title="Alligator" class="map-placeholder map-placeholder-alligator">
@@ -333,7 +340,10 @@
                     </linearGradient>
                   </defs>
                 </svg>
-                <img src="../../assets/img/map/map-placeholder/placeholder-alligator-img.png" alt="Alligator marker" />
+                <img
+                  src="../../assets/img/map/map-placeholder/placeholder-alligator-img.png"
+                  alt="Alligator marker"
+                />
               </div>
             </div>
             <div title="Gorilla" class="map-placeholder map-placeholder-gorilla">
@@ -363,41 +373,45 @@
                     </linearGradient>
                   </defs>
                 </svg>
-                <img src="../../assets/img/map/map-placeholder/placeholder-gorilla-img.png" alt="Gorilla marker" />
+                <img
+                  src="../../assets/img/map/map-placeholder/placeholder-gorilla-img.png"
+                  alt="Gorilla marker"
+                />
               </div>
             </div>
-            <div
-              title="Panda"
-              class="map-placeholder map-placeholder-panda"
-            >
-            <div class="map-marker active-marker">
-              <svg
-                width="67"
-                height="94"
-                viewBox="0 0 67 94"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z"
-                  fill="url(#paint0_linear)"
+            <div title="Panda" class="map-placeholder map-placeholder-panda">
+              <div class="map-marker active-marker">
+                <svg
+                  width="67"
+                  height="94"
+                  viewBox="0 0 67 94"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z"
+                    fill="url(#paint0_linear)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear"
+                      x1="-11.7233"
+                      y1="0.15039"
+                      x2="83.0362"
+                      y2="20.5233"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#4BD8B5" />
+                      <stop offset="1" stop-color="#49D6DF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <img
+                  src="../../assets/img/map/map-placeholder/placeholder-panda-img.png"
+                  alt="panda marker"
                 />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear"
-                    x1="-11.7233"
-                    y1="0.15039"
-                    x2="83.0362"
-                    y2="20.5233"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#4BD8B5" />
-                    <stop offset="1" stop-color="#49D6DF" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <img src="../../assets/img/map/map-placeholder/placeholder-panda-img.png" alt="panda marker" />
-            </div></div>
+              </div>
+            </div>
           </div>
           <a href="../zoos/panda/panda.html" class="btn watch-online-btn">
             <span
@@ -596,5 +610,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./map.js"></script>
   </body>
 </html>

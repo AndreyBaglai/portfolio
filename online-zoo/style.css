@@ -3,8 +3,15 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  --header-bg: #ffffff;
+  --main-bg: #fbfbfb;
+  --text-color: #333333;
+  --text-subColor: #4f4f4f;
+
   --primary-bg-color: #fbfbfb;
   --secondary-bg-color: #f2f2f2;
+  --testimonial-bg: #fefefe;
+
   --btn-bg: linear-gradient(106.89deg, #4bd8b5 -14.32%, #49d6df 100.68%);
 }
 
@@ -16,7 +23,7 @@ body {
   justify-content: space-between;
   padding: 25px 150px;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--header-bg);
   box-shadow: 0px 4px 8px rgba(44, 101, 77, 0.08);
 }
 
@@ -45,7 +52,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .header-nav-link.active-link,
@@ -143,7 +150,7 @@ input:checked + .slider:before {
 }
 
 .mobile-nav {
-  background-color: #ffffff;
+  background-color: var(--header-bg);;
   display: flex;
   justify-content: space-around;
   min-width: 100%;
@@ -160,6 +167,7 @@ input:checked + .slider:before {
 
 .mobile-nav > li {
   text-transform: capitalize;
+  cursor: pointer;
 }
 /* Switch color theme slider end */
 /* Header end */
@@ -545,7 +553,7 @@ h1 {
   font-size: 48px;
   line-height: 56px;
   margin: 98px 0 30px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .how-it-works-text {
@@ -554,7 +562,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;
+  color: var(--text-subColor);
   margin: 0 0 30px;
 }
 
@@ -572,14 +580,14 @@ h1 {
   font-weight: 900;
   font-size: 24px;
   line-height: 28px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 /*How it works range start*/
 #how-it-works-max-value,
 #pets-in-zoo-max-value,
 #testimonials-max-value {
-  color: #bdbdbd;
+  color: var(--text-subColor);
   font-size: 15px;
 }
 
@@ -606,7 +614,7 @@ h1 {
   border: 0px solid #000000;
   height: 10px;
   width: 62px;
-  background: #333333;
+  background: var(--text-color);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.6px;
@@ -631,7 +639,7 @@ h1 {
   border: 0px solid #000000;
   height: 10px;
   width: 62px;
-  background: #333333;
+  background: var(--text-color);
   cursor: pointer;
 }
 
@@ -664,7 +672,7 @@ h1 {
   border: 0px solid #000000;
   height: 10px;
   width: 62px;
-  background: #333333;
+  background: var(--text-color);
   cursor: pointer;
 }
 
@@ -717,7 +725,7 @@ h1 {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .item > .item-text {
@@ -727,7 +735,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;
+  color: var(--text-subColor);
   text-align: left;
 }
 /*How it works section end*/
@@ -746,7 +754,7 @@ h1 {
   font-size: 48px;
   line-height: 56px;
   text-align: center;
-  color: #333333;
+  color: var(--text-color);
   margin: 0 0 38px;
 }
 
@@ -893,7 +901,7 @@ h1 {
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  color: #4f4f4f;
+  color: var(--text-subColor);
 }
 
 .pay-arrow {
@@ -933,7 +941,7 @@ h1 {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
-  color: #4f4f4f;
+  color: var(--text-color);
   margin: 0;
 }
 /*Pay feed section end*/
@@ -952,7 +960,7 @@ h1 {
 
 .testimonial {
   width: 585px;
-  background: #fefefe;
+  background: var(--testimonial-bg);
   box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.1);
   border-radius: 5px;
   text-align: center;
@@ -973,7 +981,7 @@ h1 {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
-  color: #333333;
+  color: var(--text-color);
   margin: 17px 0;
 }
 
@@ -983,7 +991,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;
+  color: var(--text-subColor);
   margin: 0 auto;
   max-width: 440px;
 }
@@ -1040,12 +1048,12 @@ h1 {
 
 .map-placeholder-eagle {
   left: 127px;
-  top: 97px;
+  top: 78px;
 }
 
 .map-placeholder-alligator {
-  left: 247px;
-  top: 118px;
+  left: 244px;
+  top: 106px;
 }
 
 .map-placeholder-gorilla {
@@ -1054,8 +1062,8 @@ h1 {
 }
 
 .map-placeholder-panda {
-  right: 250px;
-  top: 101px;
+  right: 243px;
+  top: 94px;
 }
 
 .map-marker {

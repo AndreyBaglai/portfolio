@@ -17,6 +17,7 @@
       <div class="header-logo">
         <a class="header-logo-link" href="./index.html#header">
           <svg
+            id="headerLogo"
             width="59"
             height="42"
             viewBox="0 0 59 42"
@@ -52,13 +53,14 @@
       </nav>
       <div class="switch-color-theme">
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" id="changeTheme" />
           <span class="slider round"></span>
         </label>
       </div>
-      <div class="mobile-nav-icon">
+      <div class="mobile-nav-icon" id="mobileIcon">
         <a href="#"
           ><svg
+            id="mobileNavSvg"
             width="40"
             height="21"
             viewBox="0 0 40 21"
@@ -72,7 +74,7 @@
         </a>
       </div>
       <nav class="mobile-nav-wrapper">
-        <ul class="mobile-nav">
+        <ul class="mobile-nav" id="mobileNav">
           <li><a href="./index.html#header" class="mobile-nav-link active-link">about</a></li>
           <li><a href="./pages/zoos/panda/panda.html" class="mobile-nav-link">zoos</a></li>
           <li><a href="./pages/map/map.html" class="mobile-nav-link">map</a></li>
@@ -85,7 +87,7 @@
               >design</a
             >
           </li>
-          <li>
+          <li id="closeMobileNavIcon">
             <svg
               width="36px"
               height="36px"
@@ -1336,7 +1338,7 @@
       <div class="container inner">
         <h3 class="h3-text">Map</h3>
 
-        <div class="map">
+        <div class="map" id="map">
           <div class="map-placeholder map-placeholder-eagle">
             <div class="map-marker">
               <svg
@@ -1712,5 +1714,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./index.js"></script>
   </body>
 </html>

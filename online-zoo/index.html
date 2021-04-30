@@ -248,26 +248,46 @@
           </a>
         </div>
 
+        <span class="line"
+          ><svg
+            width="1080"
+            height="13"
+            viewBox="0 0 1080 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="4" y1="6.5" x2="1087" y2="6.5" stroke="#FEFEFE" />
+            <circle cx="6.5" cy="6.5" r="2.5" fill="#FEFEFE" />
+            <circle cx="6.5" cy="6.5" r="6" stroke="#FEFEFE" />
+          </svg>
+        </span>
+        <img
+          class="favorite-circle left-circle"
+          src="./assets/icons/favorite-circle.svg"
+          alt="circle"
+        />
+        <img
+          class="favorite-circle right-circle-1"
+          src="./assets/icons/favorite-circle.svg"
+          alt="circle"
+        />
+        <img
+          class="favorite-circle right-circle-2"
+          src="./assets/icons/favorite-circle.svg"
+          alt="circle"
+        />
+        <img
+          class="favorite-circle right-circle-3"
+          src="./assets/icons/favorite-circle.svg"
+          alt="circle"
+        />
         <div class="favorite-slider">
-          <span class="line"
-            ><svg
-              width="1080"
-              height="13"
-              viewBox="0 0 1080 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line x1="4" y1="6.5" x2="1087" y2="6.5" stroke="#FEFEFE" />
-              <circle cx="6.5" cy="6.5" r="2.5" fill="#FEFEFE" />
-              <circle cx="6.5" cy="6.5" r="6" stroke="#FEFEFE" />
-            </svg>
-          </span>
-          <ul class="favorite-slider-animals">
-            <li>
-              <a href="#" class="favorite-slider-animal favorite-eagle"></a>
+          <ul class="favorite-slider-animals" id="favoriteSlider">
+            <li class="item" data-animal="eagle">
+              <div class="favorite-slider-animal favorite-eagle"></div>
             </li>
-            <li>
-              <a href="#" class="favorite-slider-animal favorite-panda active-favorite-animal"></a>
+            <li class="item active-item" data-animal="panda">
+              <div class="favorite-slider-animal favorite-panda"></div>
               <div class="slider-text-favorite-wrapper">
                 <p>
                   Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves
@@ -332,12 +352,23 @@
                 </div>
               </div>
             </li>
-            <li><a href="#" class="favorite-slider-animal favorite-gorilla"></a></li>
-            <li>
-              <a href="#" class="favorite-slider-animal favorite-alligator"></a>
+            <li class="item" data-animal="gorilla">
+              <div class="favorite-slider-animal favorite-gorilla"></div>
             </li>
-            <li>
-              <a href="#" class="favorite-slider-animal favorite-fox"></a>
+            <li class="item" data-animal="alligator">
+              <div class="favorite-slider-animal favorite-alligator"></div>
+            </li>
+            <li class="item" data-animal="fox">
+              <div class="favorite-slider-animal favorite-fox"></div>
+            </li>
+            <li class="item" data-animal="elephant">
+              <div class="favorite-slider-animal favorite-elephant"></div>
+            </li>
+            <li class="item" data-animal="tiger">
+              <div class="favorite-slider-animal favorite-tiger"></div>
+            </li>
+            <li class="item" data-animal="sloth">
+              <div class="favorite-slider-animal favorite-sloth"></div>
             </li>
           </ul>
 

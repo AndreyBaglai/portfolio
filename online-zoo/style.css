@@ -275,19 +275,48 @@ h1 {
 /*Favorite slider start*/
 .favorite-slider {
   position: absolute;
-  width: 1124px;
   height: 500px;
   left: 50%;
   bottom: 48px;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.favorite-slider .item .favorite-slider-animal {
+  transition: all 1s ease;
 }
 
 .line {
   display: block;
-  position: relative;
-  top: 41%;
+  position: absolute;
+  top: 61%;
   transform: translateY(-50%);
-  right: 10%;
+  right: 0;
   z-index: -1;
+}
+
+.favorite-circle {
+  position: absolute;
+}
+
+.favorite-circle.left-circle {
+  bottom: 38.3%;
+  left: 55%;
+}
+
+.favorite-circle.right-circle-1 {
+  bottom: 38.3%;
+  right: 20%;
+}
+
+.favorite-circle.right-circle-2 {
+  bottom: 38.3%;
+  right: 10%;
+}
+
+.favorite-circle.right-circle-3 {
+  bottom: 38.3%;
+  right: 20px;
 }
 
 .favorite-slider-animals {
@@ -296,6 +325,7 @@ h1 {
   list-style: none;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .favorite-slider-animals > li {
@@ -313,14 +343,17 @@ h1 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 1s ease;
 }
 
 /*Active animal start*/
-.favorite-slider-animal.active-favorite-animal {
+.active-item .favorite-slider-animal {
   width: 245px;
   height: 350px;
   cursor: none;
   pointer-events: none;
+  transition: all 1s ease;
 }
 
 .slider-text-favorite-wrapper {
@@ -387,6 +420,16 @@ h1 {
   background-image: url('./assets/img/favorites-slider/favorite-fox.jpg');
 }
 
+.favorite-elephant {
+  background-image: url('./assets/img/favorites-slider/elephant.jpg');
+}
+.favorite-tiger {
+  background-image: url('./assets/img/favorites-slider/tiger.jpg');
+}
+.favorite-sloth {
+  background-image: url('./assets/img/favorites-slider/molinar.jpg');
+}
+
 /*Count start*/
 .count {
   display: flex;
@@ -397,7 +440,8 @@ h1 {
 
 .count.favorite-count {
   margin: 20px 0 0 210px;
-  position: relative;
+  position: absolute;
+  bottom: 64px;
 }
 
 .favorite-count {

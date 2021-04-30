@@ -177,3 +177,32 @@ window.addEventListener('keyup', (e) => {
   }
 });
 /*Popup end*/
+
+/*Video slider start*/
+const mainBroadcastEl = document.getElementById('mainBroadcast');
+const videoSlider = document.getElementById('videoSlider');
+
+videoSlider.addEventListener('click', (e) => {
+  if (e.target.classList.contains('video-slider-item')) {
+    const subVideo = e.target.querySelector('.sub-live-broadcast');
+    const mainVideo = mainBroadcastEl.querySelector('.live-broadcast');
+    const description = mainBroadcastEl.querySelector('.animal-description');
+
+    subVideo.classList.remove('sub-live-broadcast');
+    subVideo.classList.add('live-broadcast');
+    subVideo.width = '790px';
+    subVideo.height = '442px';
+
+    mainVideo.classList.remove('live-broadcast');
+    mainVideo.classList.add('sub-live-broadcast');
+    mainVideo.width = '246px';
+    mainVideo.height = '141px';
+
+    mainBroadcastEl.removeChild(mainVideo);
+    e.target.innerHTML = '';
+
+    mainBroadcastEl.insertBefore(subVideo, description);
+    e.target.appendChild(mainVideo);
+  }
+});
+/*Video slider end*/

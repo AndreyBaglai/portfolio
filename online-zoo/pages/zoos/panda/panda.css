@@ -352,6 +352,7 @@ h1 {
   position: relative;
   width: 246px;
   height: 141px;
+  cursor: pointer;
 }
 
 .video-slider-item::before {

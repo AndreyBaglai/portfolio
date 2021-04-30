@@ -141,3 +141,96 @@ function getColorThemeFromLS() {
   return localStorage.getItem('theme');
 }
 /*Change theme color end*/
+
+/*Pets in zoo slider start*/
+const petsInZooLeftArrow = document.getElementById('petsInZooLeftArrow');
+const petsInZooRightArrow = document.getElementById('petsInZooRightArrow');
+const petsInZooSlider = document.getElementById('petsInZooSlider');
+const rangePetsInZoo = document.getElementById('rangePetsInZoo');
+const petsInZooCurrentNumberEl = document.getElementById('pets-in-zoo-current-number');
+const petsItems = document.querySelectorAll('.pets-in-zoo-slider .item');
+
+let petsCurrentIndex = 0;
+
+function setActivePet(n) {
+  removeActivePet();
+  petsItems.forEach((pet, idx) => {
+    if (idx === petsCurrentIndex) {
+      pet.classList.add('active-item');
+    }
+  });
+}
+
+function removeActivePet() {
+  petsItems.forEach((pet) => {
+    if (pet.classList.contains('active-item')) {
+      pet.classList.remove('active-item');
+    }
+  });
+}
+
+function setCurrentNumber() {
+  petsInZooCurrentNumberEl.innerHTML = '';
+  petsInZooCurrentNumberEl.innerHTML = `0${petsCurrentIndex+1}/`;
+}
+
+function sliderTransform(n) {
+  switch (n) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      petsInZooSlider.style.right = '0';
+      break;
+    case 4:
+      petsInZooSlider.style.right = '300px';
+      break;
+    case 5:
+      petsInZooSlider.style.right = '600px';
+      break;
+    case 6:
+      petsInZooSlider.style.right = '900px';
+      break;
+    case 7:
+      petsInZooSlider.style.right = '1200px';
+      break;
+  }
+}
+
+function setRangeValuePetInZoo() {
+  rangePetsInZoo.value = petsCurrentIndex + 1;
+}
+
+petsInZooRightArrow.addEventListener('click', () => {
+  petsCurrentIndex++;
+  if (petsCurrentIndex > petsItems.length - 1) {
+    petsCurrentIndex = 0;
+  }
+
+  sliderTransform(petsCurrentIndex);
+  setCurrentNumber();
+  setActivePet();
+  setRangeValuePetInZoo();
+});
+
+petsInZooLeftArrow.addEventListener('click', () => {
+  petsCurrentIndex--;
+  if (petsCurrentIndex < 0) {
+    petsCurrentIndex = petsItems.length - 1;
+  }
+
+  sliderTransform(petsCurrentIndex);
+  setCurrentNumber();
+  setActivePet();
+  setRangeValuePetInZoo();
+});
+
+rangePetsInZoo.addEventListener('input', (e) => {
+  const value = e.target.value;
+  petsCurrentIndex = value - 1;
+
+  sliderTransform(petsCurrentIndex);
+  setCurrentNumber();
+  setActivePet();
+});
+/*Pets in zoo slider end*/

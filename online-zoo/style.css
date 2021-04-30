@@ -150,7 +150,7 @@ input:checked + .slider:before {
 }
 
 .mobile-nav {
-  background-color: var(--header-bg);;
+  background-color: var(--header-bg);
   display: flex;
   justify-content: space-around;
   min-width: 100%;
@@ -696,6 +696,7 @@ h1 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .icons-wrapper {
@@ -761,6 +762,8 @@ h1 {
 .pets-in-zoo-slider {
   display: flex;
   position: relative;
+  max-width: 1200px;
+  overflow: hidden;
 }
 
 .left-arrow,
@@ -768,6 +771,7 @@ h1 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .left-arrow {
@@ -789,13 +793,16 @@ h1 {
   margin: 0;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  position: relative;
+  right: 0;
+  transition: all 1s ease;
 }
 
 .pets-in-zoo-slider-wrapper > li {
   position: relative;
   overflow: hidden;
   transition: all 1s ease;
+  margin: 0 10px;
 }
 
 .pets-in-zoo-slider-wrapper > li > a {
@@ -823,18 +830,34 @@ h1 {
   background-image: url('./assets/img/favorites-slider/favorite-alligator.jpg');
 }
 
+.in-zoo-fox {
+  background-image: url('./assets/img/favorites-slider/fox.jpg');
+}
+
+.in-zoo-sloth {
+  background-image: url('./assets/img/favorites-slider/molinar.jpg');
+}
+
+.in-zoo-elephant {
+  background-image: url('./assets/img/favorites-slider/elephant.jpg');
+}
+
+.in-zoo-tiger {
+  background-image: url('./assets/img/favorites-slider/tiger.jpg');
+}
+
 .bg-zoo-item {
   display: block;
   position: absolute;
   background-color: rgba(33, 33, 33, 0.6);
   width: 278px;
   height: 399px;
-  transform: translateY(0);
+  transform: translateY(100%);
   transition: all 1s ease;
   z-index: 2;
 }
 
-.pets-in-zoo-slider-wrapper .slider-text-favorite-wrapper {
+.pets-in-zoo-slider-wrapper .item .slider-text-favorite-wrapper {
   transition: all 1s ease;
   position: absolute;
   transform: translateY(210px);
@@ -844,10 +867,18 @@ h1 {
 }
 
 .pets-in-zoo-slider-wrapper > li:hover .bg-zoo-item {
-  transform: translateY(-100%);
+  transform: translateY(0);
 }
 
 .pets-in-zoo-slider-wrapper > li:hover .slider-text-favorite-wrapper {
+  transform: translateY(0);
+}
+
+.pets-in-zoo-slider-wrapper > li.active-item .bg-zoo-item {
+  transform: translateY(0);
+}
+
+.pets-in-zoo-slider-wrapper > li.active-item .slider-text-favorite-wrapper {
   transform: translateY(0);
 }
 

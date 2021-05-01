@@ -20,6 +20,13 @@
     left: 0;
   }
   /*Footer end*/
+
+  /*Popup start*/
+  .popup-content {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  /*Popup end*/
 }
 
 @media screen and (max-width: 1200px) {
@@ -113,6 +120,43 @@
     left: 0;
   }
   /*Footer end*/
+
+  /*Popup start*/
+  .popup {
+    max-width: 640px;
+    height: 735px;
+    overflow-y: scroll;
+    top: 60%;
+  }
+
+  .popup aside img {
+    max-width: 164px;
+    height: 100%;
+    object-fit: fill;
+    min-height: 1165px;
+  }
+
+  .popup-content {
+    padding: 105px 60px 125px;
+  }
+
+  .popup h3 {
+    margin-bottom: -23px;
+  }
+
+  .form-main,
+  .form-header {
+    flex-direction: column;
+  }
+
+  .popup fieldset {
+    max-width: 335px;
+  }
+
+  .about-you {
+    margin-right: 0;
+  }
+  /*Popup end*/
 }
 
 @media screen and (max-width: 1070px) {
@@ -176,7 +220,7 @@
   }
 
   .main {
-    min-height: 1156px;
+    min-height: 1076px;
   }
 
   .aside {
@@ -341,7 +385,7 @@
   }
 
   .main {
-    min-height: 1150px;
+    min-height: 1040px;
   }
 
   .aside {
@@ -471,11 +515,39 @@
     padding-bottom: 40px;
   }
   /*Footer end*/
+
+  /*Popup start*/
+  .popup {
+    max-width: 320px;
+  }
+
+  .popup aside {
+    display: none;
+  }
+
+  .popup-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+  }
+
+  .popup fieldset {
+    min-width: 259px;
+  }
+
+  .popup h3 {
+    font-size: 20px;
+  }
+
+  .popup fieldset input {
+    min-width: 100%;
+  }
+  /*Popup end*/
 }
 
 @media screen and (max-width: 630px) {
   .main {
-    min-height: 972px;
+    min-height: 930px;
   }
 
   .container {
@@ -539,7 +611,7 @@
   }
 
   .main {
-    min-height: 936px;
+    min-height: 856px;
   }
 
   /*Footer start*/

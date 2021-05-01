@@ -10,13 +10,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./alligator.css" />
-    <link rel="stylesheet" href="./media-alligator.css">
+    <link rel="stylesheet" href="./media-alligator.css" />
   </head>
   <body>
     <header class="header" id="header">
       <div class="header-logo">
-        <a class="header-logo-link" href="../../../index.html#header">
+        <a class="header-logo-link" href="../../../index.html">
           <svg
+            id="headerLogo"
             width="59"
             height="42"
             viewBox="0 0 59 42"
@@ -37,7 +38,7 @@
       <nav class="header-nav">
         <ul>
           <li><a href="../../../index.html" class="header-nav-link">about</a></li>
-          <li><a href="./panda.html#header" class="header-nav-link active-link">zoos</a></li>
+          <li><a href="./alligator.html#header" class="header-nav-link active-link">zoos</a></li>
           <li><a href="../../map/map.html" class="header-nav-link">map</a></li>
           <li><a href="./alligator.html#contactUs" class="header-nav-link">contact us</a></li>
           <li>
@@ -52,13 +53,14 @@
       </nav>
       <div class="switch-color-theme">
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" id="changeTheme" />
           <span class="slider round"></span>
         </label>
       </div>
-      <div class="mobile-nav-icon">
+      <div class="mobile-nav-icon" id="mobileIcon">
         <a href="#"
           ><svg
+            id="mobileNavSvg"
             width="40"
             height="21"
             viewBox="0 0 40 21"
@@ -72,11 +74,11 @@
         </a>
       </div>
       <nav class="mobile-nav-wrapper">
-        <ul class="mobile-nav">
-          <li><a href="./index.html#header" class="mobile-nav-link active-link">about</a></li>
-          <li><a href="./pages/zoos/panda/panda.html" class="mobile-nav-link">zoos</a></li>
-          <li><a href="./pages/map/map.html" class="mobile-nav-link">map</a></li>
-          <li><a href="./index.html#contactUs" class="mobile-nav-link">contact us</a></li>
+        <ul class="mobile-nav" id="mobileNav">
+          <li><a href="../../../index.html" class="mobile-nav-link">about</a></li>
+          <li><a href="./alligator.html#header" class="mobile-nav-link active-link">zoos</a></li>
+          <li><a href="../../map/map.html" class="mobile-nav-link">map</a></li>
+          <li><a href="./alligator.html#contactUs" class="mobile-nav-link">contact us</a></li>
           <li>
             <a
               href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=0%3A1"
@@ -85,7 +87,7 @@
               >design</a
             >
           </li>
-          <li>
+          <li id="closeMobileNavIcon">
             <svg
               width="36px"
               height="36px"
@@ -150,43 +152,43 @@
 
     <main class="main">
       <aside class="aside">
-        <ul class="sidebar">
-          <a href="#" class="top-arrow"
-            ><svg
-              width="23"
-              height="23"
-              viewBox="0 0 23 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M11.5001 4.94404C11.9123 4.94404 12.3244 5.10143 12.6387 5.41555L22.5282 15.3051C23.1573 15.9342 23.1573 16.9542 22.5282 17.5831C21.8993 18.2119 20.8796 18.2119 20.2504 17.5831L11.5001 8.8322L2.74967 17.5827C2.12057 18.2116 1.1009 18.2116 0.472107 17.5827C-0.157299 16.9539 -0.157299 15.9339 0.472107 15.3048L10.3614 5.41524C10.6759 5.10107 11.088 4.94404 11.5001 4.94404Z"
-                  fill="#828282"
+        <div id="topArrow" class="top-arrow">
+          <svg
+            width="23"
+            height="23"
+            viewBox="0 0 23 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M11.5001 4.94404C11.9123 4.94404 12.3244 5.10143 12.6387 5.41555L22.5282 15.3051C23.1573 15.9342 23.1573 16.9542 22.5282 17.5831C21.8993 18.2119 20.8796 18.2119 20.2504 17.5831L11.5001 8.8322L2.74967 17.5827C2.12057 18.2116 1.1009 18.2116 0.472107 17.5827C-0.157299 16.9539 -0.157299 15.9339 0.472107 15.3048L10.3614 5.41524C10.6759 5.10107 11.088 4.94404 11.5001 4.94404Z"
+                fill="#828282"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect
+                  width="23"
+                  height="23"
+                  fill="white"
+                  transform="translate(23 23) rotate(-180)"
                 />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect
-                    width="23"
-                    height="23"
-                    fill="white"
-                    transform="translate(23 23) rotate(-180)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-          <li>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <ul class="sidebar" id="asideSlider">
+          <li class="item">
             <a href="../panda/panda.html">
               <img
-                class="map-slider-item"
+                class="map-slider-item active-map-slider-item"
                 src="../../../assets/img/map/map-slider/panda.png"
                 alt="panda"
                 title="Panda"
             /></a>
           </li>
-          <li>
+          <li class="item">
             <a href="../eagle/eagle.html"
               ><img
                 class="map-slider-item"
@@ -195,59 +197,52 @@
                 title="Eagle"
             /></a>
           </li>
-          <li>
-            <div class="active-li-wrapper">
-              <a>
-                <img
-                  class="map-slider-item active-map-slider-item"
-                  src="../../../assets/img/map/map-slider/alligator.png"
-                  alt="alligator"
-                  title="Alligator"
-              /></a>
-            </div>
-          </li>
-          <li>
-            <a href="../gorilla/gorilla.html"
-              ><img src="../../../assets/img/map/map-slider/gorilla.png" alt="gorilla" title="Gorilla"
+          <li class="item active-li-wrapper">
+            <a href="./alligator.html"
+              ><img
+                class="map-slider-item"
+                src="../../../assets/img/map/map-slider/alligator.png"
+                alt="alligator"
+                title="Alligator"
             /></a>
           </li>
-          <a href="#" class="bottom-arrow"
-            ><svg
-              width="23"
-              height="23"
-              viewBox="0 0 23 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M11.4999 18.056C11.0877 18.056 10.6756 17.8986 10.3613 17.5845L0.471825 7.69487C-0.157275 7.06577 -0.157275 6.04579 0.471825 5.41695C1.10067 4.7881 2.12045 4.7881 2.7496 5.41695L11.4999 14.1678L20.2503 5.41725C20.8794 4.78841 21.8991 4.78841 22.5279 5.41725C23.1573 6.0461 23.1573 7.06608 22.5279 7.69518L12.6386 17.5848C12.3241 17.8989 11.912 18.056 11.4999 18.056Z"
-                  fill="#333333"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect width="23" height="23" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
+          <li class="item">
+            <a href="../gorilla/gorilla.html"
+              ><img
+                class="map-slider-item"
+                src="../../../assets/img/map/map-slider/gorilla.png"
+                alt="gorilla"
+                title="Gorilla"
+            /></a>
+          </li>
         </ul>
+        <div id="bottomArrow" class="bottom-arrow">
+          <svg
+            width="23"
+            height="23"
+            viewBox="0 0 23 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0)">
+              <path
+                d="M11.4999 18.056C11.0877 18.056 10.6756 17.8986 10.3613 17.5845L0.471825 7.69487C-0.157275 7.06577 -0.157275 6.04579 0.471825 5.41695C1.10067 4.7881 2.12045 4.7881 2.7496 5.41695L11.4999 14.1678L20.2503 5.41725C20.8794 4.78841 21.8991 4.78841 22.5279 5.41725C23.1573 6.0461 23.1573 7.06608 22.5279 7.69518L12.6386 17.5848C12.3241 17.8989 11.912 18.056 11.4999 18.056Z"
+                fill="#333333"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="23" height="23" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
       </aside>
       <div class="container">
         <h1>Online Zoo</h1>
         <h2 class="main-header">Alligator and Spoonbill Swamp Webcam</h2>
-        <div class="broadcast">
-          <iframe
-            class="live-broadcast"
-            width="790"
-            height="442"
-            src="https://www.youtube.com/embed/A3Nneq4wCVw"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+        <div class="broadcast" id="mainBroadcast">
+          <iframe class="live-broadcast" width="790" height="442" src="https://www.youtube.com/embed/RQpj8tpxPcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="animal-description">
             <ul class="animal-description-list">
               <li>
@@ -267,49 +262,22 @@
                 </p>
               </li>
             </ul>
-            <button class="btn btn-feed">Feed</button>
+            <button class="btn btn-feed" id="feedBtn">Feed</button>
           </div>
         </div>
-        <div class="video-slider">
+        <div class="video-slider" id="videoSlider">
           <div class="video-slider-item">
-            <iframe
-              class="sub-live-broadcast"
-              width="246"
-              height="141"
-              src="https://www.youtube.com/embed/A3Nneq4wCVw"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <iframe class="sub-live-broadcast" width="246" height="141" src="https://www.youtube.com/embed/boQgZGj9Umg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="video-slider-item">
-            <iframe
-              class="sub-live-broadcast"
-              width="246"
-              height="141"
-              src="https://www.youtube.com/embed/A3Nneq4wCVw"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <iframe class="sub-live-broadcast" width="246" height="141" src="https://www.youtube.com/embed/wN1eQ9sfuk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="video-slider-item">
-            <iframe
-              class="sub-live-broadcast"
-              width="246"
-              height="141"
-              src="https://www.youtube.com/embed/A3Nneq4wCVw"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <iframe class="sub-live-broadcast" width="246" height="141" src="https://www.youtube.com/embed/w-aILnSkMXU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <ul class="circle-wrapper">
-          <li>
+          <li class="item active-item">
             <svg
               width="8"
               height="8"
@@ -320,7 +288,7 @@
               <circle cx="4" cy="4" r="4" fill="#C4C4C4" />
             </svg>
           </li>
-          <li>
+          <li class="item">
             <svg
               width="8"
               height="8"
@@ -331,7 +299,7 @@
               <circle cx="4" cy="4" r="4" fill="#C4C4C4" />
             </svg>
           </li>
-          <li>
+          <li class="item">
             <svg
               width="8"
               height="8"
@@ -374,7 +342,7 @@
               <input type="email" placeholder="Email" required />
               <fieldset class="textarea-wrapper">
                 <legend>Please enter your message</legend>
-                <textarea maxlength="280" name="msg" id="" cols="30" rows="10" required></textarea>
+                <textarea maxlength="280" name="msg" cols="30" rows="10" required></textarea>
               </fieldset>
               <label for="cbx" class="label-cbx">
                 <input id="cbx" type="checkbox" class="invisible" />
@@ -525,5 +493,72 @@
         </div>
       </div>
     </footer>
+
+    <div class="popup-wrapper">
+      <div class="popup">
+        <aside>
+          <img src="../../../assets/img/popup.png" alt="photo" />
+        </aside>
+        <div class="popup-content">
+          <h3>Donate for your animal</h3>
+          <form>
+            <div class="form-header">
+              <fieldset>
+                <legend>Сhoose an animal</legend>
+                <select>
+                  <option value="panda">Panda</option>
+                  <option value="eagle">Eagle</option>
+                  <option value="alligator">Alligator</option>
+                  <option value="gorilla">gorilla</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>To donate</legend>
+                <input type="number"/>
+              </fieldset>
+            </div>
+            <div class="form-main">
+              <div class="about-you">
+                <h5>About you</h5>
+                <fieldset>
+                  <legend>Name</legend>
+                  <input type="text">
+                </fieldset>
+                <fieldset>
+                  <legend>Email</legend>
+                  <input type="email">
+                </fieldset>
+                <fieldset>
+                  <legend>Phone</legend>
+                  <input type="tel">
+                </fieldset>
+              </div>
+              <div class="checkout">
+                <h5>Checkout</h5>
+                <fieldset>
+                  <legend>Card number</legend>
+                  <input type="number">
+                </fieldset>
+                <fieldset>
+                  <legend>Expiry date</legend>
+                  <input type="date">
+                </fieldset>
+                <fieldset>
+                  <legend>CVC</legend>
+                  <input type="number">
+                </fieldset>
+              </div>
+            </div>
+          </form>
+          <p class="popup-text">
+            If don’t cancel your subscription before the trial ends on April 15, 2021, you agree that
+            you will automatically be charged
+          </p>
+          <button class="btn popup-btn">Donate</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="./alligator.js"></script>
   </body>
 </html>

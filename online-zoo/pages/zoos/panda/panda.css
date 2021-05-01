@@ -234,6 +234,11 @@ h1 {
   cursor: pointer;
 }
 
+.top-arrow svg path,
+.bottom-arrow svg path {
+  fill: var(--text-color);
+}
+
 .sidebar {
   list-style: none;
   display: flex;
@@ -380,6 +385,15 @@ h1 {
 .circle-wrapper > li {
   padding: 0 3px;
   cursor: pointer;
+  margin: 0 4px;
+}
+
+.circle-wrapper .item.active-item svg {
+  transform: scale(1.7);
+}
+
+.circle-wrapper .item.active-item svg circle {
+  fill: #49d6df;
 }
 
 .circle-wrapper > li:hover svg {

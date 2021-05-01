@@ -331,46 +331,91 @@ function addDescription() {
 }
 
 function moveFavoriteSlide(animal) {
-  switch (animal) {
-    case 'eagle': {
-      favoriteCurrentIndex = 1;
-      favoriteSlider.style.left = '188px';
-      break;
+  if (window.innerWidth === 1200 || window.innerWidth < 1200) {
+    switch (animal) {
+      case 'eagle': {
+        favoriteCurrentIndex = 1;
+        favoriteSlider.style.left = '224px';
+        break;
+      }
+      case 'panda': {
+        favoriteCurrentIndex = 2;
+        favoriteSlider.style.left = '0';
+        break;
+      }
+      case 'gorilla': {
+        favoriteCurrentIndex = 3;
+        favoriteSlider.style.left = '-226px';
+        break;
+      }
+      case 'alligator': {
+        favoriteCurrentIndex = 4;
+        favoriteSlider.style.left = '-453px';
+        break;
+      }
+      case 'fox': {
+        favoriteCurrentIndex = 5;
+        favoriteSlider.style.left = '-679px';
+        break;
+      }
+      case 'elephant': {
+        favoriteCurrentIndex = 6;
+        favoriteSlider.style.left = '-905px';
+        break;
+      }
+      case 'tiger': {
+        favoriteCurrentIndex = 7;
+        favoriteSlider.style.left = '-1132px';
+        break;
+      }
+      case 'sloth': {
+        favoriteCurrentIndex = 8;
+        favoriteSlider.style.left = '-1355px';
+        break;
+      }
     }
-    case 'panda': {
-      favoriteCurrentIndex = 2;
-      favoriteSlider.style.left = '0';
-      break;
-    }
-    case 'gorilla': {
-      favoriteCurrentIndex = 3;
-      favoriteSlider.style.left = '-186px';
-      break;
-    }
-    case 'alligator': {
-      favoriteCurrentIndex = 4;
-      favoriteSlider.style.left = '-372px';
-      break;
-    }
-    case 'fox': {
-      favoriteCurrentIndex = 5;
-      favoriteSlider.style.left = '-558px';
-      break;
-    }
-    case 'elephant': {
-      favoriteCurrentIndex = 6;
-      favoriteSlider.style.left = '-744px';
-      break;
-    }
-    case 'tiger': {
-      favoriteCurrentIndex = 7;
-      favoriteSlider.style.left = '-930px';
-      break;
-    }
-    case 'sloth': {
-      favoriteCurrentIndex = 8;
-      favoriteSlider.style.left = '-1116px';
-      break;
+  } else {
+    switch (animal) {
+      case 'eagle': {
+        favoriteCurrentIndex = 1;
+        favoriteSlider.style.left = '188px';
+        break;
+      }
+      case 'panda': {
+        favoriteCurrentIndex = 2;
+        favoriteSlider.style.left = '0';
+        break;
+      }
+      case 'gorilla': {
+        favoriteCurrentIndex = 3;
+        favoriteSlider.style.left = '-186px';
+        break;
+      }
+      case 'alligator': {
+        favoriteCurrentIndex = 4;
+        favoriteSlider.style.left = '-372px';
+        break;
+      }
+      case 'fox': {
+        favoriteCurrentIndex = 5;
+        favoriteSlider.style.left = '-558px';
+        break;
+      }
+      case 'elephant': {
+        favoriteCurrentIndex = 6;
+        favoriteSlider.style.left = '-744px';
+        break;
+      }
+      case 'tiger': {
+        favoriteCurrentIndex = 7;
+        favoriteSlider.style.left = '-930px';
+        break;
+      }
+      case 'sloth': {
+        favoriteCurrentIndex = 8;
+        favoriteSlider.style.left = '-1116px';
+        break;
+      }
     }
   }
 }
@@ -391,7 +436,7 @@ favoriteSlider.addEventListener('click', (e) => {
 
 rangeFavoriteSlider.addEventListener('input', (e) => {
   favoriteSliderItems.forEach((pet, idx) => {
-    if (idx === e.target.value-1) {
+    if (idx === e.target.value - 1) {
       const animal = pet.dataset.animal;
       removeFavoriteActivePet();
 

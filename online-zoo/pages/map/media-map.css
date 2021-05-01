@@ -20,14 +20,8 @@
   }
 
   .map-slider-wrapper {
-    max-width: 800px;
+    max-width: 1020px;
     margin: 0 auto;
-  }
-
-  .map-slider li:nth-child(6),
-  .map-slider li:nth-child(7),
-  .map-slider li:nth-child(8) {
-    display: none;
   }
 
   .map {

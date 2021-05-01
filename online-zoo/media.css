@@ -1,3 +1,20 @@
+@media screen and (max-width: 1800px) {
+  .line {
+    right: -70px;
+  }
+
+  .favorite-circle.right-circle-1 {
+    right: 15%;
+  }
+  .favorite-circle.right-circle-2 {
+    right: 5%;
+  }
+
+  .favorite-circle.right-circle-3 {
+    right: -16px;
+  }
+}
+
 @media screen and (max-width: 1700px) {
   .map-hint-eagle,
   .map-hint-alligator {
@@ -20,13 +37,27 @@
   /*Footer end*/
 }
 
+@media screen and (max-width: 1500px) {
+  .favorite-circle.right-circle-1 {
+    right: 7%;
+  }
+
+  .favorite-circle.right-circle-2 {
+    right: -3%;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .right-arrow {
-    right: -10px;
+    right: -33px;
   }
 
   .left-arrow {
-    left: -10px;
+    left: -33px;
+  }
+
+  .pets-in-zoo-slider-wrapper .item .slider-text-favorite-wrapper {
+    left: 0;
   }
 
   .pets-in-zoo-slider-wrapper,
@@ -57,7 +88,18 @@
   }
 }
 
+@media screen and (max-width: 1300px) and (min-width: 1201px) {
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  .favorite-circle.right-circle-1 {
+    right: 2%;
+  }
+
   .header,
   .favorite-wrapper {
     max-width: 1200px;
@@ -209,6 +251,10 @@
   .map-placeholder-panda {
     right: 180px;
     top: 97px;
+  }
+
+  .pets-in-zoo-slider-wrapper .item .slider-text-favorite-wrapper {
+    left: 0;
   }
 
   /*Footer start*/

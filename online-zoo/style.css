@@ -1173,7 +1173,7 @@ h1 {
 
 .map-hint {
   position: absolute;
-  background-color: #fefefe;
+  background-color: var(--primary-bg-color);
   display: flex;
   padding: 45px;
   align-items: center;
@@ -1197,7 +1197,7 @@ h1 {
   font-weight: 900;
   font-size: 18px;
   line-height: 21px;
-  color: #333333;
+  color: var(--text-color);
 }
 
 .description p {
@@ -1207,7 +1207,7 @@ h1 {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #4f4f4f;
+  color: var(--text-subColor);
 }
 
 .map-hint-eagle {

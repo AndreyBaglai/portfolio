@@ -205,7 +205,7 @@
 
   .map {
     background-image: url('./assets/icons/map/map-1200px.svg');
-    background-size: auto;
+    background-size: contain;
   }
 
   .inner {

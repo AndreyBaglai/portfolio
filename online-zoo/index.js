@@ -127,9 +127,17 @@ function changeMobileCloseBtn() {
 
 function changeMapSVG() {
   if (colorTheme === 'dark') {
-    map.style.backgroundImage = 'url("./assets/icons/map/dark-map.svg")';
+    if (window.innerWidth === 1200 || window.innerWidth < 1200) {
+      map.style.backgroundImage = 'url("./assets/icons/map/dark-map-1200px.svg")';
+    } else {
+      map.style.backgroundImage = 'url("./assets/icons/map/dark-map.svg")';
+    }
   } else {
-    map.style.backgroundImage = 'url("./assets/icons/map/map.svg")';
+    if (window.innerWidth === 1200 || window.innerWidth < 1200) {
+      map.style.backgroundImage = 'url("./assets/icons/map/map-1200px.svg")';
+    } else {
+      map.style.backgroundImage = 'url("./assets/icons/map/map.svg")';
+    }
   }
 }
 

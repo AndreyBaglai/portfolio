@@ -4,6 +4,7 @@ const mobileIcon = document.getElementById('mobileIcon');
 const closeMobileIcon = document.getElementById('closeMobileNavIcon');
 let colorTheme = '';
 const map = document.getElementById('map');
+const mapSlider = document.getElementById('mapSlider');
 const leftArrow = document.getElementById('leftArrow');
 const rightArrow = document.getElementById('rightArrow');
 
@@ -119,9 +120,17 @@ function changeMobileCloseBtn() {
 
 function changeMapSVG() {
   if (colorTheme === 'dark') {
-    map.style.backgroundImage = 'url("../../assets/icons/map/dark-map.svg")';
+    if (window.innerWidth === 1200 || window.innerWidth < 1200) {
+      map.style.backgroundImage = 'url("../../assets/icons/map/dark-map-1200px.svg")';
+    } else {
+      map.style.backgroundImage = 'url("../../assets/icons/map/dark-map.svg")';
+    }
   } else {
-    map.style.backgroundImage = 'url("../../assets/icons/map/map.svg")';
+    if (window.innerWidth === 1200 || window.innerWidth < 1200) {
+      map.style.backgroundImage = 'url("../../assets/icons/map/map-1200px.svg")';
+    } else {
+      map.style.backgroundImage = 'url("../../assets/icons/map/map.svg")';
+    }
   }
 }
 
@@ -242,7 +251,7 @@ range.addEventListener('input', (e) => {
   setAnimal();
   removeActiveMarker();
   setActiveMarker();
-  setWatchOnlineBtnLink(animal)
+  setWatchOnlineBtnLink(animal);
 });
 
 rightArrow.addEventListener('click', () => {
@@ -268,6 +277,6 @@ leftArrow.addEventListener('click', () => {
   setAnimal();
   removeActiveMarker();
   setActiveMarker();
-  setWatchOnlineBtnLink(animal)
+  setWatchOnlineBtnLink(animal);
 });
 /*Map slider end*/

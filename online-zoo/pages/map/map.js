@@ -121,15 +121,15 @@ function changeMobileCloseBtn() {
 function changeMapSVG() {
   if (colorTheme === 'dark') {
     if (window.innerWidth === 1200 || window.innerWidth < 1200) {
-      map.style.backgroundImage = 'url("../../assets/icons/map/dark-map-1200px.svg")';
+      map.style.backgroundImage = 'url("../../assets/img/map/dark-map-1200px.png")';
     } else {
-      map.style.backgroundImage = 'url("../../assets/icons/map/dark-map.svg")';
+      map.style.backgroundImage = 'url("../../assets/img/map/dark-map.png")';
     }
   } else {
     if (window.innerWidth === 1200 || window.innerWidth < 1200) {
-      map.style.backgroundImage = 'url("../../assets/icons/map/map-1200px.svg")';
+      map.style.backgroundImage = 'url("../../assets/img/map/map-1200px.png")';
     } else {
-      map.style.backgroundImage = 'url("../../assets/icons/map/map.svg")';
+      map.style.backgroundImage = 'url("../../assets/img/map/map.png")';
     }
   }
 }

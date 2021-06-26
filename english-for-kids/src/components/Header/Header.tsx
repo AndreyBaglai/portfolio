@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
-import openMenu from '../../assets/icons/open-menu.svg';
+import openMenuSVG from '../../assets/icons/open-menu.svg';
 
 import './Header.scss';
 
-export default function Header() {
+type HeaderProps = {
+  onToggleMenu: (e: React.MouseEvent<Element>) => void;
+};
+
+export default function Header({ onToggleMenu }: HeaderProps) {
   return (
-    <header className="header container">
+    <header
+      className="header container"
+      onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
+      aria-hidden="true"
+    >
       <div className="open-menu">
-        <img src={openMenu} alt="Open menu" />
+        <img className="open-menu-icon" src={openMenuSVG} alt="Open menu" />
       </div>
 
       <div className="checkbox">

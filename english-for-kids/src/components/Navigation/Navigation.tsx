@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 import './Navigation.scss';
 
-export default function Navigation() {
+type NavigationProps = {
+  isOpen: boolean;
+  onToggleMenu: (e: React.MouseEvent<Element>) => void;
+};
+
+export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
   return (
-    <nav className="nav-wrapper close">
+    <nav className={`nav-wrapper ${isOpen ? 'open' : 'close'}`}>
       <ul className="nav">
         <li>
           <a className="nav-link" href="#home">
@@ -52,8 +57,13 @@ export default function Navigation() {
           </a>
         </li>
       </ul>
-      <div className="close-menu">
+      <div
+        className="close-menu"
+        onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
+        aria-hidden="true"
+      >
         <svg
+          className="close-menu-icon"
           id="closeMenu"
           width="59"
           height="59"

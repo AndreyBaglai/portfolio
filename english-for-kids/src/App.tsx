@@ -18,7 +18,11 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
+      aria-hidden="true"
+    >
       <Header onToggleMenu={onToggleMenu} />
       <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
       <Main />

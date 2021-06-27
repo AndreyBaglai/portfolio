@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
@@ -18,15 +19,17 @@ const App = () => {
   };
 
   return (
-    <div
-      className="App"
-      onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
-      aria-hidden="true"
-    >
-      <Header onToggleMenu={onToggleMenu} />
-      <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
-      <Main />
-    </div>
+    <Router>
+      <div
+        className="App"
+        onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
+        aria-hidden="true"
+      >
+        <Header onToggleMenu={onToggleMenu} />
+        <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
+        <Main />
+      </div>
+    </Router>
   );
 };
 

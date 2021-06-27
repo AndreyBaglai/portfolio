@@ -1,4 +1,5 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Navigation.scss';
 
@@ -11,51 +12,27 @@ export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
   return (
     <nav className={`nav-wrapper ${isOpen ? 'open' : 'close'}`}>
       <ul className="nav">
-        <li>
-          <a className="nav-link" href="#home">
-            Main page
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Action (set A)
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Action (set B)
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Action (set C)
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Adjective
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Animal (set A)
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Animal (set B)
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Clothes
-          </a>
-        </li>
-        <li>
-          <a className="nav-link" href="#home">
-            Emotion
-          </a>
-        </li>
+        <Link to="/">
+          <li className="nav-link active-link">Main page</li>
+        </Link>
+        <Link to="/action-a">
+          <li className="nav-link">Action (set A)</li>
+        </Link>
+        <Link to="/action-b">
+          <li className="nav-link">Action (set B)</li>
+        </Link>
+        <Link to="/animal-a">
+          <li className="nav-link">Animal (set A)</li>
+        </Link>
+        <Link to="/animal-b">
+          <li className="nav-link">Animal (set B)</li>
+        </Link>
+        <Link to="/clothes">
+          <li className="nav-link">Clothes</li>
+        </Link>
+        <Link to="/emotions">
+          <li className="nav-link">Emotions</li>
+        </Link>
       </ul>
       <div
         className="close-menu"

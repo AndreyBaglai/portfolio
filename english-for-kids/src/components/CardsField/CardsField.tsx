@@ -436,17 +436,36 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
     },
   ]);
 
-  const playAudio = (src: string) => {
-    const audioEl = new Audio();
-    audioEl.src = src;
-    audioEl.currentTime = 0;
-    audioEl.play();
+  const onPlayAudioWord = (e: React.MouseEvent<Element>, src: string) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('card__front-img')) {
+      const audioEl = new Audio();
+      audioEl.src = src;
+      audioEl.currentTime = 0;
+      audioEl.play();
+    }
   };
 
-  // const selectCategory = () => {
-  //   const [name, cards] = cardsData.filter((collection) => collection.category === typeCards);
-  //   return cards;
-  // };
+  const flip = (isFront = false, card: HTMLElement): Promise<void> => {
+    return new Promise((resolve) => {
+      card.classList.toggle('flipped', isFront);
+      card.addEventListener('transitionend', () => resolve(), {
+        once: true,
+      });
+    });
+  };
+
+  const onFlip = async (e: React.MouseEvent<Element>, toBack: boolean) => {
+    e.stopPropagation();
+    const target = e.target as HTMLElement;
+    const cardContainer = target.closest('.card-container') as HTMLElement;
+
+    if (toBack && target.closest('.flip-icon-wrapper') && cardContainer) {
+      await flip(true, cardContainer);
+    } else {
+      await flip(false, cardContainer);
+    }
+  };
 
   return (
     <div className="cards-field">
@@ -461,6 +480,8 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
               translation={translation}
               imgSrc={imgSrc}
               audioSrc={audioSrc}
+              onPlayAudioWord={onPlayAudioWord}
+              onFlip={onFlip}
               key={word + translation}
             />
           );

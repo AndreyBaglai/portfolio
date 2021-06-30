@@ -7,36 +7,35 @@ type CardProps = {
   translation: string;
   imgSrc: string;
   audioSrc: string;
+  onPlayAudioWord: (e: React.MouseEvent<Element>, src: string) => void;
+  onFlip: (e: React.MouseEvent<Element>, toBack: boolean) => void;
 };
 
-export default function Card({ word, translation, imgSrc, audioSrc }: CardProps) {
-  // const flipToBack = (): Promise<void> {
-  //   this.isFlipped = true;
-  //   return this.flip(true);
-  // }
-
-  // const flipToFront = (): Promise<void> {
-  //   this.isFlipped = false;
-  //   return this.flip(false);
-  // }
-
-  // const flip = (isFront = false): Promise<void> {
-  //   return new Promise((resolve) => {
-  //     this.element.classList.toggle('flipped', isFront);
-  //     this.element.addEventListener('transitionend', () => resolve(), {
-  //       once: true,
-  //     });
-  //   });
-  // }
-
+export default function Card({
+  word,
+  translation,
+  imgSrc,
+  audioSrc,
+  onPlayAudioWord,
+  onFlip,
+}: CardProps) {
   return (
-    <div className="card-container">
+    <div
+      className="card-container"
+      aria-hidden="true"
+      onClick={(e: React.MouseEvent<Element>) => onPlayAudioWord(e, audioSrc)}
+      onMouseLeave={(e: React.MouseEvent<Element>) => onFlip(e, false)}
+    >
       <div className="card">
         <div className="card__front">
           <div className="card__front-img" style={{ backgroundImage: `url(${imgSrc})` }}></div>
           <div className="card__front-content">
             <span>{word}</span>
-            <div className="flip-icon-wrapper">
+            <div
+              className="flip-icon-wrapper"
+              aria-hidden="true"
+              onClick={(e: React.MouseEvent<Element>) => onFlip(e, true)}
+            >
               <svg
                 className="flip-icon"
                 width="30"

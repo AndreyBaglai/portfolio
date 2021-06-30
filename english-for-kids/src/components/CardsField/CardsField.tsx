@@ -328,6 +328,112 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
         },
       ],
     },
+    {
+      category: 'trees',
+      info: [
+        {
+          word: 'acacia',
+          translation: 'акация',
+          imgSrc: './images/cards/trees/acacia.jpg',
+          audioSrc: './audio/cards/trees/acacia.mp3',
+        },
+        {
+          word: 'ash',
+          translation: 'ясень',
+          imgSrc: './images/cards/trees/ash.jpg',
+          audioSrc: './audio/cards/trees/ash.mp3',
+        },
+        {
+          word: 'birch',
+          translation: 'берёза',
+          imgSrc: './images/cards/trees/birch.jpg',
+          audioSrc: './audio/cards/trees/birch.mp3',
+        },
+        {
+          word: 'oak',
+          translation: 'дуб',
+          imgSrc: './images/cards/trees/oak.jpg',
+          audioSrc: './audio/cards/trees/oak.mp3',
+        },
+        {
+          word: 'palm',
+          translation: 'пальма',
+          imgSrc: './images/cards/trees/palm.jpg',
+          audioSrc: './audio/cards/trees/palm.mp3',
+        },
+        {
+          word: 'pine',
+          translation: 'сосна',
+          imgSrc: './images/cards/trees/pine.jpg',
+          audioSrc: './audio/cards/trees/pine.mp3',
+        },
+        {
+          word: 'spruce',
+          translation: 'ель',
+          imgSrc: './images/cards/trees/spruce.jpg',
+          audioSrc: './audio/cards/trees/spruce.mp3',
+        },
+        {
+          word: 'willow',
+          translation: 'ива',
+          imgSrc: './images/cards/trees/willow.jpg',
+          audioSrc: './audio/cards/trees/willow.mp3',
+        },
+      ],
+    },
+    {
+      category: 'sport',
+      info: [
+        {
+          word: 'baseball',
+          translation: 'бейсбол',
+          imgSrc: './images/cards/sport/baseball.jpg',
+          audioSrc: './audio/cards/sport/baseball.mp3',
+        },
+        {
+          word: 'basketball',
+          translation: 'баскетбол',
+          imgSrc: './images/cards/sport/basketball.jpg',
+          audioSrc: './audio/cards/sport/basketball.mp3',
+        },
+        {
+          word: 'chess',
+          translation: 'шахматы',
+          imgSrc: './images/cards/sport/chess.jpg',
+          audioSrc: './audio/cards/sport/chess.mp3',
+        },
+        {
+          word: 'cricket',
+          translation: 'крикет',
+          imgSrc: './images/cards/sport/cricket.jpg',
+          audioSrc: './audio/cards/sport/cricket.mp3',
+        },
+        {
+          word: 'football',
+          translation: 'футбол',
+          imgSrc: './images/cards/sport/football.jpg',
+          audioSrc: './audio/cards/sport/football.mp3',
+        },
+        {
+          word: 'golf',
+          translation: 'гольф',
+          imgSrc: './images/cards/sport/golf.jpg',
+          audioSrc: './audio/cards/sport/golf.mp3',
+        },
+        {
+          word: 'karate',
+          translation: 'каратэ',
+          imgSrc: './images/cards/sport/karate.jpg',
+          audioSrc: './audio/cards/sport/karate.mp3',
+        },
+        {
+          word: 'tennis',
+          translation: 'большой теннис',
+          imgSrc: './images/cards/sport/tennis.jpg',
+          audioSrc: './audio/cards/sport/tennis.mp3',
+        },
+      ],
+    },
   ]);
 
   const playAudio = (src: string) => {

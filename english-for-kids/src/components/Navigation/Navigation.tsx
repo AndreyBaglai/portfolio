@@ -33,6 +33,12 @@ export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
         <Link to="/emotions">
           <li className="nav-link">Emotions</li>
         </Link>
+        <Link to="/trees">
+          <li className="nav-link">Trees</li>
+        </Link>
+        <Link to="/sport">
+          <li className="nav-link">Sport</li>
+        </Link>
       </ul>
       <div
         className="close-menu"

@@ -16,6 +16,8 @@ export default function Main() {
         <Route path="/animal-b" component={() => <CardsField typeCards="animal-b" />} />
         <Route path="/clothes" component={() => <CardsField typeCards="clothes" />} />
         <Route path="/emotions" component={() => <CardsField typeCards="emotions" />} />
+        <Route path="/trees" component={() => <CardsField typeCards="trees" />} />
+        <Route path="/sport" component={() => <CardsField typeCards="sport" />} />
       </Switch>
     </main>
   );

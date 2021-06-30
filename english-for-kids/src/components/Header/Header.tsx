@@ -6,9 +6,10 @@ import './Header.scss';
 
 type HeaderProps = {
   onToggleMenu: (e: React.MouseEvent<Element>) => void;
+  onToggleGameMode: () => void;
 };
 
-export default function Header({ onToggleMenu }: HeaderProps) {
+export default function Header({ onToggleMenu, onToggleGameMode }: HeaderProps) {
   return (
     <header
       className="header container"
@@ -21,7 +22,13 @@ export default function Header({ onToggleMenu }: HeaderProps) {
 
       <div className="checkbox">
         <label className="checkbox__container" htmlFor="toggle">
-          <input className="checkbox__toggle" type="checkbox" id="toggle" />
+          <input
+            aria-hidden="true"
+            onChange={() => onToggleGameMode()}
+            className="checkbox__toggle"
+            type="checkbox"
+            id="toggle"
+          />
           <span className="checkbox__checker"></span>
           <span className="checkbox__txt-left">Train</span>
           <span className="checkbox__txt-right">Play</span>

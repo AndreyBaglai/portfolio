@@ -6,6 +6,7 @@ import Navigation from './components/Navigation/Navigation';
 
 const App = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isGameMode, setIsGameMode] = useState(false);
 
   const onToggleMenu = (e: React.MouseEvent<Element>) => {
     const target = e.target as HTMLElement;
@@ -18,6 +19,10 @@ const App = () => {
     }
   };
 
+  const onToggleGameMode = () => {
+    setIsGameMode(!isGameMode);
+  };
+
   return (
     <Router>
       <div
@@ -25,9 +30,9 @@ const App = () => {
         onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
         aria-hidden="true"
       >
-        <Header onToggleMenu={onToggleMenu} />
+        <Header onToggleMenu={onToggleMenu} onToggleGameMode={onToggleGameMode} />
         <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
-        <Main />
+        <Main isGameMode={isGameMode} />
       </div>
     </Router>
   );

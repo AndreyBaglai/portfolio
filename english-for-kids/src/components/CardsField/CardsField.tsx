@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardInfo } from '../../models/CardInfo';
 import Card from '../Card/Card';
 
@@ -6,9 +6,10 @@ import './CardsField.scss';
 
 type CardsFieldProps = {
   typeCards: string;
+  isGameMode: boolean;
 };
 
-export default function CardsField({ typeCards }: CardsFieldProps) {
+export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
   const [cardsData, setCardsData] = useState([
     {
       category: 'action-a',
@@ -435,14 +436,31 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
       ],
     },
   ]);
+  const [audioWords, setAudioWords] = useState(['']);
+  const [isStartGame, setIsStartGame] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+
+  const playAudio = (src: string) => {
+    const audioEl = new Audio();
+    audioEl.src = src;
+    audioEl.currentTime = 0;
+    audioEl.play();
+  };
+
+  useEffect(() => {
+    const temp = cardsData
+      .filter((collection) => collection.category === typeCards)
+      .map((currentCollection) => currentCollection.info)
+      .flat()
+      .map((item) => item.audioSrc);
+
+    setAudioWords(temp);
+  }, []);
 
   const onPlayAudioWord = (e: React.MouseEvent<Element>, src: string) => {
     const target = e.target as HTMLElement;
     if (target.classList.contains('card__front-img')) {
-      const audioEl = new Audio();
-      audioEl.src = src;
-      audioEl.currentTime = 0;
-      audioEl.play();
+      playAudio(src);
     }
   };
 
@@ -467,6 +485,34 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
     }
   };
 
+  const onStartGame = () => {
+    playAudio(audioWords[wordIndex]);
+    setIsStartGame(true);
+  };
+
+  const checkCorrectAnswer = (word: string): boolean => {
+    const temp = audioWords[wordIndex].split('/');
+    const currentWord = temp[temp.length - 1].split('.')[0];
+
+    return currentWord.toLowerCase() === word.toLowerCase();
+  };
+
+  const onTryAnswer = (e: React.MouseEvent<Element>) => {
+    const target = e.target as HTMLElement;
+    const clickedCard = target.closest('.card-container') as HTMLElement;
+    const clickedWord = clickedCard.dataset.word;
+
+    if (clickedWord && checkCorrectAnswer(clickedWord)) {
+      playAudio('./audio/correct.mp3');
+    } else {
+      playAudio('./audio/error.mp3');
+    }
+  };
+
+  const onRepeatWord = () => {
+    playAudio(audioWords[wordIndex]);
+  };
+
   return (
     <div className="cards-field">
       {cardsData
@@ -482,10 +528,27 @@ export default function CardsField({ typeCards }: CardsFieldProps) {
               audioSrc={audioSrc}
               onPlayAudioWord={onPlayAudioWord}
               onFlip={onFlip}
+              onTryAnswer={onTryAnswer}
+              isGameMode={isGameMode}
+              isStartGame={isStartGame}
               key={word + translation}
             />
           );
         })}
+      {isGameMode && !isStartGame ? (
+        <button onClick={onStartGame} type="button" className="btn">
+          Start game
+        </button>
+      ) : (
+        ''
+      )}
+      {isStartGame ? (
+        <button onClick={onRepeatWord} type="button" className="btn">
+          Repeat word
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   );
 }

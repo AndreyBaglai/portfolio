@@ -69,7 +69,7 @@ export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
           </defs>
         </svg>
       </div>
-      <button type="button" className="btn btn__login">
+      <button type="button" className="btn__login">
         Login
       </button>
     </nav>

@@ -5,19 +5,47 @@ import CategoriesField from '../CategoriesField/CategoriesField';
 
 import './Main.scss';
 
-export default function Main() {
+type MainProps = {
+  isGameMode: boolean;
+};
+
+export default function Main({ isGameMode }: MainProps) {
   return (
     <main className="main container">
       <Switch>
         <Route path="/" exact component={CategoriesField} />
-        <Route path="/action-a" component={() => <CardsField typeCards="action-a" />} />
-        <Route path="/action-b" component={() => <CardsField typeCards="action-b" />} />
-        <Route path="/animal-a" component={() => <CardsField typeCards="animal-a" />} />
-        <Route path="/animal-b" component={() => <CardsField typeCards="animal-b" />} />
-        <Route path="/clothes" component={() => <CardsField typeCards="clothes" />} />
-        <Route path="/emotions" component={() => <CardsField typeCards="emotions" />} />
-        <Route path="/trees" component={() => <CardsField typeCards="trees" />} />
-        <Route path="/sport" component={() => <CardsField typeCards="sport" />} />
+        <Route
+          path="/action-a"
+          component={() => <CardsField typeCards="action-a" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/action-b"
+          component={() => <CardsField typeCards="action-b" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/animal-a"
+          component={() => <CardsField typeCards="animal-a" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/animal-b"
+          component={() => <CardsField typeCards="animal-b" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/clothes"
+          component={() => <CardsField typeCards="clothes" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/emotions"
+          component={() => <CardsField typeCards="emotions" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/trees"
+          component={() => <CardsField typeCards="trees" isGameMode={isGameMode} />}
+        />
+        <Route
+          path="/sport"
+          component={() => <CardsField typeCards="sport" isGameMode={isGameMode} />}
+        />
       </Switch>
     </main>
   );

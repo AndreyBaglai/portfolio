@@ -4,6 +4,7 @@ import CardsField from '../CardsField/CardsField';
 import CategoriesField from '../CategoriesField/CategoriesField';
 
 import './Main.scss';
+import Statistics from '../Statistics/Statistics';
 
 type MainProps = {
   isGameMode: boolean;
@@ -46,6 +47,7 @@ export default function Main({ isGameMode }: MainProps) {
           path="/sport"
           component={() => <CardsField typeCards="sport" isGameMode={isGameMode} />}
         />
+        <Route path="/statistics" component={() => <Statistics />} />
       </Switch>
     </main>
   );

@@ -12,6 +12,7 @@ const App = () => {
     const target = e.target as HTMLElement;
     if (
       target.classList.contains('open-menu-icon') ||
+      target.closest('.nav-link') ||
       target.closest('.close-menu-icon') ||
       (!target.closest('.nav-wrapper') && isOpenMenu)
     ) {

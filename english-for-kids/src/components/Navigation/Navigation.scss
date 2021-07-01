@@ -29,12 +29,12 @@
       padding: 10px;
       margin: 0 0 10px 60px;
       text-align: left;
+      max-width: 145px;
     }
 
     &-link {
       text-decoration: none;
       color: #fff;
-      min-width: 145px;
       font-family: 'Roboto';
       font-style: normal;
       font-weight: normal;
@@ -44,7 +44,7 @@
       align-items: center;
     }
 
-    &-link.active-link {
+    &-link.active {
       text-decoration: underline;
     }
   }

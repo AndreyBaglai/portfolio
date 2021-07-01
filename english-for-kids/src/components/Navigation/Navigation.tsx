@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './Navigation.scss';
 
@@ -12,33 +12,36 @@ export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
   return (
     <nav className={`nav-wrapper ${isOpen ? 'open' : 'close'}`}>
       <ul className="nav">
-        <Link to="/">
-          <li className="nav-link active-link">Main page</li>
-        </Link>
-        <Link to="/action-a">
-          <li className="nav-link">Action (set A)</li>
-        </Link>
-        <Link to="/action-b">
-          <li className="nav-link">Action (set B)</li>
-        </Link>
-        <Link to="/animal-a">
-          <li className="nav-link">Animal (set A)</li>
-        </Link>
-        <Link to="/animal-b">
-          <li className="nav-link">Animal (set B)</li>
-        </Link>
-        <Link to="/clothes">
-          <li className="nav-link">Clothes</li>
-        </Link>
-        <Link to="/emotions">
-          <li className="nav-link">Emotions</li>
-        </Link>
-        <Link to="/trees">
-          <li className="nav-link">Trees</li>
-        </Link>
-        <Link to="/sport">
-          <li className="nav-link">Sport</li>
-        </Link>
+        <NavLink to="/" className="nav-link">
+          <li>Main page</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/action-a">
+          <li>Action (set A)</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/action-b">
+          <li>Action (set B)</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/animal-a">
+          <li>Animal (set A)</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/animal-b">
+          <li>Animal (set B)</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/clothes">
+          <li>Clothes</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/emotions">
+          <li>Emotions</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/trees">
+          <li>Trees</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/sport">
+          <li>Sport</li>
+        </NavLink>
+        <NavLink className="nav-link" to="/statistics">
+          <li>Statistics</li>
+        </NavLink>
       </ul>
       <div
         className="close-menu"

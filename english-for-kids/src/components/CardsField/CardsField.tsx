@@ -455,6 +455,12 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     });
   };
 
+  const shuffleArray = (arr: string[]) => {
+    return arr.sort((a, b) => {
+      return Math.random() - 0.5;
+    });
+  };
+
   useEffect(() => {
     const temp = cardsData
       .filter((collection) => collection.category === typeCards)
@@ -462,7 +468,7 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
       .flat()
       .map((item) => item.audioSrc);
 
-    setAudioWords(temp);
+    setAudioWords(shuffleArray(temp));
   }, []);
 
   useEffect(() => {
@@ -517,7 +523,7 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     if (clickedWord && checkCorrectAnswer(clickedWord)) {
       if (wordIndex === 7) {
         setIsFinishGame(true);
-        const finishAudioSrc = errors > 3 ? './audio/failure.mp3' : './audio/success.mp3';
+        const finishAudioSrc = errors > 0 ? './audio/failure.mp3' : './audio/success.mp3';
         playAudio(finishAudioSrc);
 
         setTimeout(() => {
@@ -544,10 +550,10 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     <div className="cards-field">
       {isFinishGame ? (
         <div className="end-game">
-          <span className={errors > 3 ? 'fail-text' : 'success-text'}>Errors: {errors}</span>
+          <span className={errors > 0 ? 'fail-text' : 'success-text'}>Errors: {errors}</span>
           <img
             className="avatar-end-game"
-            src={errors > 3 ? './images/failure.jpg' : './images/success.jpg'}
+            src={errors > 0 ? './images/failure.jpg' : './images/success.jpg'}
             alt="Avatar end game"
           />
         </div>

@@ -11,12 +11,12 @@ type HeaderProps = {
 
 export default function Header({ onToggleMenu, onToggleGameMode }: HeaderProps) {
   return (
-    <header
-      className="header container"
-      onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
-      aria-hidden="true"
-    >
-      <div className="open-menu">
+    <header className="header container">
+      <div
+        className="open-menu"
+        onClick={(e: React.MouseEvent<Element>) => onToggleMenu(e)}
+        aria-hidden="true"
+      >
         <img className="open-menu-icon" src={openMenuSVG} alt="Open menu" />
       </div>
 

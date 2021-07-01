@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CardInfo } from '../../models/CardInfo';
+import { useHistory } from 'react-router-dom';
 import Card from '../Card/Card';
 import Star from '../Star/Star';
 
@@ -442,12 +442,17 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
   const [wordIndex, setWordIndex] = useState(0);
   const [isFinishGame, setIsFinishGame] = useState(false);
   const [stars, setStars] = useState<boolean[]>([]);
+  const [errors, setErrors] = useState(0);
+
+  const history = useHistory();
 
   const playAudio = (src: string) => {
     const audioEl = new Audio();
     audioEl.src = src;
     audioEl.currentTime = 0;
-    audioEl.play();
+    audioEl.play().catch((error) => {
+      return error;
+    });
   };
 
   useEffect(() => {
@@ -510,11 +515,22 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     const clickedWord = clickedCard.dataset.word;
 
     if (clickedWord && checkCorrectAnswer(clickedWord)) {
-      playAudio('./audio/correct.mp3');
-      clickedCard.classList.add('correct');
-      setStars([...stars, true]);
-      setWordIndex(wordIndex + 1);
+      if (wordIndex === 7) {
+        setIsFinishGame(true);
+        const finishAudioSrc = errors > 3 ? './audio/failure.mp3' : './audio/success.mp3';
+        playAudio(finishAudioSrc);
+
+        setTimeout(() => {
+          history.push('/');
+        }, 3000);
+      } else {
+        playAudio('./audio/correct.mp3');
+        clickedCard.classList.add('correct');
+        setStars([...stars, true]);
+        setWordIndex(wordIndex + 1);
+      }
     } else {
+      setErrors(errors + 1);
       playAudio('./audio/error.mp3');
       setStars([...stars, false]);
     }
@@ -526,48 +542,61 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
 
   return (
     <div className="cards-field">
-      {isStartGame ? (
-        <div className="stars-wrapper">
-          {stars.map((typeStar, i) => (
-            <Star typeStar={typeStar} key={typeStar.toString()} />
-          ))}
+      {isFinishGame ? (
+        <div className="end-game">
+          <span className={errors > 3 ? 'fail-text' : 'success-text'}>Errors: {errors}</span>
+          <img
+            className="avatar-end-game"
+            src={errors > 3 ? './images/failure.jpg' : './images/success.jpg'}
+            alt="Avatar end game"
+          />
         </div>
       ) : (
-        ''
-      )}
-      {cardsData
-        .filter((collection) => collection.category === typeCards)
-        .map((currentCollection) => currentCollection.info)
-        .flat()
-        .map(({ word, translation, imgSrc, audioSrc }) => {
-          return (
-            <Card
-              word={word}
-              translation={translation}
-              imgSrc={imgSrc}
-              audioSrc={audioSrc}
-              onPlayAudioWord={onPlayAudioWord}
-              onFlip={onFlip}
-              onTryAnswer={onTryAnswer}
-              isGameMode={isGameMode}
-              isStartGame={isStartGame}
-              key={word + translation}
-            />
-          );
-        })}
-      {isGameMode && !isStartGame ? (
-        <button onClick={onStartGame} type="button" className="btn">
-          Start game
-        </button>
-      ) : (
-        ''
-      )}
-      {isStartGame ? (
-        <button onClick={onRepeatWord} type="button" className="btn">
-          Repeat word
-        </button>
-      ) : (
-        ''
+        <>
+          {isStartGame ? (
+            <div className="stars-wrapper">
+              {stars.map((typeStar, i) => (
+                <Star typeStar={typeStar} key={`key ${Math.random()}`} />
+              ))}
+            </div>
+          ) : (
+            ''
+          )}
+          {cardsData
+            .filter((collection) => collection.category === typeCards)
+            .map((currentCollection) => currentCollection.info)
+            .flat()
+            .map(({ word, translation, imgSrc, audioSrc }) => {
+              return (
+                <Card
+                  word={word}
+                  translation={translation}
+                  imgSrc={imgSrc}
+                  audioSrc={audioSrc}
+                  onPlayAudioWord={onPlayAudioWord}
+                  onFlip={onFlip}
+                  onTryAnswer={onTryAnswer}
+                  isGameMode={isGameMode}
+                  isStartGame={isStartGame}
+                  key={word + translation}
+                />
+              );
+            })}
+          {isGameMode && !isStartGame ? (
+            <button onClick={onStartGame} type="button" className="btn">
+              Start game
+            </button>
+          ) : (
+            ''
+          )}
+          {isStartGame ? (
+            <button onClick={onRepeatWord} type="button" className="btn">
+              Repeat word
+            </button>
+          ) : (
+            ''
+          )}
+        </>
       )}
     </div>
   );

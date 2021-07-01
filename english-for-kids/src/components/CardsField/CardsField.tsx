@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CardInfo } from '../../models/CardInfo';
 import Card from '../Card/Card';
+import Star from '../Star/Star';
 
 import './CardsField.scss';
 
@@ -436,9 +437,11 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
       ],
     },
   ]);
-  const [audioWords, setAudioWords] = useState(['']);
+  const [audioWords, setAudioWords] = useState<string[]>([]);
   const [isStartGame, setIsStartGame] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const [isFinishGame, setIsFinishGame] = useState(false);
+  const [stars, setStars] = useState<boolean[]>([]);
 
   const playAudio = (src: string) => {
     const audioEl = new Audio();
@@ -456,6 +459,10 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
 
     setAudioWords(temp);
   }, []);
+
+  useEffect(() => {
+    playAudio(audioWords[wordIndex]);
+  }, [wordIndex]);
 
   const onPlayAudioWord = (e: React.MouseEvent<Element>, src: string) => {
     const target = e.target as HTMLElement;
@@ -504,8 +511,12 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
 
     if (clickedWord && checkCorrectAnswer(clickedWord)) {
       playAudio('./audio/correct.mp3');
+      clickedCard.classList.add('correct');
+      setStars([...stars, true]);
+      setWordIndex(wordIndex + 1);
     } else {
       playAudio('./audio/error.mp3');
+      setStars([...stars, false]);
     }
   };
 
@@ -515,6 +526,15 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
 
   return (
     <div className="cards-field">
+      {isStartGame ? (
+        <div className="stars-wrapper">
+          {stars.map((typeStar, i) => (
+            <Star typeStar={typeStar} key={typeStar.toString()} />
+          ))}
+        </div>
+      ) : (
+        ''
+      )}
       {cardsData
         .filter((collection) => collection.category === typeCards)
         .map((currentCollection) => currentCollection.info)

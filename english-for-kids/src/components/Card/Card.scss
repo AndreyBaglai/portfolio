@@ -8,6 +8,11 @@
   cursor: pointer;
   max-width: 400px;
 
+  &.correct {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
   &:hover > .card {
     transform: translateZ(5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);

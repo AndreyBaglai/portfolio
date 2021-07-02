@@ -33,6 +33,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
   }, []);
 
   const onResetStatistics = () => {
+    setStatisticsToLocalStorage(baseStatistics);
     setStats(baseStatistics);
   };
 

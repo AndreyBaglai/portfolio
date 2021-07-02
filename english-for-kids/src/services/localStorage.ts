@@ -32,7 +32,7 @@ export const setItemToLocalStorage = (item: LocalStorageItem) => {
   if (jsonData) {
     let data = JSON.parse(jsonData);
     const updateDate = data.filter((el: LocalStorageItem) => el.word !== card.word);
-    data = [...updateDate, card];
+    data = [card, ...updateDate];
     setStatisticsToLocalStorage(data);
   }
 };

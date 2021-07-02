@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/localStorage';
 import Card from '../Card/Card';
 import Star from '../Star/Star';
 
@@ -515,10 +516,30 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     return currentWord.toLowerCase() === word.toLowerCase();
   };
 
+  // const countCorrectWrongClicks = (e: React.MouseEvent<Element>) => {
+  //   const target = e.target as HTMLElement;
+  //   const clickedCard = target.closest('.card-container') as HTMLElement;
+
+  //   if (clickedCard.classList.contains('correct')) {
+  //     const card = getItemFromLocalStorage(word);
+  //     card.correct += 1;
+  //     card.percent = card.clicks / card.wrong;
+  //     setItemToLocalStorage(card);
+  //   } else {
+  //     const card = getItemFromLocalStorage(word);
+  //     card.wrong += 1;
+  //     card.percent = card.clicks / card.wrong;
+  //     setItemToLocalStorage(card);
+  //   }
+  // };
+
   const onTryAnswer = (e: React.MouseEvent<Element>) => {
     const target = e.target as HTMLElement;
     const clickedCard = target.closest('.card-container') as HTMLElement;
     const clickedWord = clickedCard.dataset.word;
+
+    const singWordWithExtensions = audioWords[wordIndex].split('/');
+    const singWord = singWordWithExtensions[singWordWithExtensions.length - 1].split('.')[0];
 
     if (clickedWord && checkCorrectAnswer(clickedWord)) {
       if (wordIndex === 7) {
@@ -532,12 +553,24 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
       } else {
         playAudio('./audio/correct.mp3');
         clickedCard.classList.add('correct');
+
+        const card = getItemFromLocalStorage(singWord);
+        card.correct += 1;
+        card.percent = Number(((card.wrong / (card.correct + card.wrong)) * 100).toFixed(2));
+        setItemToLocalStorage(card);
+
         setStars([...stars, true]);
         setWordIndex(wordIndex + 1);
       }
     } else {
       setErrors(errors + 1);
       playAudio('./audio/error.mp3');
+
+      const card = getItemFromLocalStorage(singWord);
+      card.wrong += 1;
+      card.percent = Number(((card.wrong / (card.correct + card.wrong)) * 100).toFixed(2));
+      setItemToLocalStorage(card);
+
       setStars([...stars, false]);
     }
   };

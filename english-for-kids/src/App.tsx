@@ -757,7 +757,7 @@ const App = () => {
       >
         <Header onToggleMenu={onToggleMenu} onToggleGameMode={onToggleGameMode} />
         <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
-        <Main isGameMode={isGameMode} />
+        <Main isGameMode={isGameMode} baseStatistics={baseStatistics} />
       </div>
     </Router>
   );

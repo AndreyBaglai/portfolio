@@ -32,6 +32,21 @@ export default function Card({
     setItemToLocalStorage(card);
   };
 
+  const countCorrectClicks = (e: React.MouseEvent<Element>) => {
+    const target = e.target as HTMLElement;
+    const clickedCard = target.closest('.card-container') as HTMLElement;
+
+    if (clickedCard.classList.contains('correct')) {
+      const card = getItemFromLocalStorage(word);
+      card.correct += 1;
+      setItemToLocalStorage(card);
+    } else {
+      const card = getItemFromLocalStorage(word);
+      card.wrong += 1;
+      setItemToLocalStorage(card);
+    }
+  };
+
   return (
     <div
       data-word={word}
@@ -43,6 +58,7 @@ export default function Card({
           countClicks();
         } else if (isStartGame) {
           onTryAnswer(e);
+          countCorrectClicks(e);
           countClicks();
         }
       }}

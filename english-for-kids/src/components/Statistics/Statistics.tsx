@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { LocalStorageItem } from '../../models/localStorageItem';
-import { getStatisticsFromLocalStorage } from '../../services/localStorage';
+import {
+  getStatisticsFromLocalStorage,
+  setStatisticsToLocalStorage,
+} from '../../services/localStorage';
 
 import './Statistics.scss';
 
-export default function Statistics() {
+type StatisticsProps = {
+  baseStatistics: LocalStorageItem[];
+};
+
+export default function Statistics({ baseStatistics }: StatisticsProps) {
   const initStats = [
     {
       word: '',
@@ -18,11 +25,16 @@ export default function Statistics() {
       percent: 0,
     },
   ];
+
   const [stats, setStats] = useState<LocalStorageItem[]>(initStats);
 
   useEffect(() => {
     setStats([...getStatisticsFromLocalStorage()]);
   }, []);
+
+  const onResetStatistics = () => {
+    setStats(baseStatistics);
+  };
 
   return (
     <div className="statistics-wrapper">
@@ -30,7 +42,7 @@ export default function Statistics() {
         <button type="button" className="btn">
           Repeat difficult words
         </button>
-        <button type="button" className="btn">
+        <button onClick={onResetStatistics} type="button" className="btn">
           Reset
         </button>
       </div>

@@ -5,12 +5,14 @@ import CategoriesField from '../CategoriesField/CategoriesField';
 
 import './Main.scss';
 import Statistics from '../Statistics/Statistics';
+import { LocalStorageItem } from '../../models/localStorageItem';
 
 type MainProps = {
   isGameMode: boolean;
+  baseStatistics: LocalStorageItem[];
 };
 
-export default function Main({ isGameMode }: MainProps) {
+export default function Main({ isGameMode, baseStatistics }: MainProps) {
   return (
     <main className="main container">
       <Switch>
@@ -47,7 +49,10 @@ export default function Main({ isGameMode }: MainProps) {
           path="/sport"
           component={() => <CardsField typeCards="sport" isGameMode={isGameMode} />}
         />
-        <Route path="/statistics" component={() => <Statistics />} />
+        <Route
+          path="/statistics"
+          component={() => <Statistics baseStatistics={baseStatistics} />}
+        />
       </Switch>
     </main>
   );

@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { LocalStorageItem } from '../../models/localStorageItem';
+import { getStatistics } from '../../services/localStorage';
 
 import './Statistics.scss';
 
 export default function Statistics() {
+  const init = [
+    {
+      word: '',
+      category: '',
+      translation: '',
+      imgSrc: '',
+      audioSrc: '',
+      clicks: 0,
+      correct: 0,
+      wrong: 0,
+      percent: 0,
+    },
+  ];
+  const [stats, setStats] = useState<LocalStorageItem[]>(init);
+
+  useEffect(() => {
+    setStats([...getStatistics()]);
+  }, []);
+
   return (
     <div className="statistics-wrapper">
       <div className="buttons-wrapper">
-        {' '}
         <button type="button" className="btn">
           Repeat difficult words
         </button>
@@ -15,74 +35,35 @@ export default function Statistics() {
         </button>
       </div>
 
-      <div className="table">
-        <div className="table-header">
-          <div className="header__item">
-            <div id="name" className="filter__link">
-              Word
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="wins" className="filter__link filter__link--number">
-              Translation
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="draws" className="filter__link filter__link--number">
-              Category
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="losses" className="filter__link filter__link--number">
-              Clicks
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="total" className="filter__link filter__link--number">
-              Correct
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="total" className="filter__link filter__link--number">
-              Wrong
-            </div>
-          </div>
-          <div className="header__item">
-            <div id="total" className="filter__link filter__link--number">
-              % Errors
-            </div>
-          </div>
-        </div>
-        <div className="table-content">
-          <div className="table-row">
-            <div className="table-data">Cat</div>
-            <div className="table-data">Кот</div>
-            <div className="table-data">Animal (Set A)</div>
-            <div className="table-data">2</div>
-            <div className="table-data">0</div>
-            <div className="table-data">5</div>
-            <div className="table-data">5.01%</div>
-          </div>
-          <div className="table-row">
-            <div className="table-data">Cat</div>
-            <div className="table-data">Кот</div>
-            <div className="table-data">Animal (Set A)</div>
-            <div className="table-data">2</div>
-            <div className="table-data">0</div>
-            <div className="table-data">5</div>
-            <div className="table-data">5.01%</div>
-          </div>
-          <div className="table-row">
-            <div className="table-data">Cat</div>
-            <div className="table-data">Кот</div>
-            <div className="table-data">Animal (Set A)</div>
-            <div className="table-data">2</div>
-            <div className="table-data">0</div>
-            <div className="table-data">5</div>
-            <div className="table-data">5.01%</div>
-          </div>
-        </div>
-      </div>
+      <table>
+        <caption>Statistics</caption>
+        <thead>
+          <tr>
+            <th scope="col">Word</th>
+            <th scope="col">Translate</th>
+            <th scope="col">Category</th>
+            <th scope="col">Clicks</th>
+            <th scope="col">Correct</th>
+            <th scope="col">Wrong</th>
+            <th scope="col">% Wrong</th>
+          </tr>
+        </thead>
+        <tbody>
+          {stats.map(({ word, translation, category, clicks, correct, wrong, percent }) => {
+            return (
+              <tr key={`${word}${translation}`}>
+                <td data-label="Word">{word}</td>
+                <td data-label="Translation">{translation}</td>
+                <td data-label="Category">{category}</td>
+                <td data-label="Clicks">{clicks}</td>
+                <td data-label="Correct">{correct}</td>
+                <td data-label="Wrong">{wrong}</td>
+                <td data-label="% Wrong">{percent}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

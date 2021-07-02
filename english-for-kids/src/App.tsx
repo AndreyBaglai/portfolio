@@ -3,7 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Navigation from './components/Navigation/Navigation';
-import { setBaseStatistics } from './services/localStorage';
+import {
+  getStatisticsFromLocalStorage,
+  setStatisticsToLocalStorage,
+} from './services/localStorage';
 
 const App = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -724,8 +727,10 @@ const App = () => {
   ];
 
   useEffect(() => {
-    setBaseStatistics(baseStatistics);
-  });
+    if (!getStatisticsFromLocalStorage()) {
+      setStatisticsToLocalStorage(baseStatistics);
+    }
+  }, []);
 
   const onToggleMenu = (e: React.MouseEvent<Element>) => {
     const target = e.target as HTMLElement;

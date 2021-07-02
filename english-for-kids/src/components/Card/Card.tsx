@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/localStorage';
 
 import './Card.scss';
 
@@ -25,6 +26,12 @@ export default function Card({
   onTryAnswer,
   onFlip,
 }: CardProps) {
+  const countClicks = () => {
+    const card = getItemFromLocalStorage(word);
+    card.clicks += 1;
+    setItemToLocalStorage(card);
+  };
+
   return (
     <div
       data-word={word}
@@ -33,8 +40,10 @@ export default function Card({
       onClick={(e: React.MouseEvent<Element>) => {
         if (!isGameMode) {
           onPlayAudioWord(e, audioSrc);
+          countClicks();
         } else if (isStartGame) {
           onTryAnswer(e);
+          countClicks();
         }
       }}
       onMouseLeave={(e: React.MouseEvent<Element>) => onFlip(e, false)}

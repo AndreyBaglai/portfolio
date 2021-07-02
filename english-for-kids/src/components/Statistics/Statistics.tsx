@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { LocalStorageItem } from '../../models/localStorageItem';
-import { getStatistics } from '../../services/localStorage';
+import { getStatisticsFromLocalStorage } from '../../services/localStorage';
 
 import './Statistics.scss';
 
 export default function Statistics() {
-  const init = [
+  const initStats = [
     {
       word: '',
       category: '',
@@ -18,10 +18,10 @@ export default function Statistics() {
       percent: 0,
     },
   ];
-  const [stats, setStats] = useState<LocalStorageItem[]>(init);
+  const [stats, setStats] = useState<LocalStorageItem[]>(initStats);
 
   useEffect(() => {
-    setStats([...getStatistics()]);
+    setStats([...getStatisticsFromLocalStorage()]);
   }, []);
 
   return (

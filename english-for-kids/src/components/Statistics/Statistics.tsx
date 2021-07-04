@@ -6,6 +6,7 @@ import {
   getStatisticsFromLocalStorage,
   setStatisticsToLocalStorage,
 } from '../../services/localStorage';
+import Button from '../Button/Button';
 
 import './Statistics.scss';
 
@@ -134,7 +135,6 @@ export default function Statistics({ baseStatistics, onSetRepeatWords }: Statist
         return acc;
       }, []);
 
-    console.log(repeatWords);
     onSetRepeatWords(repeatWords);
   };
 
@@ -142,13 +142,9 @@ export default function Statistics({ baseStatistics, onSetRepeatWords }: Statist
     <div className="statistics-wrapper">
       <div className="buttons-wrapper">
         <Link to="/repeat-words" className="repeat-link">
-          <button onClick={onRepeatWords} type="button" className="btn">
-            Repeat difficult words
-          </button>
+          <Button text="Repeat difficult words" onClickHandler={onRepeatWords} />
         </Link>
-        <button onClick={onResetStatistics} type="button" className="btn">
-          Reset
-        </button>
+        <Button text="Reset statistics" onClickHandler={onResetStatistics} />
       </div>
 
       <table>

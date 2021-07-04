@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CardModel } from '../../models/card-model';
 import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/localStorage';
+import Button from '../Button/Button';
 import Card from '../Card/Card';
 import Star from '../Star/Star';
 
@@ -629,19 +630,11 @@ export default function CardsField({
               );
             })}
           {isGameMode && !isStartGame ? (
-            <button onClick={onStartGame} type="button" className="btn">
-              Start game
-            </button>
+            <Button text="Start game" onClickHandler={onStartGame} />
           ) : (
             ''
           )}
-          {isStartGame ? (
-            <button onClick={onRepeatWord} type="button" className="btn">
-              Repeat word
-            </button>
-          ) : (
-            ''
-          )}
+          {isStartGame ? <Button text="Repeat word" onClickHandler={onRepeatWord} /> : ''}
         </>
       )}
     </div>

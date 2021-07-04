@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 
 import openMenuSVG from '../../assets/icons/open-menu.svg';
 
@@ -9,7 +9,7 @@ type HeaderProps = {
   onToggleGameMode: () => void;
 };
 
-export default function Header({ onToggleMenu, onToggleGameMode }: HeaderProps) {
+export default function Header({ onToggleMenu, onToggleGameMode }: HeaderProps): JSX.Element {
   return (
     <header className="header container">
       <div

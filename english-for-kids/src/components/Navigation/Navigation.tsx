@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Navigation.scss';
 
@@ -8,7 +8,7 @@ type NavigationProps = {
   onToggleMenu: (e: React.MouseEvent<Element>) => void;
 };
 
-export default function Navigation({ isOpen, onToggleMenu }: NavigationProps) {
+export default function Navigation({ isOpen, onToggleMenu }: NavigationProps): JSX.Element {
   return (
     <nav className={`nav-wrapper ${isOpen ? 'open' : 'close'}`}>
       <ul className="nav">

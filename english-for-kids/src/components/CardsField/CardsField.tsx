@@ -18,7 +18,7 @@ export default function CardsField({
   typeCards,
   isGameMode = false,
   repeatWords = [],
-}: CardsFieldProps) {
+}: CardsFieldProps): JSX.Element {
   const [cardsData, setCardsData] = useState([
     {
       category: 'action-a',
@@ -602,7 +602,7 @@ export default function CardsField({
         <>
           {isStartGame ? (
             <div className="stars-wrapper">
-              {stars.map((typeStar, i) => (
+              {stars.map((typeStar) => (
                 <Star typeStar={typeStar} key={`key ${Math.random()}`} />
               ))}
             </div>

@@ -13,7 +13,7 @@ type MainProps = {
   baseStatistics: LocalStorageItem[];
 };
 
-export default function Main({ isGameMode, baseStatistics }: MainProps) {
+export default function Main({ isGameMode, baseStatistics }: MainProps): JSX.Element {
   const [repeatWords, setRepeatWords] = useState<CardModel[]>();
 
   const onSetRepeatWords = (cards: CardModel[]) => {

@@ -3,7 +3,7 @@ import Category from '../Category/Category';
 
 import './CategoriesField.scss';
 
-export default function CategoriesField() {
+export default function CategoriesField(): JSX.Element {
   const [categories, setCategories] = useState([
     { name: 'Action (set A)', imgSrc: '/images/categories/action-a.jpg', path: '/action-a' },
     { name: 'Action (set B)', imgSrc: '/images/categories/action-b.jpg', path: '/action-b' },
@@ -17,7 +17,7 @@ export default function CategoriesField() {
 
   return (
     <div className="categories-field">
-      {categories.map(({ name, imgSrc, path }, i) => {
+      {categories.map(({ name, imgSrc, path }) => {
         return <Category name={name} imgSrc={imgSrc} path={path} key={name} />;
       })}
     </div>

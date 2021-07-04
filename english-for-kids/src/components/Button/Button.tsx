@@ -7,7 +7,7 @@ type ButtonProps = {
   onClickHandler: (e: React.MouseEvent<Element>) => void;
 };
 
-export default function Button({ text, onClickHandler }: ButtonProps) {
+export default function Button({ text, onClickHandler }: ButtonProps): JSX.Element {
   return (
     <button onClick={onClickHandler} type="button" className="btn">
       {text}

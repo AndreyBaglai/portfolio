@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/localStorage';
 
 import './Card.scss';
@@ -25,7 +25,7 @@ export default function Card({
   onPlayAudioWord,
   onTryAnswer,
   onFlip,
-}: CardProps) {
+}: CardProps): JSX.Element {
   const countClicks = () => {
     const card = getItemFromLocalStorage(word);
     card.clicks += 1;

@@ -9,7 +9,7 @@ type CategoryProps = {
   path: string;
 };
 
-export default function Category({ name, imgSrc, path }: CategoryProps) {
+export default function Category({ name, imgSrc, path }: CategoryProps): JSX.Element {
   return (
     <Link to={path}>
       <div className="category">

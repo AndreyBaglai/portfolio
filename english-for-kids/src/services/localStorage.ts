@@ -1,6 +1,6 @@
 import { LocalStorageItem } from '../models/localStorageItem';
 
-export const setStatisticsToLocalStorage = (data: LocalStorageItem[]) => {
+export const setStatisticsToLocalStorage = (data: LocalStorageItem[]): void => {
   const jsonData = JSON.stringify(data);
   localStorage.setItem('statistics', jsonData);
 };
@@ -25,7 +25,7 @@ export const getItemFromLocalStorage = (word: string): LocalStorageItem => {
   return item[0];
 };
 
-export const setItemToLocalStorage = (item: LocalStorageItem) => {
+export const setItemToLocalStorage = (item: LocalStorageItem): void => {
   const jsonData = localStorage.getItem('statistics');
   const card = { ...item };
 

@@ -6,7 +6,7 @@ type StarProps = {
   typeStar: boolean;
 };
 
-export default function Star({ typeStar }: StarProps) {
+export default function Star({ typeStar }: StarProps): JSX.Element {
   return (
     <img
       className="star"

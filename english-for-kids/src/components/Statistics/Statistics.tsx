@@ -15,7 +15,10 @@ type StatisticsProps = {
   onSetRepeatWords: (cards: CardModel[]) => void;
 };
 
-export default function Statistics({ baseStatistics, onSetRepeatWords }: StatisticsProps) {
+export default function Statistics({
+  baseStatistics,
+  onSetRepeatWords,
+}: StatisticsProps): JSX.Element {
   const initStats = [
     {
       word: '',
@@ -114,9 +117,6 @@ export default function Statistics({ baseStatistics, onSetRepeatWords }: Statist
   };
 
   const onRepeatWords = (e: React.MouseEvent<Element>) => {
-    const target = e.target as HTMLElement;
-    const sortBy = target.dataset.sort;
-
     const unSortedStats = [...getStatisticsFromLocalStorage()];
 
     const repeatWords = unSortedStats

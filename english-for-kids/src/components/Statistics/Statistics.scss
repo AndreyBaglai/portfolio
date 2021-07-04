@@ -16,6 +16,15 @@ $color-form-highlight: #eeeeee;
     justify-content: space-between;
     min-width: 100%;
     flex-wrap: wrap;
+
+    .repeat-link {
+      cursor: pointer;
+      box-sizing: border-box;
+      font-size: 24px;
+      margin: 20px auto;
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 

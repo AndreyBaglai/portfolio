@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { CardModel } from '../../models/card-model';
 import { LocalStorageItem } from '../../models/localStorageItem';
 import {
   getStatisticsFromLocalStorage,
@@ -9,9 +11,10 @@ import './Statistics.scss';
 
 type StatisticsProps = {
   baseStatistics: LocalStorageItem[];
+  onSetRepeatWords: (cards: CardModel[]) => void;
 };
 
-export default function Statistics({ baseStatistics }: StatisticsProps) {
+export default function Statistics({ baseStatistics, onSetRepeatWords }: StatisticsProps) {
   const initStats = [
     {
       word: '',
@@ -49,7 +52,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
       switch (sortBy) {
         case 'clicks': {
           let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => b.clicks - a.clicks
+            (a: LocalStorageItem, b: LocalStorageItem) => a.clicks - b.clicks
           );
           sortedStats = isASC ? sortedStats : sortedStats.reverse();
           setStats(sortedStats);
@@ -57,7 +60,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
         }
         case 'wrong': {
           let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => b.wrong - a.wrong
+            (a: LocalStorageItem, b: LocalStorageItem) => a.wrong - b.wrong
           );
           sortedStats = isASC ? sortedStats : sortedStats.reverse();
           setStats(sortedStats);
@@ -65,7 +68,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
         }
         case 'percent': {
           let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => b.percent - a.percent
+            (a: LocalStorageItem, b: LocalStorageItem) => a.percent - b.percent
           );
           sortedStats = isASC ? sortedStats : sortedStats.reverse();
           setStats(sortedStats);
@@ -73,7 +76,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
         }
         case 'correct': {
           let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => b.correct - a.correct
+            (a: LocalStorageItem, b: LocalStorageItem) => a.correct - b.correct
           );
           sortedStats = isASC ? sortedStats : sortedStats.reverse();
           setStats(sortedStats);
@@ -109,12 +112,40 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
     }
   };
 
+  const onRepeatWords = (e: React.MouseEvent<Element>) => {
+    const target = e.target as HTMLElement;
+    const sortBy = target.dataset.sort;
+
+    const unSortedStats = [...getStatisticsFromLocalStorage()];
+
+    const repeatWords = unSortedStats
+      .sort((a: LocalStorageItem, b: LocalStorageItem) => b.wrong - a.wrong)
+      .filter((item) => item.percent > 0)
+      .filter((item, i) => i < 8)
+      .reduce((acc: CardModel[], next) => {
+        const card: CardModel = {
+          word: next.word,
+          translation: next.translation,
+          imgSrc: next.imgSrc,
+          audioSrc: next.audioSrc,
+        };
+
+        acc.push(card);
+        return acc;
+      }, []);
+
+    console.log(repeatWords);
+    onSetRepeatWords(repeatWords);
+  };
+
   return (
     <div className="statistics-wrapper">
       <div className="buttons-wrapper">
-        <button type="button" className="btn">
-          Repeat difficult words
-        </button>
+        <Link to="/repeat-words" className="repeat-link">
+          <button onClick={onRepeatWords} type="button" className="btn">
+            Repeat difficult words
+          </button>
+        </Link>
         <button onClick={onResetStatistics} type="button" className="btn">
           Reset
         </button>

@@ -1,11 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 import CardsField from '../CardsField/CardsField';
 import CategoriesField from '../CategoriesField/CategoriesField';
 
 import './Main.scss';
 import Statistics from '../Statistics/Statistics';
 import { LocalStorageItem } from '../../models/localStorageItem';
+import { CardModel } from '../../models/card-model';
 
 type MainProps = {
   isGameMode: boolean;
@@ -13,6 +14,12 @@ type MainProps = {
 };
 
 export default function Main({ isGameMode, baseStatistics }: MainProps) {
+  const [repeatWords, setRepeatWords] = useState<CardModel[]>();
+
+  const onSetRepeatWords = (cards: CardModel[]) => {
+    setRepeatWords([...cards]);
+  };
+
   return (
     <main className="main container">
       <Switch>
@@ -51,8 +58,11 @@ export default function Main({ isGameMode, baseStatistics }: MainProps) {
         />
         <Route
           path="/statistics"
-          component={() => <Statistics baseStatistics={baseStatistics} />}
+          component={() => (
+            <Statistics baseStatistics={baseStatistics} onSetRepeatWords={onSetRepeatWords} />
+          )}
         />
+        <Route path="/repeat-words" component={() => <CardsField repeatWords={repeatWords} />} />
       </Switch>
     </main>
   );

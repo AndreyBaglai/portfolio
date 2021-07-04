@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { CardModel } from '../../models/card-model';
 import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/localStorage';
 import Card from '../Card/Card';
 import Star from '../Star/Star';
@@ -7,11 +8,16 @@ import Star from '../Star/Star';
 import './CardsField.scss';
 
 type CardsFieldProps = {
-  typeCards: string;
-  isGameMode: boolean;
+  typeCards?: string;
+  isGameMode?: boolean;
+  repeatWords?: CardModel[];
 };
 
-export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
+export default function CardsField({
+  typeCards,
+  isGameMode = false,
+  repeatWords = [],
+}: CardsFieldProps) {
   const [cardsData, setCardsData] = useState([
     {
       category: 'action-a',
@@ -564,6 +570,24 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
 
   return (
     <div className="cards-field">
+      {repeatWords.length > 0
+        ? repeatWords.map(({ word, translation, imgSrc, audioSrc }) => {
+            return (
+              <Card
+                word={word}
+                translation={translation}
+                imgSrc={imgSrc}
+                audioSrc={audioSrc}
+                onPlayAudioWord={onPlayAudioWord}
+                onFlip={onFlip}
+                onTryAnswer={onTryAnswer}
+                isGameMode={isGameMode}
+                isStartGame={isStartGame}
+                key={word + translation}
+              />
+            );
+          })
+        : ''}
       {isFinishGame ? (
         <div className="end-game">
           <span className={errors > 0 ? 'fail-text' : 'success-text'}>Errors: {errors}</span>
@@ -623,3 +647,9 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     </div>
   );
 }
+
+CardsField.defaultProps = {
+  typeCards: '',
+  isGameMode: false,
+  repeatWords: [],
+};

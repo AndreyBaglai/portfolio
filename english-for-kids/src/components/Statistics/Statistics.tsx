@@ -27,6 +27,7 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
   ];
 
   const [stats, setStats] = useState<LocalStorageItem[]>(initStats);
+  const [isASC, setIsASC] = useState(false);
 
   useEffect(() => {
     setStats([...getStatisticsFromLocalStorage()]);
@@ -35,6 +36,77 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
   const onResetStatistics = () => {
     setStatisticsToLocalStorage(baseStatistics);
     setStats(baseStatistics);
+  };
+
+  const onSort = (e: React.MouseEvent<Element>) => {
+    setIsASC(!isASC);
+    const target = e.target as HTMLElement;
+    const sortBy = target.dataset.sort;
+
+    const unSortedStats = [...getStatisticsFromLocalStorage()];
+
+    if (sortBy) {
+      switch (sortBy) {
+        case 'clicks': {
+          let sortedStats = unSortedStats.sort(
+            (a: LocalStorageItem, b: LocalStorageItem) => b.clicks - a.clicks
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'wrong': {
+          let sortedStats = unSortedStats.sort(
+            (a: LocalStorageItem, b: LocalStorageItem) => b.wrong - a.wrong
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'percent': {
+          let sortedStats = unSortedStats.sort(
+            (a: LocalStorageItem, b: LocalStorageItem) => b.percent - a.percent
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'correct': {
+          let sortedStats = unSortedStats.sort(
+            (a: LocalStorageItem, b: LocalStorageItem) => b.correct - a.correct
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'word': {
+          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
+            a.word.localeCompare(b.word)
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'translation': {
+          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
+            a.translation.localeCompare(b.translation)
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        case 'category': {
+          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
+            a.category.localeCompare(b.category)
+          );
+          sortedStats = isASC ? sortedStats : sortedStats.reverse();
+          setStats(sortedStats);
+          break;
+        }
+        default:
+          break;
+      }
+    }
   };
 
   return (
@@ -50,15 +122,29 @@ export default function Statistics({ baseStatistics }: StatisticsProps) {
 
       <table>
         <caption>Statistics</caption>
-        <thead>
+        <thead onClick={onSort} aria-hidden="true">
           <tr>
-            <th scope="col">Word</th>
-            <th scope="col">Translate</th>
-            <th scope="col">Category</th>
-            <th scope="col">Clicks</th>
-            <th scope="col">Correct</th>
-            <th scope="col">Wrong</th>
-            <th scope="col">% Wrong</th>
+            <th data-sort="word" scope="col">
+              Word
+            </th>
+            <th data-sort="translation" scope="col">
+              Translation
+            </th>
+            <th data-sort="category" scope="col">
+              Category
+            </th>
+            <th data-sort="clicks" scope="col">
+              Clicks
+            </th>
+            <th data-sort="correct" scope="col">
+              Correct
+            </th>
+            <th data-sort="wrong" scope="col">
+              Wrong
+            </th>
+            <th data-sort="percent" scope="col">
+              % Wrong
+            </th>
           </tr>
         </thead>
         <tbody>

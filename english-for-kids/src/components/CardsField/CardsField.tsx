@@ -516,23 +516,6 @@ export default function CardsField({ typeCards, isGameMode }: CardsFieldProps) {
     return currentWord.toLowerCase() === word.toLowerCase();
   };
 
-  // const countCorrectWrongClicks = (e: React.MouseEvent<Element>) => {
-  //   const target = e.target as HTMLElement;
-  //   const clickedCard = target.closest('.card-container') as HTMLElement;
-
-  //   if (clickedCard.classList.contains('correct')) {
-  //     const card = getItemFromLocalStorage(word);
-  //     card.correct += 1;
-  //     card.percent = card.clicks / card.wrong;
-  //     setItemToLocalStorage(card);
-  //   } else {
-  //     const card = getItemFromLocalStorage(word);
-  //     card.wrong += 1;
-  //     card.percent = card.clicks / card.wrong;
-  //     setItemToLocalStorage(card);
-  //   }
-  // };
-
   const onTryAnswer = (e: React.MouseEvent<Element>) => {
     const target = e.target as HTMLElement;
     const clickedCard = target.closest('.card-container') as HTMLElement;

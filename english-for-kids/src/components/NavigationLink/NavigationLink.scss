@@ -1,0 +1,22 @@
+li {
+  padding: 10px;
+  margin: 0 0 10px 60px;
+  text-align: left;
+  max-width: 145px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+}

@@ -1,5 +1,18 @@
 export const MAX_CARDS_ON_PAGE = 8;
 
+export const NAVIGATION_LINKS = [
+  { text: 'Main page', path: '/' },
+  { text: 'Action (set A)', path: '/action-a' },
+  { text: 'Action (set B)', path: '/action-b' },
+  { text: 'Animal (set A)', path: '/animal-a' },
+  { text: 'Animal (set B)', path: '/animal-b' },
+  { text: 'Clothes', path: '/clothes' },
+  { text: 'Emotions', path: '/emotions' },
+  { text: 'Trees', path: '/trees' },
+  { text: 'Sport', path: '/sport' },
+  { text: 'Statistics', path: '/statistics' },
+];
+
 export const CATEGORIES_DATA = [
   { name: 'Action (set A)', imgSrc: '/images/categories/action-a.jpg', path: '/action-a' },
   { name: 'Action (set B)', imgSrc: '/images/categories/action-b.jpg', path: '/action-b' },

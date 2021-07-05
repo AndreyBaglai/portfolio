@@ -1,6 +1,20 @@
 export const MAX_CARDS_ON_PAGE = 8;
 export const MAX_WORD_INDEX = 7;
 
+export const INIT_STATISTICS_STATE = [
+  {
+    word: '',
+    category: '',
+    translation: '',
+    imgSrc: '',
+    audioSrc: '',
+    clicks: 0,
+    correct: 0,
+    wrong: 0,
+    percent: 0,
+  },
+];
+
 export const CARDS_DATA = [
   {
     category: 'action-a',

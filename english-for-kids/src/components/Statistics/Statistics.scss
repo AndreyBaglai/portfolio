@@ -21,7 +21,6 @@ $color-form-highlight: #eeeeee;
       cursor: pointer;
       box-sizing: border-box;
       font-size: 24px;
-      margin: 20px auto;
       width: 100%;
       text-align: center;
     }
@@ -29,7 +28,7 @@ $color-form-highlight: #eeeeee;
 }
 
 table {
-  border: 1px solid #ccc;
+  border: 1px solid #028394;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
@@ -49,6 +48,10 @@ table tr {
   padding: 0.35em;
 }
 
+table tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
 table th,
 table td {
   padding: 0.625em;
@@ -60,6 +63,7 @@ table th {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
+  background-color: #e0e0e0;
 }
 
 @media screen and (max-width: 700px) {

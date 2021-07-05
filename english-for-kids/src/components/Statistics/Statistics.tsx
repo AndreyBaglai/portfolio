@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import Button from '../Button/Button';
+
 import { CardModel } from '../../models/card-model';
 import { LocalStorageItem } from '../../models/localStorageItem';
 import {
   getStatisticsFromLocalStorage,
   setStatisticsToLocalStorage,
 } from '../../services/localStorage';
-import Button from '../Button/Button';
+
+import { INIT_STATISTICS_STATE, MAX_CARDS_ON_PAGE } from '../../variables/variables';
 
 import './Statistics.scss';
 
@@ -19,21 +23,7 @@ export default function Statistics({
   baseStatistics,
   onSetRepeatWords,
 }: StatisticsProps): JSX.Element {
-  const initStats = [
-    {
-      word: '',
-      category: '',
-      translation: '',
-      imgSrc: '',
-      audioSrc: '',
-      clicks: 0,
-      correct: 0,
-      wrong: 0,
-      percent: 0,
-    },
-  ];
-
-  const [stats, setStats] = useState<LocalStorageItem[]>(initStats);
+  const [stats, setStats] = useState<LocalStorageItem[]>(INIT_STATISTICS_STATE);
   const [isASC, setIsASC] = useState(false);
 
   useEffect(() => {
@@ -45,74 +35,38 @@ export default function Statistics({
     setStats(baseStatistics);
   };
 
+  const sortedBy = (statsItems: LocalStorageItem[], field: string) => {
+    let sortedStats: LocalStorageItem[] = [];
+
+    if (field === 'word' || field === 'category' || field === 'translation') {
+      sortedStats = statsItems.sort((a: LocalStorageItem, b: LocalStorageItem) =>
+        a[field].localeCompare(b[field])
+      );
+      sortedStats = isASC ? sortedStats : sortedStats.reverse();
+    } else if (
+      field === 'correct' ||
+      field === 'wrong' ||
+      field === 'clicks' ||
+      field === 'percent'
+    ) {
+      sortedStats = statsItems.sort(
+        (a: LocalStorageItem, b: LocalStorageItem) => a[field] - b[field]
+      );
+      sortedStats = isASC ? sortedStats : sortedStats.reverse();
+    }
+
+    setStats(sortedStats);
+  };
+
   const onSort = (e: React.MouseEvent<Element>) => {
     setIsASC(!isASC);
+
     const target = e.target as HTMLElement;
     const sortBy = target.dataset.sort;
-
     const unSortedStats = [...getStatisticsFromLocalStorage()];
 
     if (sortBy) {
-      switch (sortBy) {
-        case 'clicks': {
-          let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => a.clicks - b.clicks
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'wrong': {
-          let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => a.wrong - b.wrong
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'percent': {
-          let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => a.percent - b.percent
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'correct': {
-          let sortedStats = unSortedStats.sort(
-            (a: LocalStorageItem, b: LocalStorageItem) => a.correct - b.correct
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'word': {
-          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
-            a.word.localeCompare(b.word)
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'translation': {
-          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
-            a.translation.localeCompare(b.translation)
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        case 'category': {
-          let sortedStats = unSortedStats.sort((a: LocalStorageItem, b: LocalStorageItem) =>
-            a.category.localeCompare(b.category)
-          );
-          sortedStats = isASC ? sortedStats : sortedStats.reverse();
-          setStats(sortedStats);
-          break;
-        }
-        default:
-          break;
-      }
+      sortedBy(unSortedStats, sortBy);
     }
   };
 
@@ -121,8 +75,7 @@ export default function Statistics({
 
     const repeatWords = unSortedStats
       .sort((a: LocalStorageItem, b: LocalStorageItem) => b.wrong - a.wrong)
-      .filter((item) => item.percent > 0)
-      .filter((item, i) => i < 8)
+      .filter((item, i) => item.percent > 0 && i < MAX_CARDS_ON_PAGE)
       .reduce((acc: CardModel[], next) => {
         const card: CardModel = {
           word: next.word,

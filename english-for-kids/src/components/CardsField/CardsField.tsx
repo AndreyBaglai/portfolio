@@ -175,6 +175,7 @@ export default function CardsField({
           ) : (
             ''
           )}
+
           {getCardsDataByCategory(typeCards).map(({ word, translation, imgSrc, audioSrc }) => {
             return (
               <Card
@@ -191,11 +192,13 @@ export default function CardsField({
               />
             );
           })}
+
           {isGameMode && !isStartGame ? (
             <Button text="Start game" onClickHandler={onStartGame} />
           ) : (
             ''
           )}
+
           {isStartGame ? <Button text="Repeat word" onClickHandler={onRepeatWord} /> : ''}
         </>
       )}

@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  color: #aaa;
+
+  &-logo {
+    width: 90px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-link {
+    color: #00ae9f;
+  }
+}

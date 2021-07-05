@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
 
 import {
   getStatisticsFromLocalStorage,
@@ -49,6 +50,7 @@ const App = (): JSX.Element => {
         <Header onToggleMenu={onToggleMenu} onToggleGameMode={onToggleGameMode} />
         <Navigation isOpen={isOpenMenu} onToggleMenu={onToggleMenu} />
         <Main isGameMode={isGameMode} baseStatistics={BASE_STATISTICS} />
+        <Footer />
       </div>
     </Router>
   );

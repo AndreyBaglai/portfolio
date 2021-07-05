@@ -8,7 +8,7 @@ type NavigationLinkProps = {
   path: string;
 };
 
-export default function NavigationLink({ text, path }: NavigationLinkProps) {
+export default function NavigationLink({ text, path }: NavigationLinkProps): JSX.Element {
   return (
     <NavLink to={path} className="nav-link">
       <li>{text}</li>

@@ -62,9 +62,13 @@ export default function CardsField({
     return currentWord.toLowerCase() === word.toLowerCase();
   };
 
-  const updateCardData = (word: string): void => {
+  const updateCardData = (word: string, isCorrect: boolean): void => {
     const card = getItemFromLocalStorage(word);
-    card.correct += 1;
+    if (isCorrect) {
+      card.correct += 1;
+    } else {
+      card.wrong += 1;
+    }
     card.percent = countWrongPercentWord(card);
     setItemToLocalStorage(card);
   };
@@ -112,7 +116,7 @@ export default function CardsField({
         playAudio('./audio/correct.mp3');
         clickedCard.classList.add('correct');
 
-        updateCardData(singWord);
+        updateCardData(singWord, true);
 
         setStars([...stars, true]);
         setWordIndex(wordIndex + 1);
@@ -121,7 +125,7 @@ export default function CardsField({
       setErrors(errors + 1);
       playAudio('./audio/error.mp3');
 
-      updateCardData(singWord);
+      updateCardData(singWord, false);
 
       setStars([...stars, false]);
     }

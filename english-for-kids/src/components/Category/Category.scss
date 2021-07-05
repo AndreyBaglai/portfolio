@@ -44,3 +44,9 @@
     color: #000;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .category {
+    width: 220px
+  }
+}

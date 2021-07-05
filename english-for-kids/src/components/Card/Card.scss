@@ -106,3 +106,9 @@
     fill: rgb(0, 255, 106);
   }
 }
+
+@media screen and (max-width: 470px) {
+  .card__front-img, .card__back-img, .card-containr, .card {
+    width: 220px
+  }
+}

@@ -37,3 +37,15 @@
     }
   }
 }
+
+@media screen and (max-width: 720px) {
+  .cards-field {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .avatar-end-game {
+    width: 260px;
+  }
+}

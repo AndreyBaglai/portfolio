@@ -19,3 +19,9 @@
     background: linear-gradient(40deg, #04ad78, #028394);
   }
 }
+
+@media screen and (max-width: 470px) {
+  .btn {
+    font-size: 18px;
+  }
+}

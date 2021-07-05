@@ -11,7 +11,7 @@ type CategoryProps = {
 
 export default function Category({ name, imgSrc, path }: CategoryProps): JSX.Element {
   return (
-    <Link to={path}>
+    <Link to={path} className="category-link">
       <div className="category">
         <img className="category-img" src={imgSrc} alt={name}></img>
         <span className="category-name">{name}</span>

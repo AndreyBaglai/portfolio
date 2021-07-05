@@ -6,7 +6,7 @@ type ToggleProps = {
   onToggleGameMode: () => void;
 };
 
-export default function Toggle({ onToggleGameMode }: ToggleProps) {
+export default function Toggle({ onToggleGameMode }: ToggleProps): JSX.Element {
   return (
     <div className="checkbox">
       <label className="checkbox__container" htmlFor="toggle">

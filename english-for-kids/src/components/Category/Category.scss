@@ -1,3 +1,8 @@
+.category-link {
+  text-decoration: none;
+  color: #000;
+}
+
 .category {
   border-radius: 5px;
   font-family: 'Roboto';
@@ -32,5 +37,10 @@
     border: 10px solid #fff;
     object-fit: cover;
     margin: 30px auto;
+  }
+
+  &-name {
+    text-decoration: none;
+    color: #000;
   }
 }

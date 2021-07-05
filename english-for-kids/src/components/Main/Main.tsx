@@ -1,12 +1,14 @@
 import { Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
+
 import CardsField from '../CardsField/CardsField';
 import CategoriesField from '../CategoriesField/CategoriesField';
-
-import './Main.scss';
 import Statistics from '../Statistics/Statistics';
+
 import { LocalStorageItem } from '../../models/localStorageItem';
 import { CardModel } from '../../models/card-model';
+
+import './Main.scss';
 
 type MainProps = {
   isGameMode: boolean;

@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
   const [isGameMode, setIsGameMode] = useState(false);
 
   useEffect(() => {
-    if (!getStatisticsFromLocalStorage()) {
+    if (!getStatisticsFromLocalStorage().length) {
       setStatisticsToLocalStorage(BASE_STATISTICS);
     }
   }, []);

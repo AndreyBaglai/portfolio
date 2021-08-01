@@ -1,0 +1,771 @@
+@media screen and (max-width: 1700px) {
+  .aside {
+    left: 0;
+  }
+
+  .container {
+    padding-right: 30px;
+  }
+
+  /*Footer start*/
+  .right-side {
+    position: relative;
+    left: 60px;
+    top: -1px;
+  }
+
+  .btn-footer {
+    position: absolute;
+    top: 325px;
+    left: 0;
+  }
+  /*Footer end*/
+
+  /*Popup start*/
+  .popup-content {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  /*Popup end*/
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    max-width: 1200px;
+  }
+
+  .main {
+    min-height: 720px;
+  }
+
+  .aside {
+    left: 16px;
+    margin: 0;
+    max-height: 520px;
+  }
+
+  .sidebar > li > a > img {
+    width: 96px;
+    height: 96px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 104px;
+    height: 104px;
+  }
+
+  .active-li-wrapper {
+    width: 114px;
+    height: 114px;
+  }
+
+  .container {
+    max-width: 900px;
+    padding: 0 0 0 90px;
+    margin: 0;
+  }
+
+  .live-broadcast {
+    width: 527px;
+    height: 297px;
+  }
+
+  .video-slider {
+    margin-top: -15px;
+    max-width: 528px;
+  }
+
+  .sub-live-broadcast {
+    width: 164px;
+    height: 94px;
+  }
+
+  .video-slider-item {
+    width: 164px;
+    height: 94px;
+  }
+
+  .animal-description {
+    max-width: 290px;
+  }
+
+  .circle-wrapper {
+    max-width: 528px;
+  }
+
+  /*Footer start*/
+  .footer-container {
+    padding: 116px 150px 0;
+    max-width: 900px;
+  }
+
+  .footer-content {
+    justify-content: inherit;
+  }
+
+  .right-side {
+    position: relative;
+    left: 60px;
+    top: -1px;
+  }
+
+  .footer-logo {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .btn-footer {
+    position: absolute;
+    top: 325px;
+    left: 0;
+  }
+  /*Footer end*/
+
+  /*Popup start*/
+  .popup {
+    max-width: 640px;
+    height: 735px;
+    overflow-y: scroll;
+    top: 60%;
+  }
+
+  .popup aside img {
+    max-width: 164px;
+    height: 100%;
+    object-fit: fill;
+    min-height: 1165px;
+  }
+
+  .popup-content {
+    padding: 105px 60px 125px;
+  }
+
+  .popup h3 {
+    margin-bottom: -23px;
+  }
+
+  .form-main,
+  .form-header {
+    flex-direction: column;
+  }
+
+  .popup fieldset {
+    max-width: 335px;
+  }
+
+  .about-you {
+    margin-right: 0;
+  }
+  /*Popup end*/
+}
+
+@media screen and (max-width: 1070px) {
+  .header-nav > ul > li {
+    padding: 0 22px;
+  }
+
+  .container {
+    padding-left: 40px;
+  }
+
+  .video-slider {
+    margin-top: -15px;
+    max-width: 498px;
+  }
+
+  .video-slider-item {
+    width: 154px;
+    height: 94px;
+  }
+
+  .live-broadcast {
+    width: 497px;
+    height: 280px;
+  }
+
+  .sub-live-broadcast {
+    width: 155px;
+    height: 89px;
+  }
+
+  .footer-nav > li {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .header {
+    position: fixed;
+    z-index: 100;
+    width: calc(100% - 100px);
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-nav-wrapper {
+    display: block;
+  }
+
+  .switch-color-theme {
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .mobile-nav-icon {
+    display: block;
+  }
+
+  .main {
+    min-height: 1076px;
+  }
+
+  .aside {
+    max-height: 420px;
+    top: 110px;
+  }
+
+  .sidebar > li > a > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 78px;
+    height: 78px;
+  }
+
+  .active-li-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .container {
+    padding-left: 62px;
+    padding-top: 90px;
+  }
+
+  .video-slider {
+    margin-top: 18px;
+  }
+
+  .video-slider-item {
+    width: 154px;
+    height: 90px;
+  }
+
+  .broadcast {
+    position: relative;
+  }
+
+  .animal-description {
+    position: absolute;
+    top: 490px;
+    max-width: 497px;
+  }
+
+  .animal-description-list {
+    margin-left: 0;
+    max-width: 497px;
+  }
+
+  .animal-description-list p.diet-text {
+    max-width: 497px;
+  }
+
+  .btn.btn-feed {
+    margin-left: 0;
+  }
+
+  .live-broadcast {
+    width: 497px;
+    height: 280px;
+  }
+
+  .sub-live-broadcast {
+    width: 155px;
+    height: 89px;
+  }
+
+  /*Footer start*/
+  .footer-container {
+    padding: 0;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .footer-logo {
+    margin-bottom: 50px;
+  }
+
+  .left-side {
+    margin-top: 80px;
+  }
+
+  .btn-footer {
+    right: 20px;
+    top: -562px;
+    left: auto;
+  }
+
+  form {
+    max-width: 400px;
+    position: relative;
+    top: 64px;
+    margin-bottom: 70px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    position: absolute;
+    top: -494px;
+  }
+
+  .footer-nav > li {
+    padding: 0;
+  }
+
+  .right-side {
+    left: 0;
+  }
+
+  .right-side-description {
+    margin-top: 50px;
+  }
+
+  .footer-line {
+    max-width: 600px;
+    margin: 40px auto;
+  }
+
+  .copyright {
+    margin: 28px 0 0 20px;
+    padding-bottom: 40px;
+  }
+  /*Footer end*/
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    width: calc(100% - 80px);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-nav-wrapper {
+    display: block;
+  }
+
+  .switch-color-theme {
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .mobile-nav-icon {
+    display: block;
+  }
+
+  .main {
+    min-height: 1040px;
+  }
+
+  .aside {
+    max-height: 420px;
+  }
+
+  .sidebar > li > a > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 78px;
+    height: 78px;
+  }
+
+  .active-li-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .container {
+    padding-left: 36px;
+  }
+
+  .video-slider {
+    margin-top: 18px;
+  }
+
+  .video-slider-item {
+    width: 154px;
+    height: 90px;
+  }
+
+  .broadcast {
+    position: relative;
+  }
+
+  .animal-description {
+    position: absolute;
+    top: 490px;
+    max-width: 497px;
+  }
+
+  .animal-description-list {
+    margin-left: 0;
+    max-width: 497px;
+  }
+
+  .animal-description-list p.diet-text {
+    max-width: 497px;
+  }
+
+  .btn.btn-feed {
+    margin-left: 0;
+  }
+
+  .live-broadcast {
+    width: 497px;
+    height: 280px;
+  }
+
+  .sub-live-broadcast {
+    width: 155px;
+    height: 89px;
+  }
+
+  /*Footer start*/
+  .footer-container {
+    padding: 0;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .footer-logo {
+    margin-bottom: 50px;
+  }
+
+  .left-side {
+    margin-top: 80px;
+  }
+
+  .btn-footer {
+    right: 20px;
+    top: -562px;
+    left: auto;
+  }
+
+  form {
+    max-width: 400px;
+    position: relative;
+    top: 64px;
+    margin-bottom: 70px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    position: absolute;
+    top: -494px;
+  }
+
+  .footer-nav > li {
+    padding: 0;
+  }
+
+  .right-side {
+    left: 0;
+  }
+
+  .right-side-description {
+    margin-top: 50px;
+  }
+
+  .footer-line {
+    max-width: 600px;
+    margin: 40px auto;
+  }
+
+  .copyright {
+    margin: 28px 0 0 20px;
+    padding-bottom: 40px;
+  }
+  /*Footer end*/
+
+  /*Popup start*/
+  .popup {
+    max-width: 320px;
+  }
+
+  .popup aside {
+    display: none;
+  }
+
+  .popup-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+  }
+
+  .popup fieldset {
+    min-width: 259px;
+  }
+
+  .popup h3 {
+    font-size: 20px;
+  }
+
+  .popup fieldset input {
+    min-width: 100%;
+  }
+  /*Popup end*/
+}
+
+@media screen and (max-width: 630px) {
+  .main {
+    min-height: 930px;
+  }
+
+  .container {
+    padding-left: 8px;
+    margin: 0 auto;
+  }
+
+  .video-slider {
+    justify-content: space-around;
+  }
+
+  .main-header {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 40px 0 25px;
+    max-width: 205px;
+  }
+
+  .live-broadcast {
+    width: 300px;
+    height: 220px;
+  }
+
+  .sub-live-broadcast {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider-item {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider .video-slider-item:nth-child(3) {
+    display: none;
+  }
+
+  .animal-description-list h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .animal-description-list p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .animal-description {
+    top: 380px;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .live-broadcast {
+    width: 205px;
+    height: 116px;
+  }
+
+  .animal-description {
+    top: 280px;
+  }
+
+  .main {
+    min-height: 856px;
+  }
+
+  /*Footer start*/
+  .textarea-wrapper,
+  input[type='text'],
+  input[type='email'] {
+    min-width: auto;
+  }
+
+  .btn-footer {
+    top: 272px;
+  }
+
+  form {
+    margin-bottom: 70px;
+  }
+
+  .send {
+    margin-right: 0;
+  }
+
+  .right-side-description {
+    margin-top: 60px;
+  }
+
+  .footer-line {
+    max-width: 300px;
+    margin: 110px auto 40px;
+  }
+  /*Footer end*/
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main {
+    min-height: 814px;
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .mobile-nav > li {
+    margin-bottom: 20px;
+  }
+
+  .mobile-nav > li:last-child {
+    margin-bottom: 0;
+  }
+
+  .aside {
+    max-height: 318px;
+  }
+
+  .sidebar > li > a > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .active-li-wrapper .active-map-slider-item {
+    width: 55px;
+    height: 55px;
+  }
+
+  .video-slider {
+    max-width: 205px;
+  }
+
+  .animal-description-list p.diet-text {
+    max-width: 211px;
+  }
+
+  .active-li-wrapper {
+    width: 67px;
+    height: 67px;
+    align-items: flex-end;
+  }
+
+  .main-header {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 40px 0 25px;
+    max-width: 205px;
+  }
+
+  .container {
+    padding-left: 30px;
+  }
+
+  .live-broadcast {
+    width: 205px;
+    height: 116px;
+  }
+
+  .sub-live-broadcast {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider-item {
+    width: 98px;
+    height: 57px;
+  }
+
+  .video-slider .video-slider-item:nth-child(3) {
+    display: none;
+  }
+
+  .animal-description-list h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .animal-description-list p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .animal-description {
+    top: 280px;
+  }
+
+  /*Footer start*/
+  .textarea-wrapper,
+  input[type='text'],
+  input[type='email'] {
+    min-width: auto;
+  }
+
+  .btn-footer {
+    top: 272px;
+  }
+
+  form {
+    margin-bottom: 70px;
+  }
+
+  .send {
+    margin-right: 0;
+  }
+
+  .right-side-description {
+    margin-top: 60px;
+  }
+
+  .footer-line {
+    max-width: 300px;
+    margin: 110px auto 40px;
+  }
+  /*Footer end*/
+}
